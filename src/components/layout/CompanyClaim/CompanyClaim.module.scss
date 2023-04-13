@@ -48,16 +48,16 @@
 
       .cartCounter {
         width: fit-content;
-        border: 1px solid #d58e32;
+        border: 1px solid $primary;
         padding: 8.5px;
         height: 27px;
         border-radius: 14px;
-        background-color: #363636;
+        background-color: $footer-bg;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 14px;
-        color: #ffffff;
+        color: $light-text-color;
         position: absolute;
         right: 0;
         transform: translate(50%, -50%);
