@@ -75,4 +75,22 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .outlines {
+    .favorite {
+      color: $danger;
+
+      & > svg {
+        scale: 1.2;
+      }
+    }
+
+    .compare {
+      color: $primary;
+
+      & > svg {
+        scale: 1.2;
+      }
+    }
+  }
 }
