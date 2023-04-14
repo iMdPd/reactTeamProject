@@ -2,25 +2,24 @@ $base-padding: 24px;
 
 // Colors - DO NOT USE IN OTHER FILES
 $shadow: rgba(1, 2, 2, 0.2);
-$pureBlack: #292929;                   // ProductBox
-$blackGrey: #2a2a2a;                   // footer, text, button background, stars also known as 42 42 42
-$darkGrey: #363636;                    // Header - main and footer
-$standardGrey: #434343;                // header - Navbar and above footer
-$lightGrey: #a9a9a9;                   // Grey text also known as rgb(169, 169, 169)
-$mistGrey: #b6b6b6;                    // Icons in FeatureBox
-$semiGrey: #e2e2e2;                    // decorations and productBox border
+$pureBlack: #292929;
+$blackGrey: #2a2a2a;
+$darkGrey: #363636;
+$standardGrey: #434343;
+$lightGrey: #a9a9a9;
+$mistGrey: #b6b6b6;
+$semiGrey: #e2e2e2;
 $smokeGrey: #d8d8d8;
-$semiWhite: #e1e1e1;                   // In ProductBox
-$azureWhite: #f4f5f7;                  // From ProductBox
+$semiWhite: #e1e1e1;
+$azureWhite: #f4f5f7;
 $darkerAzureWhite: #e0e3ed;
-$pureWhite: #ffffff;                   // background, like and compare buttons
-$orangeGold: #d58e32;                  // primary
+$pureWhite: #ffffff;
+$orangeGold: #d58e32;          // primary
 $transparent: transparent;
 
-$red: red;                             // FOR TEST ONLY
+$red: red;                     // FOR TEST ONLY
 
 // Components Variables Main
-
 $primary: $orangeGold;
 $text-color: $blackGrey;
 
