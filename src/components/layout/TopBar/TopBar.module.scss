@@ -19,6 +19,7 @@
         &:hover {
           color: $primary;
           text-decoration: none;
+          animation: myanim-text $time-text;
         }
       }
     }

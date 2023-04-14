@@ -73,6 +73,7 @@
 
             &:hover {
               color: $primary;
+              animation: myanim-icon $time-icon;
             }
           }
         }

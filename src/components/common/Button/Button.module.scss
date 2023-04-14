@@ -10,11 +10,13 @@
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
+  white-space: nowrap;
 
   &:not(.noHover):hover {
     color: #ffffff !important;
     background-color: $primary;
     text-decoration: none;
+    animation: myanim-bg $time-bg;
   }
 }
 
@@ -37,5 +39,6 @@
   &:not(.noHover):hover {
     background-color: #2a2a2a;
     color: #ffffff;
+    animation: myanim-bg $time-bg;
   }
 }

@@ -12,20 +12,27 @@ $text-color: #2a2a2a;
 
 $form-border-color: #292929;
 
-// Animations
+// Animation settings
 $animation-bg: rgb(97, 19, 0);
-$animation-text: rgb(90, 41, 1);
+$animation-text: rgb(231, 46, 0);
 $animation-icon: rgb(255, 208, 0);
 $time-bg: 0.25s;
-$time-text: 2s;
-$time-icon: 5s;
+$time-text: 0.25s;
+$time-icon: 0.25s;
 
 
-@keyframes myanim {
+@keyframes myanim-bg {
   50% {background-color: $animation-bg; border-color: $animation-bg;
-    font-size: 20px;
-  }
-  100% {background-color:$primary;
-  }
+    font-size: 16px;}
+  100% {background-color:$primary;}
+}
 
+@keyframes myanim-text {
+  50% {color: $animation-text; font-size: 16px;}
+  100% {color:$primary;}
+}
+
+@keyframes myanim-icon {
+  50% {color: $animation-icon; font-size: 26px;}
+  100% {color:$primary;}
 }
