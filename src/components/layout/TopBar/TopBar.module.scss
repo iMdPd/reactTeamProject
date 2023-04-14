@@ -13,11 +13,11 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $header-links;
         font-size: 13px;
 
         &:hover {
-          color: $primary;
+          color: $header-links-hover;
           text-decoration: none;
           animation: pulsing-text $animation-time-text $animation-iteration-count;
         }

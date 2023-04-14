@@ -1,6 +1,7 @@
 $base-padding: 24px;
 
 // Colors - DO NOT USE IN OTHER FILES
+$shadow: rgba(1, 2, 2, 0.2);
 $pureBlack: #292929;                   // ProductBox
 $blackGrey: #2a2a2a;                   // footer, text, button background, stars also known as 42 42 42
 $darkGrey: #363636;                    // Header - main and footer
@@ -8,10 +9,13 @@ $standardGrey: #434343;                // header - Navbar and above footer
 $lightGrey: #a9a9a9;                   // Grey text also known as rgb(169, 169, 169)
 $mistGrey: #b6b6b6;                    // Icons in FeatureBox
 $semiGrey: #e2e2e2;                    // decorations and productBox border
+$smokeGrey: #d8d8d8;
 $semiWhite: #e1e1e1;                   // In ProductBox
 $azureWhite: #f4f5f7;                  // From ProductBox
+$darkerAzureWhite: #e0e3ed;
 $pureWhite: #ffffff;                   // background, like and compare buttons
 $orangeGold: #d58e32;                  // primary
+$transparent: transparent;
 
 $red: red;                             // FOR TEST ONLY
 
@@ -56,14 +60,54 @@ $pb-stars-border: $blackGrey;
 $pb-box-line: $blackGrey;
 $pb-line-ornament: $orangeGold;
 
-//
+// features/NewFurniture
+$nf-menu-line: $semiGrey;
+$nf-menu-line-ornament: $orangeGold;
+$nf-menu-tx: $blackGrey;
+$nf-menu-hover-line-ornament: $orangeGold;
+$nf-menu-dots-bg: $pureWhite;
+$nf-menu-dots: $semiWhite;
+$nf-manu-hover-dots: $orangeGold;
 
+// features/ProductSearch
+$ps-border-color: $pureBlack;
+$ps-border-dropdown: $blackGrey;
+$ps-border-icon: $orangeGold;
+$ps-border-select-bg: $transparent;
+$ps-border-placeholder-color: $blackGrey;
+$ps-border-button-bg: $transparent;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+// layout/CompanyClaim
+$cc-phone-number-color: $smokeGrey;
+$cc-cart-icon: $pureWhite;
+$cc-cart-icon-bg: $orangeGold;
+$cc-cart-counter-tx: $darkerAzureWhite;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+// layout/Footer
+$footer-claim-bg: $blackGrey;
+$footer-bg: $darkGrey;
+$footer-menu-tx: $pureWhite;
+$footer-menu-wrapper-tx: $lightGrey;
+$footer-menu-wrapper-hover-tx: $pureWhite;
+$footer-copyright-color: $lightGrey;
+$footer-social-media-color: $lightGrey;
+$footer-social-medi-hover-color: $orangeGold;
+
+// layout/MenuBar
+$mb-menu-shadow-line: $shadow;
+$mb-menu-bg: $pureWhite;
+$mb-menu-tx: $blackGrey;
+$mb-menu-links-border: $pureWhite;
+$mb-menu-links-hover-bg: $orangeGold;
+$mb-menu-links-hover-tx: $pureWhite;
+$mb-menu-links-hover-border: $orangeGold;
+$mb-menu-links-hover-border-active: $blackGrey;
+
+// layout/TopBar
+$header-topbar-bg: $standardGrey;
+$header-bg: $darkGrey;
+$header-links: $pureWhite;
+$header-links-hover: $orangeGold;
 
 $primary: #d58e32;
 $danger: #ff0000;
