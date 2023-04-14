@@ -1,13 +1,58 @@
 $base-padding: 24px;
 
+// Colors - DO NOT USE IN OTHER FILES
+$pureBlack: #292929;                   // ProductBox
+$blackGrey: #2a2a2a;                   // footer, text, button background, stars also known as 42 42 42
+$darkGrey: #363636;                    // Header - main and footer
+$standardGrey: #434343;                // header - Navbar and above footer
+$lightGrey: #a9a9a9;                   // Grey text also known as rgb(169, 169, 169)
+$mistGrey: #b6b6b6;                    // Icons in FeatureBox
+$semiGrey: #e2e2e2;                    // decorations and productBox border
+$semiWhite: #e1e1e1;                   // In ProductBox
+$pureWhite: #ffffff;                   // background, like and compare buttons
+$orangeGold: #d58e32;                  // primary
+
+$red: red;                             // FOR TEST ONLY
+
+// Components Variables Main
+
+$primary: $orangeGold;
+$text-color: $blackGrey;
+
+// Components Variables Files
+
+// common/Button
+$button-bg: $blackGrey;
+$button-tx: $pureWhite;
+$button-hover-tx: $pureWhite;
+
+$small-button-outline-border: $blackGrey;
+$small-button-outline-border-tx: $blackGrey;
+$small-button-hover-outline-border: $blackGrey;
+$small-button-hover-outline-border-tx: $pureWhite;
+
+// common/FeatureBox
+$box-border: $mistGrey;
+$box-icon-main: $blackGrey;
+$box-circle-bg: $pureWhite;
+$box-big-circle: $mistGrey;
+$box-small-circle: $mistGrey;
+
+$box-content-tx: $blackGrey;
+$box-hover-content-icon: $pureWhite;
+$box-hover-content-tx: $orangeGold;
+$box-hover-content-border: $orangeGold;
+$box-hover-content-small-circle-bg: $orangeGold;
+
+// common/ProductBox
+
+
+
+
 $header-topbar-bg: #434343;
 $header-bg: #363636;
 
 $footer-claim-bg: #2a2a2a;
 $footer-bg: #363636;
 
-$primary: #d58e32;
-
-$text-color: #2a2a2a;
-
-$form-border-color: #292929;
+$form-border-color: #292929; // NIE UŻYWAMY
