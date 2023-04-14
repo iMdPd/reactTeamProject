@@ -13,7 +13,7 @@ import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
 
-const ProductBox = ({ id, name, price, promo, stars }) => {
+const ProductBox = ({ id, name, price, promo, stars, favorite }) => {
   const dispatch = useDispatch();
 
   const handleToggleFavoriteProduct = e => {
@@ -49,7 +49,11 @@ const ProductBox = ({ id, name, price, promo, stars }) => {
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button onClick={handleToggleFavoriteProduct} variant='outline'>
+          <Button
+            className={favorite ? styles.favorite : ''}
+            onClick={handleToggleFavoriteProduct}
+            variant='outline'
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant='outline'>
@@ -73,6 +77,7 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  favorite: PropTypes.bool,
 };
 
 export default ProductBox;
