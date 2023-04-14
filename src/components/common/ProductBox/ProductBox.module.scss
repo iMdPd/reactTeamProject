@@ -82,14 +82,10 @@
     align-items: center;
   }
 
-
   .outlines {
     .favorite {
-      color: $danger;
-
-      & > svg {
-        scale: 1.2;
-      }
+      background-color: $primary;
+      color: $light-text-color;
     }
 
     .compare {
@@ -114,7 +110,7 @@
 
 .price {
   display: flex;
-  
+
   p {
     margin: auto 3px;
     color: $color-gray;
