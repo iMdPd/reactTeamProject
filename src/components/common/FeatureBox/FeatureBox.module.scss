@@ -1,14 +1,14 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  border: 1px solid $box-border;
+  border: 1px solid $fb-box-border;
   text-align: center;
   margin-top: 40px;
 
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
-    color: $box-icon-main;
+    color: $fb-box-icon-main;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
 
     &::before {
       content: "";
-      border: 1px solid $box-big-circle;
+      border: 1px solid $fb-box-big-circle;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -28,7 +28,7 @@
       width: 76px;
       height: 76px;
       border-radius: 100%;
-      background-color: $box-circle-bg;
+      background-color: $fb-box-circle-bg;
       z-index: -1;
     }
 
@@ -41,13 +41,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      border: 1px solid $box-small-circle;
+      border: 1px solid $fb-box-small-circle;
     }
   }
 
   .content {
     text-transform: uppercase;
-    color: $box-content-tx;
+    color: $fb-box-content-tx;
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
@@ -63,16 +63,16 @@
 
   &.active {
     .iconWrapper {
-      color: $box-hover-content-icon;
+      color: $fb-box-hover-content-icon;
 
       &::after {
-        background-color: $box-hover-content-small-circle-bg;
-        border-color: $box-hover-content-border;
+        background-color: $fb-box-hover-content-small-circle-bg;
+        border-color: $fb-box-hover-content-border;
       }
     }
 
     .content {
-      color: $box-hover-content-tx;
+      color: $fb-box-hover-content-tx;
     }
   }
 }

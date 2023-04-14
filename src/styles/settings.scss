@@ -9,6 +9,7 @@ $lightGrey: #a9a9a9;                   // Grey text also known as rgb(169, 169, 
 $mistGrey: #b6b6b6;                    // Icons in FeatureBox
 $semiGrey: #e2e2e2;                    // decorations and productBox border
 $semiWhite: #e1e1e1;                   // In ProductBox
+$azureWhite: #f4f5f7;                  // From ProductBox
 $pureWhite: #ffffff;                   // background, like and compare buttons
 $orangeGold: #d58e32;                  // primary
 
@@ -25,6 +26,7 @@ $text-color: $blackGrey;
 $button-bg: $blackGrey;
 $button-tx: $pureWhite;
 $button-hover-tx: $pureWhite;
+$button-hover-bg: $orangeGold;
 
 $small-button-outline-border: $blackGrey;
 $small-button-outline-border-tx: $blackGrey;
@@ -32,21 +34,29 @@ $small-button-hover-outline-border: $blackGrey;
 $small-button-hover-outline-border-tx: $pureWhite;
 
 // common/FeatureBox
-$box-border: $mistGrey;
-$box-icon-main: $blackGrey;
-$box-circle-bg: $pureWhite;
-$box-big-circle: $mistGrey;
-$box-small-circle: $mistGrey;
+$fb-box-border: $mistGrey;
+$fb-box-icon-main: $blackGrey;
+$fb-box-circle-bg: $pureWhite;
+$fb-box-big-circle: $mistGrey;
+$fb-box-small-circle: $mistGrey;
 
-$box-content-tx: $blackGrey;
-$box-hover-content-icon: $pureWhite;
-$box-hover-content-tx: $orangeGold;
-$box-hover-content-border: $orangeGold;
-$box-hover-content-small-circle-bg: $orangeGold;
+$fb-box-content-tx: $blackGrey;
+$fb-box-hover-content-icon: $pureWhite;
+$fb-box-hover-content-tx: $orangeGold;
+$fb-box-hover-content-border: $orangeGold;
+$fb-box-hover-content-small-circle-bg: $orangeGold;
 
 // common/ProductBox
+$pb-box-bg: $pureWhite;
+$pb-box-border: $semiWhite;
+$pb-photo-cover: $azureWhite;
+$pb-sale-bg: $pureBlack;
+$pb-sale-tx: $pureWhite;
+$pb-stars-border: $blackGrey;
+$pb-box-line: $blackGrey;
+$pb-line-ornament: $orangeGold;
 
-
+//
 
 
 $header-topbar-bg: #434343;
