@@ -76,3 +76,13 @@
     align-items: center;
   }
 }
+
+.price {
+  display: flex;
+  p {
+    margin: auto 3px;
+    color: gray;
+    text-decoration: line-through;
+    font-weight: 200;
+  }
+}
