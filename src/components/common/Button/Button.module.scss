@@ -14,7 +14,7 @@
 
   &:not(.noHover):hover {
     color: $button-hover-tx !important;
-    background-color: $primary;
+    background-color: $button-hover-bg;
     text-decoration: none;
     animation: pulsing-btn $animation-time-btn $animation-iteration-count;
   }
