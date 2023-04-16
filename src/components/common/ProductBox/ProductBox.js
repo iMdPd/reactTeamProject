@@ -50,7 +50,7 @@ const ProductBox = ({ id, name, price, promo, stars, favorite }) => {
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            className={favorite ? styles.favorite : ''}
+            className={favorite && styles.favorite}
             onClick={handleToggleFavoriteProduct}
             variant='outline'
           >
