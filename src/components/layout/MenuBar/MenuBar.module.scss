@@ -4,13 +4,10 @@
   box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
   background-color: #ffffff;
 
-  :global(.container) > :global(.row) {
-    height: 84px;
-  }
-
   .menu {
     display: flex;
     align-self: stretch;
+    margin: 0 auto;
 
     ul {
       margin: 0;
