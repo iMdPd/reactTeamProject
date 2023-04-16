@@ -16,19 +16,18 @@ $form-border-color: #292929;
 $animation-bg: rgb(97, 19, 0);
 $animation-text: rgb(231, 46, 0);
 $animation-icon: rgb(255, 208, 0);
-$time-bg: 0.25s;
-$time-text: 0.25s;
-$time-icon: 0.25s;
+$animation-time-bg: 0.25s;
+$animation-time-text: 0.25s;
+$animation-time-icon: 0.25s;
 
 
 @keyframes myanim-bg {
-  50% {background-color: $animation-bg; border-color: $animation-bg;
-    font-size: 16px;}
+  50% {background-color: $animation-bg; border-color: $animation-bg;}
   100% {background-color:$primary;}
 }
 
 @keyframes myanim-text {
-  50% {color: $animation-text; font-size: 16px;}
+  50% {color: $animation-text; font-size: 14px;}
   100% {color:$primary;}
 }
 
