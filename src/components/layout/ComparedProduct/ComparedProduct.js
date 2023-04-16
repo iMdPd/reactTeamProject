@@ -21,7 +21,8 @@ export const ComparedProduct = ({ name, id }) => {
         <img
           className={styles.image}
           alt={name}
-          src={`${process.env.PUBLIC_URL}/images/products/${name}.jpg`}
+          // src={`${process.env.PUBLIC_URL}/images/products/${name}.jpg`}
+          src='https://images.pexels.com/photos/15828302/pexels-photo-15828302.jpeg'
         />
         <Button
           onClick={() => handleRemoveCompare(id)}
