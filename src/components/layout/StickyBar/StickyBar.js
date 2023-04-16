@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './StickyBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
@@ -8,11 +8,22 @@ import { ComparedProduct } from '../ComparedProduct/ComparedProduct';
 import Button from '../../common/Button/Button';
 
 export const StickyBar = () => {
+  const [focused, setFocused] = useState(false);
+
   const comparedProducts = useSelector(getComparedProducts);
+
+  const styledBox = {
+    width: focused && `calc(260px + ${comparedProducts.length}*130px)`,
+    outline: 'none',
+  };
 
   return (
     <>
-      <button className={styles.sticky}>
+      <button
+        onClick={() => setFocused(!focused)}
+        style={styledBox}
+        className={styles.sticky}
+      >
         <FontAwesomeIcon className={styles.icon} icon={faExchangeAlt}>
           Add to compare
         </FontAwesomeIcon>
