@@ -39,10 +39,10 @@ const ProductBox = ({ name, price, promo, stars, favorite, compare }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button className={favorite ? styles.favorite : ''} variant='outline'>
+        <Button className={favorite && styles.favorite} variant='outline'>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button className={compare ? styles.compare : ''} variant='outline'>
+        <Button className={compare && styles.compare} variant='outline'>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
