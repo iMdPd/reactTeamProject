@@ -29,22 +29,43 @@ $animation-time-btn: 0.25s;
 $animation-iteration-count: infinite;
 
 
-@keyframes myanim-bg {
-  50% {background-color: $animation-bg; border-color: $animation-bg;}
-  100% {background-color:$primary;}
+@keyframes pulsing-bg {
+  50% {
+    background-color: $animation-bg;
+    border-color: $animation-bg;
+  }
+  100% {
+    background-color:$primary;
+  }
 }
 
-@keyframes myanim-text {
-  50% {color: $animation-text; font-size: 14px;}
-  100% {color:$primary;}
+@keyframes pulsing-text {
+  50% {
+    color: $animation-text;
+    font-size: 14px;
+  }
+  100% {
+    color:$primary;
+  }
 }
 
-@keyframes myanim-icon {
-  50% {color: $animation-icon; font-size: 26px;}
-  100% {color:$primary;}
+@keyframes pulsing-icon {
+  50% {
+    color: $animation-icon;
+    font-size: 26px;
+  }
+  100% {
+    color:$primary;
+  }
 }
 
-@keyframes myanim-btn {
-  50% {background-color: $animation-btn; transform: scale(1.05);}
-  100% {background-color: $primary; transform: scale(0.95);}
+@keyframes pulsing-btn {
+  50% {
+    background-color: $animation-btn;
+    transform: scale(1.05);
+  }
+  100% {
+    background-color: $primary;
+    transform: scale(0.95);
+  }
 }
