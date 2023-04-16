@@ -17,9 +17,11 @@
   &:hover {
     .closeButton {
       display: block !important;
-      transform: translate(25%, -25%) rotate(45deg);
+      transform: translate(-25%, -25%) rotate(45deg);
       color: $primary;
       border: none;
+      width: min-content;
+      height: min-content;
       scale: 2;
       padding: 0;
     }
