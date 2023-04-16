@@ -38,7 +38,7 @@
 
 
       &:hover {
-        animation: myanim-bg $animation-time-bg;
+        animation: myanim-bg $animation-time-bg $animation-iteration-count;
       }
 
       &:hover,

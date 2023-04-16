@@ -19,7 +19,7 @@
         &:hover {
           color: $primary;
           text-decoration: none;
-          animation: myanim-text $animation-time-text;
+          animation: myanim-text $animation-time-text $animation-iteration-count;
         }
       }
     }

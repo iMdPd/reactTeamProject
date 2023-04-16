@@ -16,7 +16,7 @@
     color: #ffffff !important;
     background-color: $primary;
     text-decoration: none;
-    animation: myanim-bg $animation-time-bg;
+    animation: myanim-btn $animation-time-btn $animation-iteration-count;
   }
 }
 
@@ -39,6 +39,6 @@
   &:not(.noHover):hover {
     background-color: #2a2a2a;
     color: #ffffff;
-    animation: myanim-bg $animation-time-bg;
+    animation: myanim-btn $animation-time-btn $animation-iteration-count;
   }
 }
