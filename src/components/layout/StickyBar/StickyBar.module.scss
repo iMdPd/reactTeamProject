@@ -9,7 +9,7 @@
   position: fixed;
   bottom: 50px;
   box-shadow: 0 0 10px;
-  background-color: #434343;
+  background-color: $header-topbar-bg;
   align-items: center;
   border: none;
   z-index: 1;
@@ -27,7 +27,7 @@
 }
 
 .icon {
-  color: #d58e32;
+  color: $primary;
   position: absolute;
   right: 20px;
   cursor: pointer;
