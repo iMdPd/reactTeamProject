@@ -20,7 +20,7 @@ export const StickyBar = () => {
   return (
     <>
       <button
-        onClick={() => setFocused(!focused)}
+        onClick={e => e.target.tagName === 'BUTTON' && setFocused(!focused)}
         style={styledBox}
         className={styles.sticky}
       >
