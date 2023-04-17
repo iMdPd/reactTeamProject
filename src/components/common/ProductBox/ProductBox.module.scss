@@ -82,6 +82,25 @@
     align-items: center;
   }
 
+
+  .outlines {
+    .favorite {
+      color: $danger;
+
+      & > svg {
+        scale: 1.2;
+      }
+    }
+
+    .compare {
+      color: $primary;
+
+      & > svg {
+        scale: 1.2;
+      }
+    }
+  }
+
   &:hover {
     .buttons {
       visibility: visible;
@@ -95,6 +114,7 @@
 
 .price {
   display: flex;
+  
   p {
     margin: auto 3px;
     color: $color-gray;
