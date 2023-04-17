@@ -61,7 +61,7 @@
     }
   }
 
-  &.active {
+  &.active, &:hover {
     .iconWrapper {
       color: #ffffff;
 
@@ -74,5 +74,11 @@
     .content {
       color: $primary;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  h5 {
+    word-spacing: 150px;
   }
 }

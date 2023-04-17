@@ -13,7 +13,7 @@ import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
 
-const ProductBox = ({ id, name, price, promo, stars, favorite }) => {
+const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare }) => {
   const dispatch = useDispatch();
 
   const handleToggleFavoriteProduct = e => {
@@ -24,6 +24,11 @@ const ProductBox = ({ id, name, price, promo, stars, favorite }) => {
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
+        <img
+          className={styles.image}
+          alt={name}
+          src={`${process.env.PUBLIC_URL}/images/products/${name}.jpg`}
+        />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -54,11 +59,12 @@ const ProductBox = ({ id, name, price, promo, stars, favorite }) => {
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button className={compare && styles.compare} variant='outline'>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
         <div className={styles.price}>
+          {oldPrice && <p>${oldPrice}</p>}
           <Button noHover variant='small'>
             $ {price}
           </Button>
@@ -76,6 +82,8 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   favorite: PropTypes.bool,
+  compare: PropTypes.bool,
+  oldPrice: PropTypes.number,
 };
 
 export default ProductBox;

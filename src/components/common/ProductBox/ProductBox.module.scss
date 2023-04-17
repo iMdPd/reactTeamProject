@@ -7,7 +7,6 @@
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
     background: {
       color: #f4f5f7;
       size: contain;
@@ -16,6 +15,12 @@
     }
     overflow: hidden;
     align-items: flex-end;
+
+    .image {
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+    }
 
     .sale {
       position: absolute;
@@ -31,6 +36,7 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      visibility: hidden;
     }
   }
 
@@ -76,8 +82,53 @@
     align-items: center;
   }
 
-  .favorite {
+  .outlines {
+    .favorite {
     background-color: $primary;
     color: $light-text-color;
+    }
+
+    .compare {
+      color: $primary;
+
+      & > svg {
+        scale: 1.2;
+      }
+    }
+  }
+
+  &:hover {
+    .buttons {
+      visibility: visible;
+    }
+
+    .price > div {
+      background-color: $primary;
+    }
+  }
+}
+
+.price {
+  display: flex;
+  
+  p {
+    margin: auto 3px;
+    color: $color-gray;
+    text-decoration: line-through;
+    font-weight: 200;
+  }
+}
+
+@media (max-width: 577px) {
+  .root {
+    margin: 20px auto;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 578px) and (max-width: 991px) {
+  .root {
+    margin: 20px auto;
+    max-width: 300px;
   }
 }
