@@ -40,13 +40,11 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
+          {[...Array(5).keys()].map(i => (
             <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
+              <FontAwesomeIcon icon={i <= stars ? faStar : farStar}>
+                {i} stars
+              </FontAwesomeIcon>
             </a>
           ))}
         </div>
