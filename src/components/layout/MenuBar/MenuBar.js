@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faListUl } from '@fortawesome/free-solid-svg-icons';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
@@ -9,10 +11,12 @@ const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
       <nav className='row  flex-column-reverse  flex-xl-row  align-items-center '>
-        <div className='col text-center my-4'>
+        <div className='col d-flex justify-content-center align-items-center  my-4'>
           <ProductSearch />
+          {/* <button className='d-block ml-4 d-md-none'>click</button> */}
+          <FontAwesomeIcon className='d-block ml-4 d-md-none' icon={faListUl} />
         </div>
-        <div className={'col-auto ' + styles.menu}>
+        <div className={'col-auto d-none d-md-flex ' + styles.menu}>
           <ul>
             <li>
               <a href='#' className={styles.active}>
