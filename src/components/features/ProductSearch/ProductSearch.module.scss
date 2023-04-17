@@ -44,14 +44,14 @@
         & > ul {
           position: absolute;
           display: none;
-          border-right: 1px solid $form-border-color;
+          border: 1px solid $form-border-color;
           width: 200px;
-          background-color: white; // docelowo będzie kolor ze zmienną z pliku settings.scss
           z-index: 2;
         }
 
         &:hover > ul {
           display: block;
+          background-color: white; // docelowo będzie kolor ze zmienną z pliku settings.scss
         }
       }
     }
