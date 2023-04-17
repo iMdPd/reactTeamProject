@@ -70,3 +70,59 @@
     }
   }
 }
+
+
+@media (max-width: 577px) {
+  .root {
+    position: relative;
+    .phoneNumber {
+      position: absolute;
+      bottom: 20px;
+      right: -60%;
+      p {
+        font-size: 14px;
+        .icon {
+          font-size: 28px;
+        }
+      }
+    }
+    .logo {
+      position: absolute;
+      left: -30%;
+    }
+
+    .cart {
+      position: absolute;
+      top: 34px;
+      right: 10px;
+    }
+  }
+}
+
+
+@media (min-width: 578px) and (max-width: 768px) {
+.root {
+  position: relative;
+  .phoneNumber {
+    position: absolute;
+    bottom: 20px;
+    right: -62%;
+    p {
+      font-size: 14px;
+      .icon {
+        font-size: 28px;
+      }
+    }
+  }
+  .logo {
+    position: absolute;
+    left: -175px;
+  }
+
+  .cart {
+    position: absolute;
+    top: 34px;
+    right: 40px;
+  }
+}
+}
