@@ -42,15 +42,15 @@
       position: absolute;
       right: 20px;
 
-    a {
-      visibility: hidden;
-    }
+      a {
+        visibility: hidden;
+      }
 
-    .icon {
-      visibility: visible;
+      .icon {
+        visibility: visible;
+      }
     }
   }
-}
 }
 
 @media (min-width: 578px) and (max-width: 767px) {
@@ -70,15 +70,15 @@
       position: absolute;
       right: 10px;
 
-    a {
-      visibility: hidden;
-    }
+      a {
+        visibility: hidden;
+      }
 
-    .icon {
-      visibility: visible;
+      .icon {
+        visibility: visible;
+      }
     }
   }
-}
 }
 
 @media (min-width: 768px) {
@@ -97,6 +97,5 @@
     .icon {
       margin-right: 5px;
     }
-
   }
 }
