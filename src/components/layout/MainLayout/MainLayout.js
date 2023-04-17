@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { useDispatch } from 'react-redux';
+import { updateViewportMode } from '../../../redux/viewportModeRedux';
+import getViewportMode from '../../../utils/getViewportMode';
 
-const MainLayout = ({ children }) => (
-  <div>
-    <Header />
-    {children}
-    <Footer />
-  </div>
-);
+const MainLayout = ({ children }) => {
+  const dispatch = useDispatch();
+
+  const setViewportMode = () => dispatch(updateViewportMode(getViewportMode()));
+
+  const handleWindowResize = () => {
+    setViewportMode();
+  };
+
+  useEffect(() => {
+    // initialize mode
+    setViewportMode();
+
+    window.addEventListener('resize', handleWindowResize);
+  });
+
+  return (
+    <div>
+      <Header />
+      {children}
+      <Footer />
+    </div>
+  );
+};
 
 MainLayout.propTypes = {
   children: PropTypes.node,

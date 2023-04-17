@@ -1,3 +1,5 @@
+import { viewportModes } from '../settings';
+
 const initialState = {
   categories: [
     { id: 'bed', name: 'Bed' },
@@ -230,6 +232,7 @@ const initialState = {
   cart: {
     products: [],
   },
+  viewportMode: {},
 };
 
 export default initialState;
