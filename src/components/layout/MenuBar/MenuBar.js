@@ -13,11 +13,46 @@ const MenuBar = ({ children }) => (
       <nav className='row  flex-column-reverse  flex-xl-row  align-items-center '>
         <div className='col d-flex justify-content-center align-items-center  my-4'>
           <ProductSearch />
-          {/* <button className='d-block ml-4 d-md-none'>click</button> */}
-          <FontAwesomeIcon className='d-block ml-4 d-md-none' icon={faListUl} />
+          {/* <div className='d-inline-block ml-4 d-md-none'>
+            <FontAwesomeIcon icon={faListUl} />
+            <ul className={styles.dropdown}>
+              <li>1st item</li>
+              <li>2nd item</li>
+              <li>3rd item</li>
+            </ul>
+          </div> */}
+          <div className={styles.dropdown + ' d-md-none'}>
+            <FontAwesomeIcon className='ml-4' icon={faListUl} />
+
+            <ul className={styles.dropdowncontent}>
+              <li>
+                <a href='#' className={styles.active}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href='#'>Furniture</a>
+              </li>
+              <li>
+                <a href='#'>Chair</a>
+              </li>
+              <li>
+                <a href='#'>Table</a>
+              </li>
+              <li>
+                <a href='#'>Sofa</a>
+              </li>
+              <li>
+                <a href='#'>Bedroom</a>
+              </li>
+              <li>
+                <a href='#'>Blog</a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className={'col-auto d-none d-md-flex ' + styles.menu}>
-          <ul>
+          <ul className={styles.dropdowncontent}>
             <li>
               <a href='#' className={styles.active}>
                 Home
