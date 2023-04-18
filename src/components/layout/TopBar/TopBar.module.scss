@@ -27,11 +27,15 @@
 }
 
 @media (max-width: 577px) {
-  .topOptions ul li {
-    margin-right: 10px;
+  .topOptions {
+    white-space: nowrap;
 
-    .icon {
-      margin-left: 2px;
+      ul li {
+      margin-right: 10px;
+
+      .icon {
+        margin-left: 2px;
+      }
     }
   }
 
