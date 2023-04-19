@@ -11,13 +11,13 @@ const ProductSearch = () => (
     <div className={styles.category}>
       <FontAwesomeIcon className={styles.icon} icon={faListUl} />
       <ul>
-        <li>
+        <li className={styles.selectCategory}>
           Select a category
           <ul>
-            <li>New collection</li>
-            <li>Bestsellers</li>
-            <li>Hot deals</li>
-            <li>Coming soon</li>
+            <li className={styles.mainCategory}>New collection</li>
+            <li className={styles.mainCategory}>Bestsellers</li>
+            <li className={styles.mainCategory}>Hot deals</li>
+            <li className={styles.mainCategory}>Coming soon</li>
           </ul>
         </li>
       </ul>

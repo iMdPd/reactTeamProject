@@ -35,10 +35,16 @@
 
       li {
         position: relative;
-        margin: 10px 0;
+        margin: 14px 0;
 
-        &:hover {
-          cursor: pointer;
+        &.mainCategory {
+          padding: 8px 16px;
+          margin: 0;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $color-gray;
+          }
         }
 
         & > ul {
