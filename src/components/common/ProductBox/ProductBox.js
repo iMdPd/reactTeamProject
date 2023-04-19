@@ -73,7 +73,7 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
             onClick={handleToggleCompareProduct}
             variant='outline'
           >
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+            <FontAwesomeIcon icon={faExchangeAlt}>Favorite</FontAwesomeIcon>
           </Button>
         </div>
         <div className={styles.price}>
