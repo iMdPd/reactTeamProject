@@ -16,7 +16,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      favorite: true,
+      favorite: false,
       compare: false,
     },
     {
@@ -28,7 +28,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      favorite: true,
+      favorite: false,
       compare: false,
     },
     {
