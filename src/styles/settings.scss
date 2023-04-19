@@ -14,3 +14,61 @@ $text-color: #2a2a2a;
 $light-text-color: #ffffff;
 
 $form-border-color: #292929;
+
+// Animation settings
+
+$animation-bg: rgb(97, 19, 0);
+$animation-text: rgb(231, 46, 0);
+$animation-icon: rgb(255, 208, 0);
+$animation-btn: rgb(97, 19, 0);
+
+// choose time animation, 0 if no animation
+$animation-time-bg: 0.25s;
+$animation-time-text: 0.25s;
+$animation-time-icon: 0.25s;
+$animation-time-btn: 0.25s;
+
+// choose number of iteration or "infinite"
+$animation-iteration-count: infinite;
+
+
+@keyframes pulsing-bg {
+  50% {
+    background-color: $animation-bg;
+    border-color: $animation-bg;
+  }
+  100% {
+    background-color:$primary;
+  }
+}
+
+@keyframes pulsing-text {
+  50% {
+    color: $animation-text;
+    font-size: 14px;
+  }
+  100% {
+    color:$primary;
+  }
+}
+
+@keyframes pulsing-icon {
+  50% {
+    color: $animation-icon;
+    font-size: 26px;
+  }
+  100% {
+    color:$primary;
+  }
+}
+
+@keyframes pulsing-btn {
+  50% {
+    background-color: $animation-btn;
+    transform: scale(1.05);
+  }
+  100% {
+    background-color: $primary;
+    transform: scale(0.95);
+  }
+}

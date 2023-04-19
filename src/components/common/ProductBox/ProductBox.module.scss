@@ -89,11 +89,8 @@
 
   .outlines {
     .favorite {
-      color: $danger;
-
-      & > svg {
-        scale: 1.2;
-      }
+    background-color: $primary;
+    color: $light-text-color;
     }
 
     .compare {
