@@ -75,9 +75,6 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button className={compare && styles.compare} variant='outline'>
-            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-          </Button>
         </div>
         <div className={styles.price}>
           {oldPrice && <p>${oldPrice}</p>}
