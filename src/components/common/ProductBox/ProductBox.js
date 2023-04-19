@@ -20,7 +20,8 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
   const handleToggleFavoriteProduct = e => {
     e.preventDefault();
     dispatch(toggleFavorite(id));
-
+  };
+  
   const handleToggleCompareProduct = e => {
     e.preventDefault();
     if (products.length < 4 || compare === true) {
