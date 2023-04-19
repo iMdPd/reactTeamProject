@@ -21,6 +21,8 @@ const StarRating = ({ defaultRating, clientRating, onRatingChange }) => {
     } else {
       if (starNumber <= rating && clicked) {
         return <FontAwesomeIcon icon={faStar} className={styles.clickedStar} />;
+      } else if (starNumber <= rating && clientRating !== 0) {
+        return <FontAwesomeIcon icon={faStar} className={styles.userRatedStar} />;
       } else if (starNumber <= rating) {
         return <FontAwesomeIcon icon={faStar} className={styles.defaultStar} />;
       } else {

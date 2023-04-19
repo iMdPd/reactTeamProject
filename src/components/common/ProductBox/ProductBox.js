@@ -12,11 +12,18 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
 
-const ProductBox = ({ name, price, promo, stars, oldPrice, id, defaultUserRating }) => {
-  const [userRating, setUserRating] = useState(defaultUserRating);
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  oldPrice,
+  id,
+  userRating: initialUserRating,
+}) => {
+  const [userRating, setUserRating] = useState(initialUserRating || 0);
 
   const handleRatingChange = (productId, newRating) => {
-    console.log('You gave', productId, 'rating of:', newRating, 'stars');
     setUserRating(newRating);
   };
 
@@ -75,7 +82,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   oldPrice: PropTypes.number,
   id: PropTypes.string,
-  defaultUserRating: PropTypes.number,
+  userRating: PropTypes.number,
 };
 
 export default ProductBox;
