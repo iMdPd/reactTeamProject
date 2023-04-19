@@ -13,14 +13,23 @@ const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
+const TOGGLE_FAVORITE = createActionName('TOGGLE_FAVORITE');
 const TOGGLE_COMPARE = createActionName('TOGGLE_COMPARE');
 
 /* action creators */
+export const toggleFavorite = payload => ({ payload, type: TOGGLE_FAVORITE });
 export const toggleCompare = payload => ({ payload, type: TOGGLE_COMPARE });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
+    case TOGGLE_FAVORITE:
+      return statePart.map(product =>
+        product.id === action.payload
+          ? { ...product, favorite: !product.favorite }
+          : product
+      );
+      
     case TOGGLE_COMPARE:
       return statePart.map(product =>
         product.id === action.payload

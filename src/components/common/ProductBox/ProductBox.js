@@ -10,12 +10,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
-import { getComparedProducts, toggleCompare } from '../../../redux/productsRedux';
+import { getComparedProducts, toggleCompare, toggleFavorite } from '../../../redux/productsRedux';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare }) => {
   const dispatch = useDispatch();
   const products = useSelector(getComparedProducts);
+
+  const handleToggleFavoriteProduct = e => {
+    e.preventDefault();
+    dispatch(toggleFavorite(id));
 
   const handleToggleCompareProduct = e => {
     e.preventDefault();
@@ -36,20 +40,19 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> Add to cart
           </Button>
         </div>
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
+
+          {[...Array(5).keys()].map(i => (
             <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
+              <FontAwesomeIcon icon={i <= stars ? faStar : farStar}>
+                {i} stars
+              </FontAwesomeIcon>
             </a>
           ))}
         </div>
@@ -57,7 +60,11 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button className={favorite && styles.favorite} variant='outline'>
+          <Button
+            className={favorite && styles.favorite}
+            onClick={handleToggleFavoriteProduct}
+            variant='outline'
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
@@ -65,6 +72,9 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
             onClick={handleToggleCompareProduct}
             variant='outline'
           >
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          </Button>
+          <Button className={compare && styles.compare} variant='outline'>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
