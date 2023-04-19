@@ -4,6 +4,7 @@ export const getCount = ({ products }) => products.length;
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
+export const getOne = ({ products }, id) => products.find(product => product.id === id);
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
