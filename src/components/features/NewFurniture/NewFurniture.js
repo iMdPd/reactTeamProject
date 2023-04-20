@@ -6,6 +6,8 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 import { viewportModes } from '../../../settings';
 
 class NewFurniture extends React.Component {
+  DEFAULT_PRODUCTS_PER_PAGE = 8;
+
   state = {
     activePage: 0,
     activeCategory: 'bed',
@@ -23,16 +25,17 @@ class NewFurniture extends React.Component {
     const { categories, products, viewportMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
-    let productsPerPage = 8; // default value for desktop mode
     if (
       viewportMode === viewportModes.tablet ||
       viewportMode === viewportModes.mobile
     ) {
-      productsPerPage = 4;
+      this.DEFAULT_PRODUCTS_PER_PAGE = 4;
     }
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
+    const pagesCount = Math.ceil(
+      categoryProducts.length / this.DEFAULT_PRODUCTS_PER_PAGE
+    );
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -77,7 +80,10 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts
-              .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
+              .slice(
+                activePage * this.DEFAULT_PRODUCTS_PER_PAGE,
+                (activePage + 1) * this.DEFAULT_PRODUCTS_PER_PAGE
+              )
               .map(item => (
                 <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
                   <ProductBox {...item} />

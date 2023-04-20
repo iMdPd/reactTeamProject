@@ -8,9 +8,8 @@ const getViewportMode = () => {
     return viewportModes.desktop;
   } else if (width >= viewportModes.tablet.minWidth) {
     return viewportModes.tablet;
-  } else {
-    return viewportModes.mobile;
   }
+  return viewportModes.mobile;
 };
 
 export default getViewportMode;
