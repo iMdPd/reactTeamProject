@@ -17,7 +17,7 @@ import {
 import { faStar as farStar, faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
-const Promoted = ({ name, price, promo, stars, oldPrice, favorite, compare }) => (
+const Promoted = ({ name, price, stars, oldPrice, favorite, compare }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
@@ -36,40 +36,59 @@ const Promoted = ({ name, price, promo, stars, oldPrice, favorite, compare }) =>
                 <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
               </Button>
             </div>
-          </div>
-          <div className={styles.counter}></div>
-          <div className={styles.content}>
-            <h5>Aenean Ru Bristique 1</h5>
-            <div className={styles.stars}>
-              {[1, 2, 3, 4, 5].map(i => (
-                <a key={i} href='#'>
-                  {i <= stars ? (
-                    <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                  ) : (
-                    <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                  )}
-                </a>
-              ))}
+            <div className={styles.counter}>
+              <div className={styles.item}>
+                <h4>25</h4>
+                <h5>days</h5>
+              </div>
+              <div className={styles.item}>
+                <h4>10</h4>
+                <h5>hrs</h5>
+              </div>
+              <div className={styles.item}>
+                <h4>47</h4>
+                <h5>mins</h5>
+              </div>
+              <div className={styles.item}>
+                <h4>59</h4>
+                <h5>secs</h5>
+              </div>
             </div>
           </div>
-          <div className={styles.line}></div>
-          <div className={styles.actions}>
-            <div className={styles.outlines}>
-              <Button className={favorite && styles.favorite} variant='outline'>
-                <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
-              </Button>
-              <Button className={favorite && styles.favorite} variant='outline'>
-                <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-              </Button>
-              <Button className={compare && styles.compare} variant='outline'>
-                <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-              </Button>
+          <div className={styles.contentbox}>
+            <div className={styles.content}>
+              <h5>Aenean Ru Bristique 1</h5>
+              <div className={styles.stars}>
+                {[1, 2, 3, 4, 5].map(i => (
+                  <a key={i} href='#'>
+                    {i <= stars ? (
+                      <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                    ) : (
+                      <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                    )}
+                  </a>
+                ))}
+              </div>
             </div>
-            <div className={styles.price}>
-              {oldPrice && <p>${oldPrice}</p>}
-              <Button noHover variant='small'>
-                $ {price}
-              </Button>
+            <div className={styles.line}></div>
+            <div className={styles.actions}>
+              <div className={styles.outlines}>
+                <Button className={favorite && styles.favorite} variant='outline'>
+                  <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
+                </Button>
+                <Button className={favorite && styles.favorite} variant='outline'>
+                  <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+                </Button>
+                <Button className={compare && styles.compare} variant='outline'>
+                  <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+                </Button>
+              </div>
+              <div className={styles.price}>
+                {oldPrice && <p>${oldPrice}</p>}
+                <Button noHover variant='small'>
+                  $ {price}
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -92,12 +111,8 @@ const Promoted = ({ name, price, promo, stars, oldPrice, favorite, compare }) =>
           </div>
 
           <div className={styles.buttons}>
-            <div className={styles.previous}>
-              <button>&lsaquo;</button>
-            </div>
-            <div className={styles.next}>
-              <button>&rsaquo;</button>
-            </div>
+            <button className={styles.button}>&lsaquo;</button>
+            <button className={styles.button}>&rsaquo;</button>
           </div>
         </section>
       </div>
