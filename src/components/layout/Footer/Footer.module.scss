@@ -73,6 +73,7 @@
 
             &:hover {
               color: $primary;
+              animation: pulsing-icon $animation-time-icon $animation-iteration-count;
             }
           }
         }

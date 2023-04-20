@@ -58,6 +58,7 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 4px solid $primary;
+                animation: pulsing-bg $animation-time-bg $animation-iteration-count;
               }
             }
           }
