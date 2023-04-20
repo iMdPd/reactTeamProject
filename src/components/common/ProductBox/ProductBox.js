@@ -14,14 +14,25 @@ import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
 import StarRating from '../../features/StarRating/StarRating';
 
-const ProductBox = ({ id, name, price, promo, stars, oldPrice, userRating: initialUserRating, favorite, compare }) => {
+const ProductBox = ({
+  id,
+  name,
+  price,
+  promo,
+  stars,
+  oldPrice,
+  favorite,
+  compare,
+  userRating: initialUserRating,
+}) => {
   const [userRating, setUserRating] = useState(initialUserRating || 0);
 
   const handleRatingChange = (productId, newRating) => {
     setUserRating(newRating);
-    
+  };
+
   const dispatch = useDispatch();
-  
+
   const handleToggleFavoriteProduct = e => {
     e.preventDefault();
     dispatch(toggleFavorite(id));
@@ -88,7 +99,6 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
   oldPrice: PropTypes.number,
-  id: PropTypes.string,
   userRating: PropTypes.number,
 };
 
