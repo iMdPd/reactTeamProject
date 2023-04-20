@@ -13,14 +13,7 @@ const MenuBar = ({ children }) => (
       <nav className='row  flex-column-reverse  flex-xl-row  align-items-center '>
         <div className='col d-flex justify-content-center align-items-center  my-4'>
           <ProductSearch />
-          {/* <div className='d-inline-block ml-4 d-md-none'>
-            <FontAwesomeIcon icon={faListUl} />
-            <ul className={styles.dropdown}>
-              <li>1st item</li>
-              <li>2nd item</li>
-              <li>3rd item</li>
-            </ul>
-          </div> */}
+
           <div className={styles.dropdown + ' d-md-none'}>
             <FontAwesomeIcon className='ml-4' icon={faListUl} />
 

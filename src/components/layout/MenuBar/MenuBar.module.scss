@@ -3,7 +3,6 @@
 .root {
   box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
   background-color: #ffffff;
-
   .menu {
     display: flex;
     align-self: stretch;
@@ -48,20 +47,16 @@
 }
 
 .dropdown {
-  position: relative;
+  text-align: center;
 }
-
-
 
 .dropdowncontent {
   display: none;
-  position: absolute;
+  z-index: 2;
   padding: 0;
-  left:-60px;
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
   list-style: none;
 }
 
