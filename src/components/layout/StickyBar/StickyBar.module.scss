@@ -1,0 +1,45 @@
+@import "../../../styles/settings.scss";
+
+.sticky {
+  height: 150px;
+  display: flex;
+  width: 15px;
+  border-end-end-radius: 20px;
+  border-start-end-radius: 20px;
+  position: fixed;
+  bottom: 50px;
+  box-shadow: 0 0 10px;
+  background-color: $header-topbar-bg;
+  align-items: center;
+  border: none;
+  z-index: 1;
+  transition: 0.5s;
+  cursor: default !important;
+
+  &:hover {
+    width: 50px;
+  }
+}
+
+.icon {
+  color: $primary;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.container {
+  position: absolute;
+  right: 50px;
+  margin-left: 50px;
+  width: 100%;
+
+  div {
+    flex-direction: row-reverse;
+  }
+}
+
+.compareButton {
+  position: relative;
+  left: -30px;
+}
