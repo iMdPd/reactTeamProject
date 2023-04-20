@@ -25,6 +25,19 @@ const Promoted = ({ name, price, stars, oldPrice, favorite, compare }) => (
           <div className={styles.photobox}>
             <div className={styles.deals}>
               <h3 className={styles.text}>hot deals</h3>
+              <div className={'col-auto ' + styles.dots}>
+                <ul>
+                  <li>
+                    <a></a>
+                  </li>
+                  <li>
+                    <a></a>
+                  </li>
+                  <li>
+                    <a></a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <img
               className={styles.image}
