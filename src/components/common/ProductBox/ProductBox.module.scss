@@ -89,11 +89,8 @@
     }
 
     .compare {
-      color: $primary;
-
-      & > svg {
-        scale: 1.2;
-      }
+      background-color: $primary;
+      color: $light-text-color;
     }
   }
 
