@@ -7,8 +7,8 @@ export const CarouselItem = ({ children }) => {
   return <div className={styles.carouselItem}>{children}</div>;
 };
 
-const Carousel = ({ children, leftAction, rightAction }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const Carousel = ({ children, initialIndex, actionSwiped }) => {
+  const [activeIndex, setActiveIndex] = useState(initialIndex);
 
   const updateIndex = newIndex => {
     if (newIndex < 0) {
@@ -16,7 +16,7 @@ const Carousel = ({ children, leftAction, rightAction }) => {
     } else if (newIndex >= React.Children.count(children)) {
       newIndex = React.Children.count(children) - 1;
     }
-
+    actionSwiped(newIndex);
     setActiveIndex(newIndex);
   };
 
@@ -46,8 +46,8 @@ CarouselItem.propTypes = {
 
 Carousel.propTypes = {
   children: PropTypes.array,
-  leftAction: PropTypes.func,
-  rightAction: PropTypes.func,
+  actionSwiped: PropTypes.func,
+  initialIndex: PropTypes.number,
 };
 
 export default Carousel;

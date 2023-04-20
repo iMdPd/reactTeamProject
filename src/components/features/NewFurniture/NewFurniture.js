@@ -11,9 +11,9 @@ class NewFurniture extends React.Component {
     activeCategory: 'bed',
   };
 
-  handlePageChange(newPage) {
+  handlePageChange = newPage => {
     this.setState({ activePage: newPage });
-  }
+  };
 
   handleCategoryChange(newCategory) {
     this.setState({ activeCategory: newCategory });
@@ -70,7 +70,7 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <Carousel>
+          <Carousel actionSwiped={this.handlePageChange} initialIndex={activePage}>
             {pages.map((page, i) => (
               <CarouselItem key={i}>
                 <div className='row'>
