@@ -25,11 +25,12 @@ class NewFurniture extends React.Component {
     const { categories, products, viewportMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
-    if (
-      viewportMode === viewportModes.tablet ||
-      viewportMode === viewportModes.mobile
-    ) {
-      this.DEFAULT_PRODUCTS_PER_PAGE = 4;
+    if (viewportMode === viewportModes.mobile) {
+      this.DEFAULT_PRODUCTS_PER_PAGE = 1;
+    } else if (viewportMode === viewportModes.tablet) {
+      this.DEFAULT_PRODUCTS_PER_PAGE = 2;
+    } else {
+      this.DEFAULT_PRODUCTS_PER_PAGE = 8;
     }
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
