@@ -10,7 +10,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
-import { getComparedProducts, toggleCompare, toggleFavorite } from '../../../redux/productsRedux';
+import {
+  getComparedProducts,
+  toggleCompare,
+  toggleFavorite,
+} from '../../../redux/productsRedux';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare }) => {
@@ -21,7 +25,7 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
     e.preventDefault();
     dispatch(toggleFavorite(id));
   };
-  
+
   const handleToggleCompareProduct = e => {
     e.preventDefault();
     if (products.length < 4 || compare === true) {
@@ -37,7 +41,7 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
           alt={name}
           src={`${process.env.PUBLIC_URL}/images/products/${id}.jpg`}
         />
-        {promo && <div className={styles.sale}>{promo}</div>}
+        {oldPrice && oldPrice > price && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
@@ -48,7 +52,6 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-
           {[...Array(5).keys()].map(i => (
             <a key={i} href='#'>
               <FontAwesomeIcon icon={i <= stars ? faStar : farStar}>
