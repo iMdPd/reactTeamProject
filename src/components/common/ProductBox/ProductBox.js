@@ -11,7 +11,12 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { getComparedProducts, toggleCompare, toggleFavorite } from '../../../redux/productsRedux';
+import {
+  getComparedProducts,
+  toggleCompare,
+  toggleFavorite,
+  updateClientRating,
+} from '../../../redux/productsRedux';
 import StarRating from '../../features/StarRating/StarRating';
 
 const ProductBox = ({
@@ -29,6 +34,7 @@ const ProductBox = ({
 
   const handleRatingChange = (productId, newRating) => {
     setUserRating(newRating);
+    dispatch(updateClientRating(productId, newRating));
   };
 
   const dispatch = useDispatch();
@@ -38,7 +44,7 @@ const ProductBox = ({
     e.preventDefault();
     dispatch(toggleFavorite(id));
   };
-  
+
   const handleToggleCompareProduct = e => {
     e.preventDefault();
     if (products.length < 4 || compare === true) {
