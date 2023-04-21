@@ -12,6 +12,7 @@
       display: inline-block;
       line-height: 55px;
 
+
       a {
         color: $header-links;
         font-size: 13px;
@@ -24,6 +25,68 @@
       }
     }
   }
+}
+
+@media (max-width: 577px) {
+  .topOptions {
+    white-space: nowrap;
+
+      ul li {
+      margin-right: 10px;
+
+      .icon {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  .topMenu {
+    position: relative;
+
+    ul li {
+      position: absolute;
+      right: 20px;
+
+      a {
+        visibility: hidden;
+      }
+
+      .icon {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@media (min-width: 578px) and (max-width: 767px) {
+
+  .topOptions ul li {
+    margin-right: 15px;
+
+    .icon {
+      margin-left: 3px;
+    }
+  }
+
+  .topMenu {
+    position: relative;
+
+    ul li {
+      position: absolute;
+      right: 10px;
+
+      a {
+        visibility: hidden;
+      }
+
+      .icon {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
 
   .topOptions ul li {
     margin-right: 1.5rem;
