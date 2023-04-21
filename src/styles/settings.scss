@@ -1,10 +1,129 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+// Colors - DO NOT USE IN OTHER FILES
+$shadow: rgba(1, 2, 2, 0.2);
+$pure-black: #292929;
+$black-grey: #2a2a2a;
+$dark-grey: #363636;
+$standard-grey: #434343;
+$light-grey: #a9a9a9;
+$mist-grey: #b6b6b6;
+$semi-grey: #e2e2e2;
+$smoke-grey: #d8d8d8;
+$semi-white: #e1e1e1;
+$azure-white: #f4f5f7;
+$darker-azure-white: #e0e3ed;
+$pure-white: #ffffff;
+$orange-gold: #d58e32;          // primary
+$transparent: transparent;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+$red: red;                     // FOR TEST ONLY
+
+// Components Variables Main
+$primary: $orange-gold;
+$text-color: $black-grey;
+
+// Components Variables Files
+
+// common/Button
+$button-bg: $black-grey;
+$button-tx: $pure-white;
+$button-hover-tx: $pure-white;
+$button-hover-bg: $orange-gold;
+
+$small-button-outline-border: $black-grey;
+$small-button-outline-border-tx: $black-grey;
+$small-button-hover-outline-border: $black-grey;
+$small-button-hover-outline-border-tx: $pure-white;
+
+// common/FeatureBox
+$fb-box-border: $mist-grey;
+$fb-box-icon-main: $black-grey;
+$fb-box-circle-bg: $pure-white;
+$fb-box-big-circle: $mist-grey;
+$fb-box-small-circle: $mist-grey;
+
+$fb-box-content-tx: $black-grey;
+$fb-box-hover-content-icon: $pure-white;
+$fb-box-hover-content-tx: $orange-gold;
+$fb-box-hover-content-border: $orange-gold;
+$fb-box-hover-content-small-circle-bg: $orange-gold;
+
+// common/ProductBox
+$pb-box-bg: $pure-white;
+$pb-box-border: $semi-white;
+$pb-photo-cover: $azure-white;
+$pb-sale-bg: $pure-black;
+$pb-sale-tx: $pure-white;
+$pb-stars-border: $black-grey;
+$pb-box-line: $black-grey;
+$pb-line-ornament: $orange-gold;
+
+// features/NewFurniture
+$nf-menu-line: $semi-grey;
+$nf-menu-line-ornament: $orange-gold;
+$nf-menu-tx: $black-grey;
+$nf-menu-hover-line-ornament: $orange-gold;
+$nf-menu-dots-bg: $pure-white;
+$nf-menu-dots: $semi-white;
+$nf-manu-hover-dots: $orange-gold;
+
+// features/ProductSearch
+$ps-border-color: $pure-black;
+$ps-border-dropdown: $black-grey;
+$ps-border-icon: $orange-gold;
+$ps-border-select-bg: $transparent;
+$ps-border-placeholder-color: $black-grey;
+$ps-border-button-bg: $transparent;
+
+// layout/CompanyClaim
+$cc-phone-number-color: $smoke-grey;
+$cc-cart-icon: $pure-white;
+$cc-cart-icon-bg: $orange-gold;
+$cc-cart-counter-tx: $darker-azure-white;
+
+// layout/Footer
+$footer-claim-bg: $black-grey;
+$footer-bg: $dark-grey;
+$footer-menu-tx: $pure-white;
+$footer-menu-wrapper-tx: $light-grey;
+$footer-menu-wrapper-hover-tx: $pure-white;
+$footer-copyright-color: $light-grey;
+$footer-social-media-color: $light-grey;
+$footer-social-medi-hover-color: $orange-gold;
+
+// layout/MenuBar
+$mb-menu-shadow-line: $shadow;
+$mb-menu-bg: $pure-white;
+$mb-menu-tx: $black-grey;
+$mb-menu-links-border: $pure-white;
+$mb-menu-links-hover-bg: $orange-gold;
+$mb-menu-links-hover-tx: $pure-white;
+$mb-menu-links-hover-border: $orange-gold;
+$mb-menu-links-hover-border-active: $black-grey;
+
+// layout/TopBar
+$header-topbar-bg: $standard-grey;
+$header-bg: $dark-grey;
+$header-links: $pure-white;
+$header-links-hover: $orange-gold;
+$header-topbar-bg: $standard-grey;
+$header-bg: $dark-grey;
+$header-links: $pure-white;
+$header-links-hover: $orange-gold;
+
+// layout/Footer
+$footer-claim-bg: $black-grey;
+$footer-bg: $dark-grey;
+$footer-menu-tx: $pure-white;
+$footer-menu-wrapper-tx: $light-grey;
+$footer-menu-wrapper-hover-tx: $pure-white;
+$footer-copyright-color: $light-grey;
+$footer-social-media-color: $light-grey;
+$footer-social-medi-hover-color: $orange-gold;
+
+
+// After merge
 
 $primary: #d58e32;
 $danger: #ff0000;
@@ -14,3 +133,61 @@ $text-color: #2a2a2a;
 $light-text-color: #ffffff;
 
 $form-border-color: #292929;
+
+// Animation settings
+
+$animation-bg: rgb(97, 19, 0);
+$animation-text: rgb(231, 46, 0);
+$animation-icon: rgb(255, 208, 0);
+$animation-btn: rgb(97, 19, 0);
+
+// choose time animation, 0 if no animation
+$animation-time-bg: 0.25s;
+$animation-time-text: 0.25s;
+$animation-time-icon: 0.25s;
+$animation-time-btn: 0.25s;
+
+// choose number of iteration or "infinite"
+$animation-iteration-count: infinite;
+
+
+@keyframes pulsing-bg {
+  50% {
+    background-color: $animation-bg;
+    border-color: $animation-bg;
+  }
+  100% {
+    background-color:$primary;
+  }
+}
+
+@keyframes pulsing-text {
+  50% {
+    color: $animation-text;
+    font-size: 14px;
+  }
+  100% {
+    color:$primary;
+  }
+}
+
+@keyframes pulsing-icon {
+  50% {
+    color: $animation-icon;
+    font-size: 26px;
+  }
+  100% {
+    color:$primary;
+  }
+}
+
+@keyframes pulsing-btn {
+  50% {
+    background-color: $animation-btn;
+    transform: scale(1.05);
+  }
+  100% {
+    background-color: $primary;
+    transform: scale(0.95);
+  }
+}
