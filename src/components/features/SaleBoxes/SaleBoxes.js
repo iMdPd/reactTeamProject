@@ -18,11 +18,9 @@ export const SaleBoxes = () => {
         <div className={'col col-lg-6 ' + styles.mainBox}>
           <SaleBox key={shuffledProducts[0].id} {...shuffledProducts[0]} />
           <div className={styles.saleDescription}>
-            <p className={styles.heading}>
-              {isNaN(percent) ? 'Check also' : 'Hot offer'}
-            </p>
+            <p className={styles.heading}>Hot offer</p>
             <p className={styles.category}>{shuffledProducts[0].category}</p>
-            {!isNaN(percent) && <p className={styles.percent}> {percent}%</p>}
+            <p className={styles.percent}> {percent}%</p>
           </div>
         </div>
         <div className={'col col-lg-6 ' + styles.mainBox}>
