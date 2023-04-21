@@ -6,8 +6,7 @@ import { getSaleProducts } from '../../../redux/productsRedux';
 
 export const SaleBoxes = () => {
   const saleProducts = useSelector(getSaleProducts);
-  const newProductsArray = saleProducts.map(product => product);
-  const shuffledProducts = newProductsArray.sort(() => 0.5 - Math.random());
+  const shuffledProducts = saleProducts.sort(() => 0.5 - Math.random());
 
   const percent = Math.floor(
     100 * (shuffledProducts[0].price / shuffledProducts[0].oldPrice) - 100
