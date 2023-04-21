@@ -43,7 +43,7 @@
 
           &:hover {
             cursor: pointer;
-            background-color: $color-gray;
+            background-color: $ps-border-hover-list-category-bg;
           }
         }
 
@@ -57,7 +57,7 @@
 
         &:hover > ul {
           display: block;
-          background-color: white; // docelowo będzie kolor ze zmienną z pliku settings.scss
+          background-color: $ps-border-hover-list-bg;
         }
       }
     }
