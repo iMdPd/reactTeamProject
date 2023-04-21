@@ -230,6 +230,11 @@ const initialState = {
   cart: {
     products: [],
   },
+  brands: [
+    { id: 1, name: 'Brand 1', logo: '' },
+    { id: 2, name: 'Brand 2', logo: '' },
+    { id: 3, name: 'Brand 3', logo: '' },
+  ],
 };
 
 export default initialState;
