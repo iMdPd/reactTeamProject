@@ -4,31 +4,37 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
+const time = 250;
+
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    visible: true,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ visible: false });
+    setTimeout(() => this.setState({ activePage: newPage }), time);
+    setTimeout(() => this.setState({ visible: true }), time * 2);
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ visible: false });
+    setTimeout(() => this.setState({ activeCategory: newCategory }), time);
+    setTimeout(() => this.setState({ visible: true }), time * 2);
   }
 
   render() {
     const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
-
+    const { activeCategory, activePage, visible } = this.state;
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
             className={i === activePage && styles.active}
@@ -38,7 +44,6 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
-
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -66,7 +71,11 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div
+            className={
+              'row ' + styles.productsContainer + ' ' + (!visible && styles.fade)
+            }
+          >
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
                 <ProductBox {...item} />
