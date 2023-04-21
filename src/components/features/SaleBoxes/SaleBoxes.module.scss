@@ -1,0 +1,142 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin-bottom: 2rem;
+
+  .mainBox {
+    height: 500px;
+    display: inline-block;
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:first-child::after {
+      content: "";
+      background-color: $header-bg;
+      display: block;
+      height: 90%;
+      width: 90%;
+      opacity: 0.7;
+      top: -95%;
+      left: 5%;
+      position: relative;
+    }
+
+    .smallBoxTop {
+      height: 50%;
+      padding-bottom: 1rem;
+      width: 100%;
+
+      &:after {
+        content: "";
+        background-color: $light-text-color;
+        display: block;
+        height: 100%;
+        width: 75%;
+        opacity: 0.7;
+        right: -11%;
+        top: -100%;
+        position: relative;
+      }
+
+      .saleDescription {
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align-last: center;
+
+        .collection {
+          font-weight: 300;
+          font-size: 2.5rem;
+          color: $header-topbar-bg;
+          margin: 0;
+        }
+
+        .price {
+          font-weight: 600;
+          font-size: 3.5rem;
+          color: $primary;
+          margin: 0;
+          position: relative;
+          top: -25px;
+        }
+      }
+    }
+
+    .smallBoxBottom {
+      height: 50%;
+      padding-top: 1rem;
+
+      &:after {
+        content: "";
+        background-color: $light-text-color;
+        display: block;
+        height: 30%;
+        width: 100%;
+        opacity: 0.7;
+        top: -90%;
+        position: relative;
+      }
+
+      .saleDescription {
+        bottom: 30%;
+        right: 5%;
+      }
+    }
+
+    .saleDescription {
+      font-weight: 600;
+      color: #ffffff;
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+      z-index: 1;
+      text-transform: uppercase;
+    }
+
+    .heading {
+      font-size: 2.5rem;
+      transform: translateY(45px);
+      margin: 0;
+      padding: 0;
+    }
+
+    .category {
+      font-size: 4.5rem;
+      transform: translateY(15px);
+      margin: 0;
+      padding: 0;
+    }
+
+    .percent {
+      font-size: 2.5rem;
+      border: 5px solid;
+      padding: 5px 10px;
+      width: min-content;
+      margin: 0;
+    }
+
+    .collection {
+      text-align: end;
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: $primary;
+      margin: 0;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .describeCollection {
+      text-align: end;
+      font-weight: 300;
+      color: $header-topbar-bg;
+      margin: 0;
+    }
+  }
+}
