@@ -35,7 +35,7 @@ const ProductBox = ({ id, name, price, promo, stars, oldPrice, favorite, compare
         <img
           className={styles.image}
           alt={name}
-          src={`${process.env.PUBLIC_URL}/images/products/${name}.jpg`}
+          src={`${process.env.PUBLIC_URL}/images/products/${id}.jpg`}
         />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>

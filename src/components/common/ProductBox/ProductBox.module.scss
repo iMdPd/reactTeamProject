@@ -7,6 +7,7 @@
 
   .photo {
     position: relative;
+    height: 330px;
     background: {
       color: $pb-photo-cover;
       size: contain;
@@ -18,7 +19,8 @@
 
     .image {
       object-fit: cover;
-      height: 300px;
+      position: absolute;
+      height: 100%;
       width: 100%;
     }
 
@@ -35,8 +37,11 @@
 
     .buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       visibility: hidden;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
     }
   }
 
