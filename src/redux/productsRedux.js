@@ -8,6 +8,9 @@ export const getComparedProducts = ({ products }) =>
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
+export const getSaleProducts = ({ products }) =>
+  products.filter(({ price, oldPrice }) => price < oldPrice);
+
 /* action name creator */
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
@@ -29,7 +32,7 @@ export default function reducer(statePart = [], action = {}) {
           ? { ...product, favorite: !product.favorite }
           : product
       );
-      
+
     case TOGGLE_COMPARE:
       return statePart.map(product =>
         product.id === action.payload
