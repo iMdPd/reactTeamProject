@@ -17,7 +17,6 @@ const MainLayout = ({ children }) => {
   };
 
   useEffect(() => {
-    // initialize mode
     setViewportMode();
 
     window.addEventListener('resize', handleWindowResize);
