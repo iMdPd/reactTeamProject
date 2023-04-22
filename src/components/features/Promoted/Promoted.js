@@ -10,6 +10,8 @@ import {
   faStar,
   faExchangeAlt,
   faShoppingBasket,
+  faChevronRight,
+  faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
@@ -126,18 +128,22 @@ const Promoted = () => {
               />
               <div className={styles.title}>
                 <div className={styles.text}>
-                  <h1>
-                    indoor <b>furniture</b>
-                  </h1>
-                  <h2>save up to 50% of all furniture</h2>
+                  <p className={styles.textOne}>
+                    indoor <span>furniture</span>
+                  </p>
+                  <p className={styles.textTwo}>save up to 50% of all furniture</p>
                 </div>
               </div>
               <button>shop now</button>
             </div>
 
             <div className={styles.buttons}>
-              <button className={styles.button}>&lsaquo;</button>
-              <button className={styles.button}>&rsaquo;</button>
+              <button className={styles.button}>
+                <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+              </button>
+              <button className={styles.button}>
+                <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+              </button>
             </div>
           </section>
         </div>

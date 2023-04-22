@@ -232,15 +232,20 @@
           color: $light-text-color;
           text-transform: uppercase;
 
-          h1 {
+          .textOne {
             font-size: 55px;
             margin: 0;
+
+            span {
+              font-weight: 600;
+            }
           }
-          h2 {
+          .textTwo {
             font-size: 25px;
           }
         }
       }
+      
       button {
         position: absolute;
         top: 70%;
