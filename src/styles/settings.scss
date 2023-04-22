@@ -142,6 +142,12 @@ $light-text-color: #ffffff;
 
 $form-border-color: #292929;
 
+$semi-grey: #e2e2e2;
+$standard-grey: #434343;
+$orange-gold: #d58e32;
+$pure-white: #ffffff;
+$lime-green: rgb(15, 224, 15);
+
 // Animation settings
 
 $animation-bg: rgb(97, 19, 0);
@@ -198,3 +204,19 @@ $animation-iteration-count: infinite;
     transform: scale(0.95);
   }
 }
+
+// Gallery
+
+$gal-header-line: $semi-grey;
+$gal-header-line-decor: $orange-gold;
+$gal-button-bg: $pure-white;
+$gal-tooltip-bg: $orange-gold;
+$gal-tooltip-tx: $pure-white;
+$gal-product-info-bg: $pure-white;
+$gal-product-info-border: $semi-grey;
+$gal-product-prices-bg: $standard-grey;
+$gal-product-prices-tx: $pure-white;
+$gal-right-value-tx: $lime-green;
+$gal-right-product-name: $orange-gold;
+$gal-right-button-bg: $lime-green;
+$gal-right-button-tx: $pure-white;
