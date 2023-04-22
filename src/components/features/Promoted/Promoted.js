@@ -86,7 +86,7 @@ const Promoted = ({ name, price, stars, oldPrice, favorite, compare }) => (
             <div className={styles.line}></div>
             <div className={styles.actions}>
               <div className={styles.outlines}>
-                <Button className={favorite && styles.favorite} variant='outline'>
+                <Button className={compare && styles.compare} variant='outline'>
                   <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
                 </Button>
                 <Button className={favorite && styles.favorite} variant='outline'>
