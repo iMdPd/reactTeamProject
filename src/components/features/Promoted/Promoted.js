@@ -73,15 +73,15 @@ const Promoted = () => {
             </div>
             <div className={styles.contentbox}>
               <div className={styles.content}>
-                <h5>Aenean Ru Bristique 1</h5>
+                <h5>{product.name}</h5>
                 <div className={styles.stars}>
-                  {[1, 2, 3, 4, 5].map(i => (
+                  {[...Array(5).keys()].map(i => (
                     <a key={i} href='#'>
-                      {i <= product.stars ? (
-                        <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                      ) : (
-                        <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                      )}
+                      {' '}
+                      <FontAwesomeIcon icon={i <= product.stars ? faStar : farStar}>
+                        {' '}
+                        {i} stars{' '}
+                      </FontAwesomeIcon>{' '}
                     </a>
                   ))}
                 </div>
