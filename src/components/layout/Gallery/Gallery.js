@@ -17,49 +17,57 @@ const Gallery = () => (
     <div className='container'>
       <div className={styles.gallery}>
         <div className={styles.leftSide}>
-          <h3 className='text-uppercase'>Furniture gallery</h3>
+          <h3>Furniture gallery</h3>
           <div className={styles.sectionButtons}>
-            <Button variant='small'>Featured</Button>
-            <Button variant='small'>Top seller</Button>
-            <Button variant='small'>Sale off</Button>
-            <Button variant='small'>Top rated</Button>
+            <Button variant='small' className={styles.button}>
+              Featured
+            </Button>
+            <Button variant='small' className={styles.button}>
+              Top seller
+            </Button>
+            <Button variant='small' className={styles.button}>
+              Sale off
+            </Button>
+            <Button variant='small' className={styles.button}>
+              Top rated
+            </Button>
           </div>
           <div className={styles.leftSideMainImage}>
             <img
-              src='https://images.pexels.com/photos/2082090/pexels-photo-2082090.jpeg'
+              src='https://images.pexels.com/photos/8135277/pexels-photo-8135277.jpeg'
               alt='mainLeft'
             ></img>
-          </div>
-          <div className={styles.buttons}>
-            <Button variant='icon' className={styles.tooltipButton}>
-              <FontAwesomeIcon icon={faHeart} />
-              <span className={styles.tooltip}>Wishlist</span>
-            </Button>
-            <Button variant='icon' className={styles.tooltipButton}>
-              <FontAwesomeIcon icon={faExchangeAlt} />
-              <span className={styles.tooltip}>Compare</span>
-            </Button>
-            <Button variant='icon' className={styles.tooltipButton}>
-              <FontAwesomeIcon icon={faEye} />
-              <span className={styles.tooltip}>Quick view</span>
-            </Button>
-            <Button variant='icon' className={styles.tooltipButton}>
-              <FontAwesomeIcon icon={faShoppingBasket} />
-              <span className={styles.tooltip}>Add to cart</span>
-            </Button>
-          </div>
-          <div className={styles.productInfo}>
-            <h5>Product name</h5>
-            <div className={styles.stars}>
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
+            <div className={styles.productButtons}>
+              <Button variant='outline' className={styles.tooltipButton}>
+                <FontAwesomeIcon icon={faHeart} />
+                <span className={styles.tooltip}>Favorite</span>
+              </Button>
+              <Button variant='outline' className={styles.tooltipButton}>
+                <FontAwesomeIcon icon={faExchangeAlt} />
+                <span className={styles.tooltip}>Compare</span>
+              </Button>
+              <Button variant='outline' className={styles.tooltipButton}>
+                <FontAwesomeIcon icon={faEye} />
+                <span className={styles.tooltip}>Quick view</span>
+              </Button>
+              <Button variant='outline' className={styles.tooltipButton}>
+                <FontAwesomeIcon icon={faShoppingBasket} />
+                <span className={styles.tooltip}>Add to cart</span>
+              </Button>
             </div>
-            <div className={styles.prices}>
-              <span className={styles.salePrice}>$120</span>
-              <span className={styles.oldPrice}>$160</span>
+            <div className={styles.productInfo}>
+              <h5>Product name</h5>
+              <div className={styles.stars}>
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+              </div>
+              <div className={styles.productPrices}>
+                <span className={styles.price}>$120</span>
+                <span className={styles.oldPrice}>$160</span>
+              </div>
             </div>
           </div>
           <div className={styles.slider}>
@@ -115,14 +123,15 @@ const Gallery = () => (
               src='https://images.pexels.com/photos/7598138/pexels-photo-7598138.jpeg'
               alt='mainRight'
             ></img>
-          </div>
-          <div className={styles.productInfo}>
-            <h5>Product name</h5>
-            <div className={styles.price}>
-              from <span className={styles.priceValue}>$50.80</span>
+            <div className={styles.productInfo}>
+              <div className={styles.price}>
+                <span className={styles.priceText}>from</span>
+                <span className={styles.priceValue}>$50.80</span>
+              </div>
+              <h5>Bedroom Bed</h5>
             </div>
+            <Button className={styles.shopButton}>Shop now</Button>
           </div>
-          <Button>Shop now</Button>
         </div>
       </div>
     </div>
