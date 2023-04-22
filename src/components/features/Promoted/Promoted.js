@@ -54,20 +54,20 @@ const Promoted = () => {
               </div>
               <div className={styles.counter}>
                 <div className={styles.item}>
-                  <h4>25</h4>
-                  <h5>days</h5>
+                  <p className={styles.itemOne}>25</p>
+                  <p className={styles.itemTwo}>days</p>
                 </div>
                 <div className={styles.item}>
-                  <h4>10</h4>
-                  <h5>hrs</h5>
+                  <p className={styles.itemOne}>10</p>
+                  <p className={styles.itemTwo}>hrs</p>
                 </div>
                 <div className={styles.item}>
-                  <h4>47</h4>
-                  <h5>mins</h5>
+                  <p className={styles.itemOne}>47</p>
+                  <p className={styles.itemTwo}>mins</p>
                 </div>
                 <div className={styles.item}>
-                  <h4>59</h4>
-                  <h5>secs</h5>
+                  <p className={styles.itemOne}>59</p>
+                  <p className={styles.itemTwo}>secs</p>
                 </div>
               </div>
             </div>
