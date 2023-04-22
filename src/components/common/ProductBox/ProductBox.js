@@ -15,7 +15,7 @@ import {
   getComparedProducts,
   toggleCompare,
   toggleFavorite,
-  updateClientRating,
+  updateUserRating,
 } from '../../../redux/productsRedux';
 import StarRating from '../../features/StarRating/StarRating';
 
@@ -32,9 +32,9 @@ const ProductBox = ({
 }) => {
   const [userRating, setUserRating] = useState(initialUserRating || 0);
 
-  const handleRatingChange = (productId, newRating) => {
-    setUserRating(newRating);
-    dispatch(updateClientRating(productId, newRating));
+  const handleRatingChange = (id, rating) => {
+    setUserRating(rating);
+    dispatch(updateUserRating(id, rating));
   };
 
   const dispatch = useDispatch();
