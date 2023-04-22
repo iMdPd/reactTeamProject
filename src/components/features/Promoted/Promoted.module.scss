@@ -1,9 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
+  background-color: $light-text-color;
   margin-bottom: 2rem;
-
 
   .productCart {
     max-height: 500px;
@@ -245,7 +244,7 @@
           }
         }
       }
-      
+
       button {
         position: absolute;
         top: 70%;
