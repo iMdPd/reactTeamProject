@@ -4,7 +4,7 @@
   margin-bottom: 2rem;
 
   .mainBox {
-    height: 500px;
+    height: 400px;
     display: inline-block;
     &:first-child {
       padding-left: 0;
@@ -16,7 +16,7 @@
 
     &:first-child::after {
       content: "";
-      background-color: $header-bg;
+      background-color: $sb-image-overlay-dark;
       display: block;
       height: 90%;
       width: 90%;
@@ -33,7 +33,7 @@
 
       &:after {
         content: "";
-        background-color: $light-text-color;
+        background-color: $sb-image-overlay-light;
         display: block;
         height: 100%;
         width: 75%;
@@ -52,7 +52,7 @@
         .collection {
           font-weight: 300;
           font-size: 2.5rem;
-          color: $header-topbar-bg;
+          color: $sb-description-text-dark;
           margin: 0;
         }
 
@@ -62,7 +62,7 @@
           color: $primary;
           margin: 0;
           position: relative;
-          top: -25px;
+          top: -15px;
         }
       }
     }
@@ -73,9 +73,9 @@
 
       &:after {
         content: "";
-        background-color: $light-text-color;
+        background-color: $sb-image-overlay-light;
         display: block;
-        height: 30%;
+        height: 31%;
         width: 100%;
         opacity: 0.7;
         top: -90%;
@@ -83,14 +83,14 @@
       }
 
       .saleDescription {
-        bottom: 30%;
+        bottom: 27%;
         right: 5%;
       }
     }
 
     .saleDescription {
       font-weight: 600;
-      color: #ffffff;
+      color: $sb-description-text-light;
       position: absolute;
       bottom: 10%;
       left: 10%;
@@ -124,7 +124,7 @@
       text-align: end;
       font-weight: 300;
       font-size: 1.5rem;
-      color: $primary;
+      color: $sb-description-text-highlight;
       margin: 0;
 
       span {
@@ -135,7 +135,7 @@
     .describeCollection {
       text-align: end;
       font-weight: 300;
-      color: $header-topbar-bg;
+      color: $sb-description-text-dark;
       margin: 0;
     }
   }
