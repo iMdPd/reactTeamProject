@@ -1,19 +1,27 @@
 .border {
+    padding-top: 15px;
+    padding-bottom: 15px;
     display: flex;
-    color: green;
+    color: white;
     width: 100%;
     height: 100px;
-    border: 1px solid black;
+    border-top: 1px solid rgb(182, 180, 180);
+    border-bottom: 1px solid rgb(182, 180, 180);
     margin-bottom: 20px;
 }
 
 .button{
+    background-color: black;
     height: 100%;
-    width: 40px;
+    width: 25px;
+    border: none;
+    color: black;
+     i {
+        color: black;
+     }
 }
 
 .content {
     width: 100%;
-    background-color: gray;
     text-align: center;
 }
