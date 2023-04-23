@@ -14,6 +14,7 @@ const initialState = {
       price: 542,
       oldPrice: 553,
       stars: 2,
+      userRating: 4,
       promo: 'sale',
       newFurniture: true,
       favorite: false,
