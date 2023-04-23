@@ -15,9 +15,9 @@ const MenuBar = ({ children }) => (
           <ProductSearch />
 
           <div className={styles.dropdown + ' d-md-none'}>
-            <FontAwesomeIcon className='ml-4' icon={faListUl} />
+            <FontAwesomeIcon className='mx-2' icon={faListUl} />
 
-            <ul className={styles.dropdowncontent}>
+            <ul className={styles.dropdownContent}>
               <li>
                 <a href='#' className={styles.active}>
                   Home
@@ -45,7 +45,7 @@ const MenuBar = ({ children }) => (
           </div>
         </div>
         <div className={'col-auto d-none d-md-flex ' + styles.menu}>
-          <ul className={styles.dropdowncontent}>
+          <ul>
             <li>
               <a href='#' className={styles.active}>
                 Home
