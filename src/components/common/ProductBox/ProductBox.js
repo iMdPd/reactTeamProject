@@ -56,7 +56,7 @@ const ProductBox = ({
           alt={name}
           src={`${process.env.PUBLIC_URL}/images/products/${id}.jpg`}
         />
-        {promo && <div className={styles.sale}>{promo}</div>}
+        {price < oldPrice && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
           <Button variant='small'>
