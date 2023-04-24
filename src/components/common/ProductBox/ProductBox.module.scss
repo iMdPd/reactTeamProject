@@ -1,14 +1,15 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
-  border: 1px solid #e1e1e1;
+  background-color: $pb-box-bg;
+  border: 1px solid $pb-box-border;
   margin-bottom: 2rem;
 
   .photo {
     position: relative;
+    height: 330px;
     background: {
-      color: #f4f5f7;
+      color: $pb-photo-cover;
       size: contain;
       position: center;
       repeat: no-repeat;
@@ -18,7 +19,8 @@
 
     .image {
       object-fit: cover;
-      height: 300px;
+      position: absolute;
+      height: 100%;
       width: 100%;
     }
 
@@ -27,16 +29,19 @@
       top: -30px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #292929;
+      background-color: $pb-sale-bg;
       border-radius: 50%;
-      color: #ffffff;
+      color: $pb-sale-tx;
       padding: 30px 15px 5px 15px;
     }
 
     .buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       visibility: hidden;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
     }
   }
 
@@ -54,14 +59,14 @@
     .stars {
       a {
         text-decoration: none;
-        color: rgb(42, 42, 42);
+        color: $pb-stars-border;
       }
     }
   }
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid $pb-box-line;
     position: relative;
 
     &::before {
@@ -70,7 +75,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $primary;
+      border-bottom: 4px solid $pb-line-ornament;
       transform: translateX(-50%);
     }
   }
@@ -89,11 +94,8 @@
     }
 
     .compare {
-      color: $primary;
-
-      & > svg {
-        scale: 1.2;
-      }
+      background-color: $primary;
+      color: $light-text-color;
     }
   }
 
