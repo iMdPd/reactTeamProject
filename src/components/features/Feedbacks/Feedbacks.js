@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { getAll } from '../../../redux/feedbacksRedux';
 import { useSelector } from 'react-redux';
 import styles from './Feedbacks.module.scss';
@@ -11,19 +11,23 @@ const Feedbacks = () => {
 
   const handleFeedbackChange = newFeedback => setActiveFeedback(newFeedback);
 
-  const dots = [];
-  for (let i = 0; i < feedbacks.length; i++) {
-    dots.push(
-      <li key={i}>
-        <a
-          onClick={() => handleFeedbackChange(i)}
-          className={i === activeFeedback && styles.active}
-        >
-          feedback {i}
-        </a>
-      </li>
-    );
-  }
+  const dots = useMemo(() => {
+    const dots = [];
+    for (let i = 0; i < feedbacks.length; i++) {
+      dots.push(
+        <li key={i}>
+          <a
+            onClick={() => handleFeedbackChange(i)}
+            className={i === activeFeedback && styles.active}
+          >
+            feedback {i}
+          </a>
+        </li>
+      );
+    }
+
+    return dots;
+  }, [feedbacks.length, activeFeedback]);
 
   return (
     <div className={styles.root}>
