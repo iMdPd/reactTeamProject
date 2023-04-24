@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
 
 const time = 250;
 
@@ -18,6 +19,10 @@ class NewFurniture extends React.Component {
     setTimeout(() => this.setState({ activePage: newPage }), time);
     setTimeout(() => this.setState({ visible: true }), time * 2);
   }
+  
+  handlePageSwipe = newPage => {
+    this.setState({ activePage: newPage });
+  };
 
   handleCategoryChange(newCategory) {
     this.setState({ visible: false });
@@ -31,6 +36,7 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
+    const pages = [];
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -43,6 +49,8 @@ class NewFurniture extends React.Component {
           </a>
         </li>
       );
+
+      pages.push(categoryProducts.slice(i * 8, (i + 1) * 8));
     }
     return (
       <div className={styles.root}>
@@ -71,17 +79,23 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div
-            className={
-              'row ' + styles.productsContainer + ' ' + (!visible && styles.fade)
-            }
-          >
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
-                <ProductBox {...item} />
-              </div>
+          <Carousel actionSwiped={this.handlePageSwipe} initialIndex={activePage}>
+            {pages.map((page, i) => (
+              <CarouselItem key={i}>
+                <div
+                  className={
+                    'row ' + styles.productsContainer + ' ' + (!visible && styles.fade)
+                  }
+                >
+                  {page.map(item => (
+                    <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))}
+                </div>
+              </CarouselItem>
             ))}
-          </div>
+          </Carousel>
         </div>
       </div>
     );
