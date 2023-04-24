@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
 
 class NewFurniture extends React.Component {
   state = {
@@ -10,9 +11,9 @@ class NewFurniture extends React.Component {
     activeCategory: 'bed',
   };
 
-  handlePageChange(newPage) {
+  handlePageChange = newPage => {
     this.setState({ activePage: newPage });
-  }
+  };
 
   handleCategoryChange(newCategory) {
     this.setState({ activeCategory: newCategory });
@@ -25,6 +26,7 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
+    const pages = [];
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -37,6 +39,8 @@ class NewFurniture extends React.Component {
           </a>
         </li>
       );
+
+      pages.push(categoryProducts.slice(i * 8, (i + 1) * 8));
     }
 
     return (
@@ -66,13 +70,19 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
-                <ProductBox {...item} />
-              </div>
+          <Carousel actionSwiped={this.handlePageChange} initialIndex={activePage}>
+            {pages.map((page, i) => (
+              <CarouselItem key={i}>
+                <div className='row'>
+                  {page.map(item => (
+                    <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))}
+                </div>
+              </CarouselItem>
             ))}
-          </div>
+          </Carousel>
         </div>
       </div>
     );

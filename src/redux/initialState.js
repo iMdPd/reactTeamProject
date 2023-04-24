@@ -14,6 +14,7 @@ const initialState = {
       price: 542,
       oldPrice: 553,
       stars: 2,
+      userRating: 4,
       promo: 'sale',
       newFurniture: true,
       favorite: false,
@@ -246,6 +247,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 22',
       category: 'bed',
       price: 574,
+      oldPrice: 599,
       stars: 5,
       promo: 'sale',
       newFurniture: true,
@@ -268,6 +270,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 24',
       category: 'bed',
       price: 345,
+      oldPrice: 222,
       stars: 1,
       promo: 'sale',
       newFurniture: true,
@@ -278,6 +281,29 @@ const initialState = {
   cart: {
     products: [],
   },
+  feedbacks: [
+    {
+      id: '1',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, autem cupiditate ea necessitatibus. Eaque enim sit architecto atque possimus non asperiores rem nesciunt voluptate voluptatem, quia quibusdam magnam, sequi sapiente!',
+      author: 'John Smith',
+      description: 'Furniture client',
+    },
+    {
+      id: '2',
+      text:
+        'Eaque enim sit architecto atque possimus non asperiores rem nesciunt voluptate voluptatem, quia quibusdam magnam, sequi sapiente!',
+      author: 'Jane Doe',
+      description: 'Furniture client',
+    },
+    {
+      id: '3',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, autem cupiditate ea necessitatibus.',
+      author: 'Dexter Owens',
+      description: 'Furniture client',
+    },
+  ],
 };
 
 export default initialState;
