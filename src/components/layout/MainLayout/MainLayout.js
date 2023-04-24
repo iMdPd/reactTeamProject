@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { StickyBar } from '../StickyBar/StickyBar';
+import Feedbacks from '../../features/Feedbacks/Feedbacks';
 
 const MainLayout = ({ children }) => (
   <div>
     <Header />
     {children}
     <StickyBar />
+    <Feedbacks />
     <Footer />
   </div>
 );
