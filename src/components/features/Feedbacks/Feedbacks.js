@@ -3,13 +3,16 @@ import { getAll } from '../../../redux/feedbacksRedux';
 import { useSelector } from 'react-redux';
 import styles from './Feedbacks.module.scss';
 import Feedback from '../../common/Feedback/Feedback';
+import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
 
 const Feedbacks = () => {
   const feedbacks = useSelector(getAll);
 
   const [activeFeedback, setActiveFeedback] = useState(0);
 
-  const handleFeedbackChange = newFeedback => setActiveFeedback(newFeedback);
+  const handleFeedbackChange = newFeedback => {
+    setActiveFeedback(newFeedback);
+  };
 
   const dots = useMemo(() => {
     const dots = [];
@@ -42,9 +45,17 @@ const Feedbacks = () => {
             </div>
           </div>
         </div>
-        <div className='row justify-content-center'>
-          {<Feedback {...feedbacks[activeFeedback]} />}
-        </div>
+        <Carousel actionSwiped={handleFeedbackChange} initialIndex={activeFeedback}>
+          {feedbacks.map((feedback, i) => (
+            <CarouselItem key={i}>
+              <div className='row justify-content-center'>
+                <div className='col-12'>
+                  <Feedback {...feedback} />
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </Carousel>
       </div>
     </div>
   );
