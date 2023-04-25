@@ -48,8 +48,8 @@ const Feedbacks = () => {
         <Carousel actionSwiped={handleFeedbackChange} initialIndex={activeFeedback}>
           {feedbacks.map((feedback, i) => (
             <CarouselItem key={i}>
-              <div className='row justify-content-center'>
-                <div className='col-12'>
+              <div className='row'>
+                <div className='col'>
                   <Feedback {...feedback} />
                 </div>
               </div>
