@@ -101,6 +101,14 @@
       }
     }
   }
+
+  .productsContainer {
+    transition: all 0.25s;
+  }
+
+  .fade {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 369px) {
