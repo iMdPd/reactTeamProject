@@ -10,17 +10,17 @@
 }
 
 .defaultStar {
-  color: black;
+  color: $sr-star-color-default;
 }
 
 .hoverStar {
-  color: $primary; // Kolor kremowy
+  color: $sr-star-hover-color;
 }
 
 .clickedStar {
-  color: $primary; // Kolor kremowy
+  color: $sr-star-click-color;
 }
 
 .userRatedStar {
-  color: $primary; // Kolor kremowy
+  color: $sr-star-user-rating-color;
 }
