@@ -14,6 +14,7 @@ import {
   updateUserRating,
 } from '../../../redux/productsRedux';
 import StarRating from '../../features/StarRating/StarRating';
+import { useTranslation } from 'react-i18next';
 
 const ProductBox = ({
   id,
@@ -26,6 +27,7 @@ const ProductBox = ({
   compare,
   userRating: initialUserRating,
 }) => {
+  const { t } = useTranslation();
   const [userRating, setUserRating] = useState(initialUserRating || 0);
 
   const handleRatingChange = (id, rating) => {
@@ -58,9 +60,10 @@ const ProductBox = ({
         />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+          <Button variant='small'>{t('button.quickView')}</Button>
           <Button variant='small'>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> Add to cart
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon>
+            {t('button.addToCart')}
           </Button>
         </div>
       </div>
@@ -82,14 +85,16 @@ const ProductBox = ({
             onClick={handleToggleFavoriteProduct}
             variant='outline'
           >
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+            <FontAwesomeIcon icon={faHeart}>{t('label.favorite')}</FontAwesomeIcon>
           </Button>
           <Button
             className={compare && styles.compare}
             onClick={handleToggleCompareProduct}
             variant='outline'
           >
-            <FontAwesomeIcon icon={faExchangeAlt}>Favorite</FontAwesomeIcon>
+            <FontAwesomeIcon icon={faExchangeAlt}>
+              {t('label.favorite')}
+            </FontAwesomeIcon>
           </Button>
         </div>
         <div className={styles.price}>

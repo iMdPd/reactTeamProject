@@ -10,9 +10,10 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import Loading from './components/common/Loading/Loading';
 
 const App = () => (
-  <Suspense fallback={null}>
+  <Suspense fallback={<Loading />}>
     <Provider store={store}>
       <BrowserRouter>
         <MainLayout>

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
+import { Translation } from 'react-i18next';
 
 class NewFurniture extends React.Component {
   state = {
@@ -35,7 +36,8 @@ class NewFurniture extends React.Component {
             onClick={() => this.handlePageChange(i)}
             className={i === activePage && styles.active}
           >
-            page {i}
+            <Translation>{(t, { i18n }) => t('label.page')}</Translation>
+            {i}
           </a>
         </li>
       );
@@ -49,7 +51,9 @@ class NewFurniture extends React.Component {
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
               <div className={'col-auto ' + styles.heading}>
-                <h3>New furniture</h3>
+                <h3>
+                  <Translation>{(t, { i18n }) => t('label.newFurniture')}</Translation>
+                </h3>
               </div>
               <div className={'col ' + styles.menu}>
                 <ul>
