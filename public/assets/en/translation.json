@@ -1,7 +1,18 @@
 {
-  "button.addToChart": "Add to chart",
   "label.freeShipping": {
     "part1": "Free shipping",
     "part2": "All orders"
+  },
+  "label.custSupport": {
+    "part1": "24/7 customer",
+    "part2": "support"
+  },
+  "label.moneyBack": {
+    "part1": "Money back",
+    "part2": "guarantee"
+  },
+  "label.memberDiscount": {
+    "part1": "Member discount",
+    "part2": "First order"
   }
 }

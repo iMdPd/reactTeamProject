@@ -1,7 +1,18 @@
 {
-  "button.addToChart": "Do koszyka",
   "label.freeShipping": {
     "part1": "Darmowa dostawa",
     "part2": "Wszystkie zamówienia"
+  },
+  "label.custSupport": {
+    "part1": "24/7 wsparcie",
+    "part2": "klienta"
+  },
+  "label.moneyBack": {
+    "part1": "gwarancja",
+    "part2": "zwrotu pieniędzy"
+  },
+  "label.memberDiscount": {
+    "part1": "zniżki członkowskie",
+    "part2": "od pierwszego zamówienia"
   }
 }
