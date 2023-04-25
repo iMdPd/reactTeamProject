@@ -1,6 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  margin-bottom: 2rem;
+
   .panelBar {
     margin-bottom: 30px;
     position: relative;
@@ -98,5 +100,13 @@
         }
       }
     }
+  }
+
+  .productsContainer {
+    transition: all 0.25s;
+  }
+
+  .fade {
+    opacity: 0;
   }
 }
