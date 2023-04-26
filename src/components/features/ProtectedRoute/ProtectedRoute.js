@@ -11,7 +11,7 @@ export const ProtectedRoute = ({ user, redirectPath = '/login', children }) => {
 };
 
 ProtectedRoute.propTypes = {
-  user: PropTypes.shape({ email: PropTypes.string, password: PropTypes.string }),
+  user: PropTypes.string,
   redirectPath: PropTypes.func,
   children: PropTypes.node,
 };

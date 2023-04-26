@@ -33,15 +33,11 @@ export const AccessPage = ({ setUser }) => {
     e.preventDefault();
     setUser({
       email: `${userEmail}`,
-      password: `${password}`,
     });
 
-    const userData = {
-      email: `${userEmail}`,
-      password: `${password}`,
-    };
     if (userEmail && password) {
-      sessionStorage.setItem('userData', JSON.stringify(userData));
+      sessionStorage.setItem('userEmail', userEmail);
+      sessionStorage.setItem('userPassword', password);
     }
 
     navigate('/');

@@ -32,7 +32,6 @@ export const NewsletterModal = props => {
           Signup for our weekly newsletter to get the latest news, updates and amazing
           offers delivered directly in your inbox.
         </p>
-
         <Form onSubmit={handleSubmit}>
           <Row className={styles.form}>
             <Col xs={7}>

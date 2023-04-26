@@ -12,25 +12,26 @@ import { getNewsleterByEmail } from '../../../redux/newsletterRedux';
 
 const timeout = 15000;
 
-const MainLayout = ({ children, user }) => {
+const MainLayout = ({ children }) => {
   const [modalShow, setModalShow] = useState(false);
   const [count, setCount] = useState(0);
+  const userEmail = sessionStorage.getItem('userEmail');
 
   const { pathname } = useLocation();
 
   const userSignedToNewsletter = useSelector(state =>
-    getNewsleterByEmail(state, user.email)
+    getNewsleterByEmail(state, userEmail)
   );
 
   const incorrectPath = pathname !== '/signup' && pathname !== '/login';
 
-  if (count < 1 && incorrectPath && !userSignedToNewsletter) {
+  if (count < 1 && incorrectPath && userSignedToNewsletter !== userEmail) {
     setTimeout(() => setModalShow(true), timeout);
     setCount(prev => prev + 1);
   }
 
   const handleMouseLeave = () => {
-    if (count <= 1 && incorrectPath && !userSignedToNewsletter) {
+    if (count <= 1 && incorrectPath && userSignedToNewsletter !== userEmail) {
       setModalShow(true);
       setCount(prev => prev + 1);
     }
@@ -54,7 +55,6 @@ const MainLayout = ({ children, user }) => {
 
 MainLayout.propTypes = {
   children: PropTypes.node,
-  user: PropTypes.shape({ email: PropTypes.string, password: PropTypes.string }),
 };
 
 export default MainLayout;
