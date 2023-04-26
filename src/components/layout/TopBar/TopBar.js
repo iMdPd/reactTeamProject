@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './TopBar.module.scss';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const TopBar = () => {
@@ -39,21 +40,21 @@ const TopBar = () => {
           <div className={`col text-right ${styles.topMenu}`}>
             <ul>
               <li>
-                <a href='#'>
+                <Link to='/login'>
                   <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
                   {t('label.login')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='#'>
+                <Link to='/signup'>
                   <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
                   {t('label.register')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='#'>
+                <Link to='/'>
                   <FontAwesomeIcon className={styles.icon} icon={faBars} />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
