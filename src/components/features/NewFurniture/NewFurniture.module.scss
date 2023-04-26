@@ -109,6 +109,31 @@
   .fade {
     opacity: 0;
   }
+
+  .arrows {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+
+    svg {
+      color: $primary;
+
+      &:hover {
+        cursor: pointer;
+      }
+      &.unactive {
+        color: $nf-menu-dots;
+        cursor: auto;
+      }
+    }
+
+    .left {
+      margin-right: 1rem;
+    }
+
+    .right {
+      margin-left: 1rem;
+    }
+  }
 }
 
 @media (max-width: 369px) {
@@ -200,3 +225,16 @@
     }
   }
 }
+
+@media (max-width: 1199px) {
+  .dots {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .arrows {
+    display: none;
+  }
+}
+
