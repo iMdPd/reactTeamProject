@@ -947,6 +947,7 @@ const initialState = {
       description: 'Furniture client',
     },
   ],
+  newsletter: ['test@test.pl', 'admin@admin.pl', '1@1.pl', '0@0.pl'],
 };
 
 export default initialState;
