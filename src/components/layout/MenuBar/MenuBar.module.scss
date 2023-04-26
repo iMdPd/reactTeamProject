@@ -2,7 +2,13 @@
 
 .root {
   box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  background-color: $azure-white;
+  
+
+  :global(.container) > :global(.row) {
+    height: 84px;
+  }
+
+
   .menu {
     display: flex;
     align-self: stretch;
@@ -87,6 +93,13 @@
   }
 }
 
+
+@media (max-width: 1200px) {
+  .root
+  :global(.container) > :global(.row) {
+    height: 124px;
+  }
+}
 
 @media (max-width:470px) {
   

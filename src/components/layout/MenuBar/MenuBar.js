@@ -11,7 +11,7 @@ const MenuBar = ({ children }) => (
   <div className={styles.root}>
     <div className='container'>
       <nav className='row  flex-column-reverse  flex-xl-row  align-items-center '>
-        <div className='col d-flex justify-content-center align-items-center  my-4'>
+        <div className='col d-flex justify-content-center align-items-center  my-2'>
           <ProductSearch />
 
           <div className={styles.dropdown + ' d-md-none'}>
