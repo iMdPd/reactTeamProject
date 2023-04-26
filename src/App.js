@@ -17,13 +17,13 @@ import { ProtectedRoute } from './components/features/ProtectedRoute/ProtectedRo
 const userData = JSON.parse(sessionStorage.getItem('userData'));
 
 const App = () => {
-  const [user, setUser] = useState(userData);
+  const [user, setUser] = useState(userData || {});
 
   return (
     <Suspense fallback={<Loading />}>
       <Provider store={store}>
         <BrowserRouter>
-          <MainLayout>
+          <MainLayout user={user}>
             <Routes>
               <Route
                 exact
