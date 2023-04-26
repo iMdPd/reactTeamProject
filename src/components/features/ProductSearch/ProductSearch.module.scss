@@ -25,18 +25,40 @@
       z-index: 0;
     }
 
-    select {
-      -webkit-appearance: none;
+    ul {
+      list-style: none;
       font-size: 14px;
-      outline: none;
-      border: 0;
-      background-color: $ps-border-select-bg;
-      padding: 5px 30px 5px 35px;
-      position: relative;
-      z-index: 1;
+      text-align: center;
+      width: 200px;
+      margin: 0;
+      padding: 0;
 
-      &:hover {
-        cursor: pointer;
+      li {
+        position: relative;
+        margin: 14px 0;
+
+        &.mainCategory {
+          padding: 8px 16px;
+          margin: 0;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $ps-border-hover-list-category-bg;
+          }
+        }
+
+        & > ul {
+          position: absolute;
+          display: none;
+          border: 1px solid $form-border-color;
+          width: 200px;
+          z-index: 2;
+        }
+
+        &:hover > ul {
+          display: block;
+          background-color: $ps-border-hover-list-bg;
+        }
       }
     }
   }

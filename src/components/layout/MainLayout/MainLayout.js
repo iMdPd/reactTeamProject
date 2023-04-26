@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux';
 import { updateViewportMode } from '../../../redux/viewportModeRedux';
 import getViewportMode from '../../../utils/getViewportMode';
 import { StickyBar } from '../StickyBar/StickyBar';
+import Feedbacks from '../../features/Feedbacks/Feedbacks';
+import { useLocation } from 'react-router-dom';
 
 const MainLayout = ({ children }) => {
   const dispatch = useDispatch();
@@ -24,12 +26,15 @@ const MainLayout = ({ children }) => {
     window.addEventListener('resize', handleWindowResize);
   });
 
+  const { pathname } = useLocation();
+
   return (
     <div>
-      <Header />
+      <Header pathname={pathname} />
       {children}
-      <StickyBar />
-      <Footer />
+      {pathname !== '/signup' && pathname !== '/login' && <StickyBar />}
+      {pathname !== '/signup' && pathname !== '/login' && <Feedbacks />}
+      <Footer pathname={pathname} />
     </div>
   );
 };
