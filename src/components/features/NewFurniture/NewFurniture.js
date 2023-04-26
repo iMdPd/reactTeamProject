@@ -10,6 +10,7 @@ import {
   faArrowCircleLeft,
   faArrowCircleRight,
 } from '@fortawesome/free-solid-svg-icons';
+import { Translation } from 'react-i18next';
 
 const time = 250;
 
@@ -76,7 +77,8 @@ class NewFurniture extends React.Component {
             onClick={() => this.handlePageChange(i)}
             className={i === activePage && styles.active}
           >
-            page {i}
+            <Translation>{(t, { i18n }) => t('label.page')}</Translation>
+            {i}
           </a>
         </li>
       );
@@ -94,7 +96,9 @@ class NewFurniture extends React.Component {
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
               <div className={'col-auto ' + styles.heading}>
-                <h3>New furniture</h3>
+                <h3>
+                  <Translation>{(t, { i18n }) => t('label.newFurniture')}</Translation>
+                </h3>
               </div>
               <div className={'col ' + styles.menu}>
                 <ul>
