@@ -6,8 +6,10 @@ import { useSelector } from 'react-redux';
 import { getComparedProducts } from '../../../redux/productsRedux';
 import { ComparedProduct } from '../ComparedProduct/ComparedProduct';
 import Button from '../../common/Button/Button';
+import { useTranslation } from 'react-i18next';
 
 export const StickyBar = () => {
+  const { t } = useTranslation();
   const [focused, setFocused] = useState(false);
 
   const comparedProducts = useSelector(getComparedProducts);
@@ -25,7 +27,7 @@ export const StickyBar = () => {
         className={styles.sticky}
       >
         <FontAwesomeIcon className={styles.icon} icon={faExchangeAlt}>
-          Add to compare
+          {t('label.addToCompare')}
         </FontAwesomeIcon>
         <div className={styles.container}>
           <div className='row align-items-center justify-content-start flex-nowrap flex'>
@@ -33,7 +35,7 @@ export const StickyBar = () => {
               <ComparedProduct key={i} {...product} />
             ))}
             <Button className={styles.compareButton} variant='small'>
-              COMPARE
+              {t('button.compare')}
             </Button>
           </div>
         </div>
