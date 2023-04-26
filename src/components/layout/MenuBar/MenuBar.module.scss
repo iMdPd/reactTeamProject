@@ -1,8 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  
+  box-shadow: 2px 3.464px 6px $mb-menu-shadow-line;
+  background-color: $mb-menu-bg;
 
   :global(.container) > :global(.row) {
     height: 84px;
@@ -27,26 +27,31 @@
     }
 
     a {
-      color: $text-color;
+      color: $mb-menu-tx;
       text-transform: uppercase;
       font-size: 12px;
       padding: 1rem;
       text-decoration: none;
       display: flex;
       align-items: center;
-      border-top: 4px solid $azure-white;
+      border-top: 4px solid $mb-menu-links-border;
       font-weight: 500;
       letter-spacing: 1px;
 
+
+      &:hover {
+        animation: pulsing-bg $animation-time-bg $animation-iteration-count;
+      }
+
       &:hover,
       &.active {
-        background-color: $primary;
-        color: #ffffff;
-        border-color: $primary;
+        background-color: $mb-menu-links-hover-bg;
+        color: $mb-menu-links-hover-tx;
+        border-color: $mb-menu-links-hover-border;
       }
 
       &.active {
-        border-color: $text-color;
+        border-color: $mb-menu-links-hover-border-active;
       }
     }
   }

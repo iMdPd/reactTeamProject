@@ -6,75 +6,80 @@ import { faListUl } from '@fortawesome/free-solid-svg-icons';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
+import { useTranslation } from 'react-i18next';
 
-const MenuBar = ({ children }) => (
-  <div className={styles.root}>
-    <div className='container'>
-      <nav className='row  flex-column-reverse  flex-xl-row  align-items-center '>
-        <div className='col d-flex justify-content-center align-items-center  my-2'>
-          <ProductSearch />
+const MenuBar = ({ children }) => {
+  const { t } = useTranslation();
 
-          <div className={styles.dropdown + ' d-md-none'}>
-            <FontAwesomeIcon className='mx-2' icon={faListUl} />
+  return (
+    <div className={styles.root}>
+      <div className='container'>
+        <nav className='row  flex-column-reverse  flex-xl-row  align-items-center '>
+          <div className='col d-flex justify-content-center align-items-center  my-2'>
+            <ProductSearch />
 
-            <ul className={styles.dropdownContent}>
+            <div className={styles.dropdown + ' d-md-none'}>
+              <FontAwesomeIcon className='mx-2' icon={faListUl} />
+
+              <ul className={styles.dropdownContent}>
+                <li>
+                  <a href='#' className={styles.active}>
+                    {t('label.homePage')}
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.furniture')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.chair')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.table')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.sofa')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.bedroom')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.blog')}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={'col-auto d-none d-md-flex ' + styles.menu}>
+            <ul>
               <li>
                 <a href='#' className={styles.active}>
-                  Home
+                  {t('label.homePage')}
                 </a>
               </li>
               <li>
-                <a href='#'>Furniture</a>
+                <a href='#'>{t('label.furniture')}</a>
               </li>
               <li>
-                <a href='#'>Chair</a>
+                <a href='#'>{t('label.chair')}</a>
               </li>
               <li>
-                <a href='#'>Table</a>
+                <a href='#'>{t('label.table')}</a>
               </li>
               <li>
-                <a href='#'>Sofa</a>
+                <a href='#'>{t('label.sofa')}</a>
               </li>
               <li>
-                <a href='#'>Bedroom</a>
+                <a href='#'>{t('label.bedroom')}</a>
               </li>
               <li>
-                <a href='#'>Blog</a>
+                <a href='#'>{t('label.blog')}</a>
               </li>
             </ul>
           </div>
-        </div>
-        <div className={'col-auto d-none d-md-flex ' + styles.menu}>
-          <ul>
-            <li>
-              <a href='#' className={styles.active}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href='#'>Furniture</a>
-            </li>
-            <li>
-              <a href='#'>Chair</a>
-            </li>
-            <li>
-              <a href='#'>Table</a>
-            </li>
-            <li>
-              <a href='#'>Sofa</a>
-            </li>
-            <li>
-              <a href='#'>Bedroom</a>
-            </li>
-            <li>
-              <a href='#'>Blog</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 MenuBar.propTypes = {
   children: PropTypes.node,

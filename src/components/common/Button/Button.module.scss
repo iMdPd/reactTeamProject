@@ -4,17 +4,23 @@
 // }
 
 .main {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $button-bg;
+  color: $button-tx;
+  background-color: $button-bg;
+  color: $button-tx;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
+  white-space: nowrap;
 
   &:not(.noHover):hover {
-    color: #ffffff !important;
-    background-color: $primary;
+    color: $button-hover-tx !important;
+    background-color: $button-hover-bg;
+    color: $button-hover-tx !important;
+    background-color: $button-hover-bg;
     text-decoration: none;
+    animation: pulsing-btn $animation-time-btn $animation-iteration-count;
   }
 }
 
@@ -29,13 +35,23 @@
 .outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  border: 1px solid $small-button-outline-border;
+  color: $small-button-outline-border-tx;
+  border: 1px solid $small-button-outline-border;
+  color: $small-button-outline-border-tx;
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: #2a2a2a;
-    color: #ffffff;
+    background-color: $small-button-hover-outline-border;
+    color: $small-button-hover-outline-border-tx;
+    animation: pulsing-btn $animation-time-btn $animation-iteration-count;
+  }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .small {
+    font-size: 11px;
   }
 }

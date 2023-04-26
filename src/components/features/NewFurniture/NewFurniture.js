@@ -3,49 +3,66 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
+import { Translation } from 'react-i18next';
+
+const time = 250;
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    visible: true,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ visible: false });
+    setTimeout(() => this.setState({ activePage: newPage }), time);
+    setTimeout(() => this.setState({ visible: true }), time * 2);
   }
 
+  handlePageSwipe = newPage => {
+    this.setState({ activePage: newPage });
+  };
+
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ visible: false });
+    setTimeout(() => this.setState({ activeCategory: newCategory }), time);
+    setTimeout(() => this.setState({ visible: true }), time * 2);
   }
 
   render() {
     const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
-
+    const { activeCategory, activePage, visible } = this.state;
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
+    const pages = [];
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
             className={i === activePage && styles.active}
           >
-            page {i}
+            <Translation>{(t, { i18n }) => t('label.page')}</Translation>
+            {i}
           </a>
         </li>
       );
-    }
 
+      pages.push(categoryProducts.slice(i * 8, (i + 1) * 8));
+    }
     return (
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
               <div className={'col-auto ' + styles.heading}>
-                <h3>New furniture</h3>
+                <h3>
+                  <Translation>{(t, { i18n }) => t('label.newFurniture')}</Translation>
+                </h3>
               </div>
               <div className={'col ' + styles.menu}>
                 <ul>
@@ -66,13 +83,23 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
+          <Carousel actionSwiped={this.handlePageSwipe} initialIndex={activePage}>
+            {pages.map((page, i) => (
+              <CarouselItem key={i}>
+                <div
+                  className={
+                    'row ' + styles.productsContainer + ' ' + (!visible && styles.fade)
+                  }
+                >
+                  {page.map(item => (
+                    <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
+                      <ProductBox {...item} />
+                    </div>
+                  ))}
+                </div>
+              </CarouselItem>
             ))}
-          </div>
+          </Carousel>
         </div>
       </div>
     );

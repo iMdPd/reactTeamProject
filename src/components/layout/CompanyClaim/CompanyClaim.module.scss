@@ -12,7 +12,7 @@
       margin: 0;
       font-size: 17px;
       line-height: 42px;
-      color: rgb(216, 216, 216);
+      color: $cc-phone-number-color;
       font-weight: 500;
 
       .icon {
@@ -29,10 +29,10 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $cc-cart-icon;
 
       .cartIcon {
-        background-color: $primary;
+        background-color: $cc-cart-icon-bg;
         width: 55px;
         height: 50px;
         border-radius: 3px;
@@ -57,7 +57,7 @@
         align-items: center;
         justify-content: center;
         font-size: 14px;
-        color: $light-text-color;
+        color: $cc-cart-counter-tx;
         position: absolute;
         right: 0;
         transform: translate(50%, -50%);
@@ -68,6 +68,39 @@
           background-color: lighten($primary, 10%);
         }
       }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .root {
+    .phoneNumber {
+      text-align: right;
+      white-space: nowrap;
+      order: 2;
+      padding-left: 90px;
+      top: -10px;
+
+      p {
+        font-size: 14px;
+        .icon {
+          font-size: 28px;
+        }
+      }
+    }
+
+    .logo {
+      order: 0;
+      margin-top: 30px;
+      padding-right: 25px;
+    }
+
+    .cart {
+      order: 1;
+      padding-left: 12px;
+      padding-right: 30px;
+      margin-top: 20px;
     }
   }
 }
