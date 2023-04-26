@@ -231,9 +231,12 @@ const initialState = {
     products: [],
   },
   brands: [
-    { id: 1, name: 'Brand 1', logo: '' },
-    { id: 2, name: 'Brand 2', logo: '' },
-    { id: 3, name: 'Brand 3', logo: '' },
+    { id: 1, name: 'Adidas', logo: 'AdidasLogo' },
+    { id: 2, name: 'Microsoft', logo: 'MicrosoftLogo' },
+    { id: 3, name: 'Audi', logo: 'AudiLogo' },
+    { id: 4, name: 'Batman', logo: 'BatmanLogo' },
+    { id: 5, name: 'Jewellery', logo: 'JewelleryLogo' },
+    { id: 6, name: 'Volvo', logo: 'VolvoLogo' },
   ],
 };
 

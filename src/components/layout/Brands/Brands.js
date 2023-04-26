@@ -2,16 +2,21 @@ import React from 'react';
 import styles from './Brands.module.scss';
 import Brand from '../../common/Brand/Brand';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSelector } from 'react-redux';
+import { getAll } from '../../../redux/brandRedux';
 
 const Brands = () => {
-  const array = [1, 2, 3, 4, 5, 6, 7];
+  const brands = useSelector(getAll);
+
   return (
     <div className='container'>
       <div className={styles.border}>
-        <button className={styles.button}></button>
+        <button className={styles.button}>
+          <FontAwesomeIcon icon='fa-solid fa-chevron-left' />
+        </button>
         <div className={styles.content}>
-          {array.map(element => (
-            <Brand key={element} />
+          {brands.map(brand => (
+            <Brand key={brand.name} {...brand} />
           ))}
         </div>
         <button className={styles.button}>
