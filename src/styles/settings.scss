@@ -14,17 +14,10 @@ $semi-white: #e1e1e1;
 $azure-white: #f4f5f7;
 $darker-azure-white: #e0e3ed;
 $pure-white: #ffffff;
-<<<<<<< HEAD
 $orange-gold: #d58e32;          // primary
 $transparent: transparent;
 
 $red: red;                     // FOR TEST ONLY
-=======
-$orange-gold: #d58e32; // primary
-$transparent: transparent;
-
-$red: red; // FOR TEST ONLY
->>>>>>> main
 
 // Components Variables Main
 $primary: $orange-gold;
@@ -82,8 +75,6 @@ $ps-border-icon: $orange-gold;
 $ps-border-select-bg: $transparent;
 $ps-border-placeholder-color: $black-grey;
 $ps-border-button-bg: $transparent;
-<<<<<<< HEAD
-=======
 $ps-border-hover-list-category-bg: $mist-grey;
 $ps-border-hover-list-bg: $pure-white;
 
@@ -93,7 +84,6 @@ $sb-image-overlay-light: $pure-white;
 $sb-description-text-dark: $standard-grey;
 $sb-description-text-light: $pure-white;
 $sb-description-text-highlight: $orange-gold;
->>>>>>> main
 
 // layout/CompanyClaim
 $cc-phone-number-color: $smoke-grey;
@@ -141,10 +131,6 @@ $footer-copyright-color: $light-grey;
 $footer-social-media-color: $light-grey;
 $footer-social-medi-hover-color: $orange-gold;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 // After merge
 
 $primary: #d58e32;
@@ -172,21 +158,13 @@ $animation-time-btn: 0.25s;
 // choose number of iteration or "infinite"
 $animation-iteration-count: infinite;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 @keyframes pulsing-bg {
   50% {
     background-color: $animation-bg;
     border-color: $animation-bg;
   }
   100% {
-<<<<<<< HEAD
-    background-color:$primary;
-=======
     background-color: $primary;
->>>>>>> main
   }
 }
 
@@ -196,11 +174,7 @@ $animation-iteration-count: infinite;
     font-size: 14px;
   }
   100% {
-<<<<<<< HEAD
-    color:$primary;
-=======
     color: $primary;
->>>>>>> main
   }
 }
 
@@ -210,11 +184,7 @@ $animation-iteration-count: infinite;
     font-size: 26px;
   }
   100% {
-<<<<<<< HEAD
-    color:$primary;
-=======
     color: $primary;
->>>>>>> main
   }
 }
 
