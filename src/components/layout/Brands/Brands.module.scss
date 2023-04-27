@@ -22,7 +22,13 @@
     width: 100%;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: nowrap;
     overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+    .content {
+        justify-content: center;
+    }
 }
