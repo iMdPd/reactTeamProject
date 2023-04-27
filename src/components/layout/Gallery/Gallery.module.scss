@@ -280,3 +280,15 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .root {
+    .gallery {
+      .leftSide,
+      .rightSide {
+        flex: 1 1 50%;
+        max-width: 50%;
+      }
+    }
+  }
+}
