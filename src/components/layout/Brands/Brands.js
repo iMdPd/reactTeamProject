@@ -4,6 +4,12 @@ import Brand from '../../common/Brand/Brand';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/brandRedux';
+import {
+  faArrowCircleRight,
+  faArrowCircleLeft,
+  faChevronCircleLeft,
+  faChevronCircleRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 const Brands = () => {
   const brands = useSelector(getAll);
@@ -12,7 +18,7 @@ const Brands = () => {
     <div className='container'>
       <div className={styles.border}>
         <button className={styles.button}>
-          <FontAwesomeIcon icon='fa-solid fa-chevron-left' />
+          <FontAwesomeIcon icon={faChevronCircleLeft} />
         </button>
         <div className={styles.content}>
           {brands.map(brand => (
@@ -20,7 +26,7 @@ const Brands = () => {
           ))}
         </div>
         <button className={styles.button}>
-          <FontAwesomeIcon icon='fa-solid fa-chevron-right' />
+          <FontAwesomeIcon icon={faChevronCircleRight} />
         </button>
       </div>
     </div>
