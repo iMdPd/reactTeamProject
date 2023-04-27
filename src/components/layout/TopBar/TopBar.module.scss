@@ -23,6 +23,11 @@
           animation: pulsing-text $animation-time-text $animation-iteration-count;
         }
       }
+
+      span {
+        color: $header-links;
+        font-size: 13px;
+      }
     }
   }
 }

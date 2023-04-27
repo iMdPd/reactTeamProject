@@ -10,6 +10,11 @@ import { useTranslation } from 'react-i18next';
 
 const TopBar = () => {
   const { t } = useTranslation();
+  const userData = JSON.parse(sessionStorage.getItem('userData'));
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('userData');
+  };
 
   return (
     <div className={styles.root}>
@@ -40,16 +45,30 @@ const TopBar = () => {
           <div className={`col text-right ${styles.topMenu}`}>
             <ul>
               <li>
-                <Link to='/login'>
-                  <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
-                  {t('label.login')}
-                </Link>
+                {userData ? (
+                  <span>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                    {userData.email}
+                  </span>
+                ) : (
+                  <Link to='/login'>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                    {t('label.login')}
+                  </Link>
+                )}
               </li>
               <li>
-                <Link to='/signup'>
-                  <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
-                  {t('label.register')}
-                </Link>
+                {userData ? (
+                  <Link onClick={handleLogout}>
+                    <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
+                    {t('label.logout')}
+                  </Link>
+                ) : (
+                  <Link to='/signup'>
+                    <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
+                    {t('label.register')}
+                  </Link>
+                )}
               </li>
               <li>
                 <Link to='/'>
