@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -10,7 +10,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { StickyBar } from '../StickyBar/StickyBar';
 
-const timeout = 15000;
+const time = 15000;
 
 const MainLayout = ({ children, user }) => {
   const [modalShow, setModalShow] = useState(false);
@@ -21,14 +21,27 @@ const MainLayout = ({ children, user }) => {
   const userSignedToNewsletter = useSelector(state => getNewsleterByEmail(state, user));
   const incorrectPath = pathname !== '/signup' && pathname !== '/login';
 
-  if (count < 1 && incorrectPath && userSignedToNewsletter !== user && user !== null) {
-    setTimeout(() => setModalShow(true), timeout);
-    setCount(prev => prev + 1);
-  }
+  useEffect(() => {
+    if (
+      count < 1 &&
+      incorrectPath &&
+      userSignedToNewsletter !== user &&
+      user !== null
+    ) {
+      const modalTimeout = setTimeout(() => {
+        setModalShow(true);
+        setCount(prev => prev + 1);
+      }, time);
+
+      return () => {
+        clearTimeout(modalTimeout);
+      };
+    }
+  }, [count, incorrectPath, user, userSignedToNewsletter]);
 
   const handleMouseLeave = () => {
     if (
-      count <= 1 &&
+      count < 1 &&
       incorrectPath &&
       userSignedToNewsletter !== user &&
       user !== null
