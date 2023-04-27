@@ -10,10 +10,10 @@ import { getOne } from '../../../redux/productsRedux';
 import ProductBoxContent from './ProductBoxContent';
 import { useTranslation } from 'react-i18next';
 
-const ProductBox = ({ name, price, promo, stars, oldPrice, ...props }) => {
+const ProductBox = ({ name, price, promo, oldPrice, id }) => {
   const { t } = useTranslation();
 
-  const product = useSelector(state => getOne(state, props.id));
+  const product = useSelector(state => getOne(state, id));
 
   return (
     <div className={styles.root}>
@@ -21,7 +21,7 @@ const ProductBox = ({ name, price, promo, stars, oldPrice, ...props }) => {
         <img
           className={styles.image}
           alt={name}
-          src={`${process.env.PUBLIC_URL}/images/products/${props.id}.jpg`}
+          src={`${process.env.PUBLIC_URL}/images/products/${id}.jpg`}
         />
         {price < oldPrice && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
@@ -45,7 +45,6 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   oldPrice: PropTypes.number,
-  id: PropTypes.string,
 };
 
 export default ProductBox;
