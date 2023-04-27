@@ -21,8 +21,8 @@ const Footer = ({ pathname }) => {
       {pathname !== '/login' && pathname !== '/signup' && (
         <div className={styles.footerMenu}>
           <div className='container'>
-            <div className='row'>
-              <div className='col'>
+            <div className='row text-center text-md-left'>
+              <div className='col-12 col-md-6 col-lg-3'>
                 <div className={styles.menuWrapper}>
                   <h6>{t('label.information')}</h6>
                   <ul>
@@ -41,7 +41,7 @@ const Footer = ({ pathname }) => {
                   </ul>
                 </div>
               </div>
-              <div className='col'>
+              <div className='col-12 col-md-6 col-lg-3'>
                 <div className={styles.menuWrapper}>
                   <h6>{t('label.myAccount')}</h6>
                   <ul>
@@ -60,7 +60,7 @@ const Footer = ({ pathname }) => {
                   </ul>
                 </div>
               </div>
-              <div className='col'>
+              <div className='col-12 col-md-6 col-lg-3'>
                 <div className={styles.menuWrapper}>
                   <h6>{t('label.information')}</h6>
                   <ul>
@@ -79,7 +79,7 @@ const Footer = ({ pathname }) => {
                   </ul>
                 </div>
               </div>
-              <div className='col'>
+              <div className='col-12 col-md-6 col-lg-3'>
                 <div className={styles.menuWrapper}>
                   <h6>{t('label.orders')}</h6>
                   <ul>
@@ -97,7 +97,11 @@ const Footer = ({ pathname }) => {
                     </li>
                   </ul>
                 </div>
-                <img src='./images/cards.png' alt={t('label.supportedCreditCards')} />
+                <img
+                  className={styles.paymentCards}
+                  src='./images/cards.png'
+                  alt={t('label.supportedCreditCards')}
+                />
               </div>
             </div>
           </div>
@@ -105,9 +109,9 @@ const Footer = ({ pathname }) => {
       )}
       <div className={styles.bottomBar}>
         <div className='container'>
-          <div className='row align-items-center'>
-            <div className='col'></div>
-            <div className={'col text-center ' + styles.copyright}>
+          <div className='row  align-items-lg-center '>
+            <div className='col-12 col-lg-4 text-center'></div>
+            <div className={'col text-left text-lg-center ' + styles.copyright}>
               <p>©Copyright 2016 Bazar | All Rights Reserved</p>
             </div>
             <div className={'col text-right ' + styles.socialMedia}>
