@@ -1,37 +1,38 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import { StickyBar } from '../StickyBar/StickyBar';
-import Feedbacks from '../../features/Feedbacks/Feedbacks';
-import { useLocation } from 'react-router-dom';
-import { NewsletterModal } from '../../features/NewsletterModal/NewsletterModal';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { getNewsleterByEmail } from '../../../redux/newsletterRedux';
+import Feedbacks from '../../features/Feedbacks/Feedbacks';
+import { NewsletterModal } from '../../features/NewsletterModal/NewsletterModal';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import { StickyBar } from '../StickyBar/StickyBar';
 
 const timeout = 15000;
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, user }) => {
   const [modalShow, setModalShow] = useState(false);
   const [count, setCount] = useState(0);
-  const userEmail = sessionStorage.getItem('userEmail');
 
   const { pathname } = useLocation();
 
-  const userSignedToNewsletter = useSelector(state =>
-    getNewsleterByEmail(state, userEmail)
-  );
-
+  const userSignedToNewsletter = useSelector(state => getNewsleterByEmail(state, user));
   const incorrectPath = pathname !== '/signup' && pathname !== '/login';
 
-  if (count < 1 && incorrectPath && userSignedToNewsletter !== userEmail) {
+  if (count < 1 && incorrectPath && userSignedToNewsletter !== user && user !== null) {
     setTimeout(() => setModalShow(true), timeout);
     setCount(prev => prev + 1);
   }
 
   const handleMouseLeave = () => {
-    if (count <= 1 && incorrectPath && userSignedToNewsletter !== userEmail) {
+    if (
+      count <= 1 &&
+      incorrectPath &&
+      userSignedToNewsletter !== user &&
+      user !== null
+    ) {
       setModalShow(true);
       setCount(prev => prev + 1);
     }
@@ -55,6 +56,7 @@ const MainLayout = ({ children }) => {
 
 MainLayout.propTypes = {
   children: PropTypes.node,
+  user: PropTypes.string,
 };
 
 export default MainLayout;

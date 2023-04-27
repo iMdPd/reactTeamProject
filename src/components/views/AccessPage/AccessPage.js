@@ -31,9 +31,7 @@ export const AccessPage = ({ setUser }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setUser({
-      email: `${userEmail}`,
-    });
+    setUser(userEmail);
 
     if (userEmail && password) {
       sessionStorage.setItem('userEmail', userEmail);
