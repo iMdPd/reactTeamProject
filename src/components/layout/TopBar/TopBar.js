@@ -12,10 +12,6 @@ const TopBar = () => {
   const { t } = useTranslation();
   const userData = JSON.parse(sessionStorage.getItem('userData'));
 
-  const handleLogout = () => {
-    sessionStorage.removeItem('userData');
-  };
-
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -59,7 +55,7 @@ const TopBar = () => {
               </li>
               <li>
                 {userData ? (
-                  <Link onClick={handleLogout}>
+                  <Link>
                     <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
                     {t('label.logout')}
                   </Link>
