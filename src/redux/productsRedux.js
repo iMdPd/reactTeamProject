@@ -7,6 +7,7 @@ export const getComparedProducts = ({ products }) =>
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
+export const getOne = ({ products }, id) => products.find(product => product.id === id);
 
 export const getSaleProducts = ({ products }) =>
   products.filter(({ price, oldPrice }) => price < oldPrice);
