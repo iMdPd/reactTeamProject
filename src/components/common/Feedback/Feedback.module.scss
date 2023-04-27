@@ -1,0 +1,26 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  text-align: center;
+
+  div {
+    margin-bottom: 1rem;
+    white-space: normal;
+  }
+
+  .author {
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin: 0 0 0 1rem;
+      text-align: left;
+
+    }
+
+    .image {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

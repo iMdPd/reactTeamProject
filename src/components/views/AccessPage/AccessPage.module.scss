@@ -1,0 +1,57 @@
+@import "../../../styles/settings.scss";
+
+.wrapper {
+  height: calc(100vh - 151px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 12px;
+}
+
+.root {
+  border: 1px solid #d1cdcd;
+  padding: 15px 35px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 0 rgba(209, 209, 209, 1);
+
+  .title {
+    margin-bottom: 35px;
+  }
+
+  .formControl {
+    margin-bottom: 15px;
+    align-items: center;
+
+    .label {
+      margin: 0;
+      text-align: right;
+      padding-left: 0;
+    }
+  }
+
+  .button {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  .separate {
+    margin: 5px;
+  }
+
+  .description {
+    margin: 0;
+    padding-right: 10px;
+    font-size: 12px;
+    display: inline;
+  }
+
+  .redirect {
+    margin: 0;
+    font-size: 12px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

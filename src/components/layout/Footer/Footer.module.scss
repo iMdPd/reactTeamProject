@@ -7,7 +7,7 @@
 
     .menuWrapper {
       h6 {
-        color: $azure-white;
+        color: $footer-menu-tx;
         text-transform: uppercase;
         margin: 0 0 1rem 0;
       }
@@ -20,10 +20,10 @@
           a {
             font-size: 14px;
             line-height: 30px;
-            color: $light-grey;
+            color: $footer-menu-wrapper-tx;
 
             &:hover {
-              color: $azure-white;
+              color: $footer-menu-wrapper-hover-tx;
             }
           }
         }
@@ -51,8 +51,8 @@
     .copyright {
       p {
         margin: 0;
-        color: $light-grey;
         font-size: 11px;
+        color: $footer-copyright-color;
         line-height: 26px;
       }
     }
@@ -68,11 +68,11 @@
           margin-left: 1rem;
 
           a {
-            color: $light-grey;
+            color: $footer-social-media-color;
             text-decoration: none;
 
             &:hover {
-              color: $primary;
+              color: $footer-social-medi-hover-color;
               animation: pulsing-icon $animation-time-icon $animation-iteration-count;
             }
           }
