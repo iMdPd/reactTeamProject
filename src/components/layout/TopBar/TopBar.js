@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 const TopBar = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
+  const currentLangName = currentLang === 'pl' ? t('label.polish') : t('label.english');
 
   const handleLangChange = e => {
     const lang = e.target.dataset.id;
@@ -34,7 +35,7 @@ const TopBar = () => {
               </li>
               <li className={styles.languages}>
                 <a href='#'>
-                  {t('label.english')}{' '}
+                  {currentLangName}{' '}
                   <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
                 </a>
                 <ul>
