@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './Brand.module.scss';
 
 const Brand = ({ name, logo }) => {
-  console.log(logo);
   return (
-    <div className={styles.class}>
+    <div className={styles.brand}>
       <img src={`${process.env.PUBLIC_URL}/images/brands/${logo}.jpg`} alt={name} />
     </div>
   );
