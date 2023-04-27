@@ -2,7 +2,13 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCaretDown,
+  faUser,
+  faLock,
+  faBars,
+  faPowerOff,
+} from '@fortawesome/free-solid-svg-icons';
 
 import styles from './TopBar.module.scss';
 import { Link } from 'react-router-dom';
@@ -56,7 +62,7 @@ const TopBar = () => {
               <li>
                 {userData ? (
                   <Link>
-                    <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
+                    <FontAwesomeIcon className={styles.icon} icon={faPowerOff} />{' '}
                     {t('label.logout')}
                   </Link>
                 ) : (
