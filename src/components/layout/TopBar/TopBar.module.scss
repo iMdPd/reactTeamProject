@@ -30,6 +30,36 @@
       }
     }
   }
+
+  .languages {
+    position: relative;
+
+    ul {
+      position: absolute;
+      display: none;
+      margin-top: -1rem;
+
+
+      li {
+        margin: 0;
+        display: block;
+        line-height: 2rem;
+        padding: 0 1rem 0 1rem;
+        color: $header-topbar-bg;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $header-topbar-bg;
+          color: $header-links;
+        }
+      }
+    }
+
+    &:hover > ul {
+      display: block;
+      background-color: $header-links;
+    }
+  }
 }
 
 @media (max-width: 577px) {

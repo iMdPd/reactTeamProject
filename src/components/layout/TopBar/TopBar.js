@@ -15,8 +15,18 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const TopBar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const currentLangName = currentLang === 'pl' ? t('label.polish') : t('label.english');
   const userData = JSON.parse(sessionStorage.getItem('userData'));
+
+  const handleLangChange = e => {
+    const lang = e.target.dataset.id;
+
+    if (lang !== currentLang) {
+      i18n.changeLanguage(lang);
+    }
+  };
 
   return (
     <div className={styles.root}>
@@ -30,11 +40,19 @@ const TopBar = () => {
                   <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
                 </a>
               </li>
-              <li>
+              <li className={styles.languages}>
                 <a href='#'>
-                  {t('label.english')}{' '}
+                  {currentLangName}{' '}
                   <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
                 </a>
+                <ul>
+                  <li data-id='en' onClick={handleLangChange}>
+                    {t('label.english')}
+                  </li>
+                  <li data-id='pl' onClick={handleLangChange}>
+                    {t('label.polish')}
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href='#'>
