@@ -7,14 +7,12 @@ import { getOne } from '../../../redux/productsRedux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faStar,
-  faExchangeAlt,
   faShoppingBasket,
   faChevronRight,
   faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
+import ProductBoxContent from '../../common/ProductBox/ProductBoxContent';
 
 const Promoted = () => {
   const product = useSelector(state => getOne(state, 'aenean-ru-bristique-1'));
@@ -30,13 +28,13 @@ const Promoted = () => {
                 <div className={'col-auto ' + styles.dots}>
                   <ul>
                     <li>
-                      <a></a>
+                      <a>.</a>
                     </li>
                     <li>
-                      <a></a>
+                      <a>.</a>
                     </li>
                     <li>
-                      <a></a>
+                      <a>.</a>
                     </li>
                   </ul>
                 </div>
@@ -44,7 +42,7 @@ const Promoted = () => {
               <img
                 className={styles.image}
                 alt={product.name}
-                src={`${process.env.PUBLIC_URL}/images/products/Aenean Ru Bristique 1.jpg`}
+                src={`${process.env.PUBLIC_URL}/images/products/aenean-ru-bristique-1.jpg`}
               />
               <div className={styles.button}>
                 <Button variant='small'>
@@ -71,60 +69,14 @@ const Promoted = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.contentbox}>
-              <div className={styles.content}>
-                <h5>{product.name}</h5>
-                <div className={styles.stars}>
-                  {[...Array(5).keys()].map(i => (
-                    <a key={i} href='#'>
-                      {' '}
-                      <FontAwesomeIcon icon={i <= product.stars ? faStar : farStar}>
-                        {' '}
-                        {i} stars{' '}
-                      </FontAwesomeIcon>{' '}
-                    </a>
-                  ))}
-                </div>
-              </div>
-              <div className={styles.line}></div>
-              <div className={styles.actions}>
-                <div className={styles.outlines}>
-                  <Button
-                    className={product.compare && styles.compare}
-                    variant='outline'
-                  >
-                    <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
-                  </Button>
-                  <Button
-                    className={product.favorite && styles.favorite}
-                    variant='outline'
-                  >
-                    <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-                  </Button>
-                  <Button
-                    className={product.compare && styles.compare}
-                    variant='outline'
-                  >
-                    <FontAwesomeIcon icon={faExchangeAlt}>
-                      Add to compare
-                    </FontAwesomeIcon>
-                  </Button>
-                </div>
-                <div className={styles.price}>
-                  {product.oldPrice && <p>${product.oldPrice}</p>}
-                  <Button noHover variant='small'>
-                    $ {product.price}
-                  </Button>
-                </div>
-              </div>
-            </div>
+            <ProductBoxContent key={product.id} {...product} />
           </section>
           <section className={'col-8 ' + styles.productFeatured}>
             <div className={styles.photo}>
               <img
                 className={styles.image}
                 alt={product.name}
-                src={`${process.env.PUBLIC_URL}/images/products/Aenean Ru Bristique 3.jpg`}
+                src={`${process.env.PUBLIC_URL}/images/products/aenean-ru-bristique-2.jpg`}
               />
               <div className={styles.title}>
                 <div className={styles.text}>

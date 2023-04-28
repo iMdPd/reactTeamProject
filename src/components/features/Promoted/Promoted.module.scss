@@ -44,7 +44,7 @@
           ul {
             margin: 0;
             list-style: none;
-            transform: translateY(10px);
+            transform: translateY(-2px);
 
             li {
               display: inline-block;
@@ -281,18 +281,3 @@
   }
 }
 
-/*
-@media (max-width: 577px) {
-  .root {
-    margin: 20px auto;
-    max-width: 300px;
-  }
-}
-
-@media (min-width: 578px) and (max-width: 991px) {
-  .root {
-    margin: 20px auto;
-    max-width: 300px;
-  }
-}
- */
