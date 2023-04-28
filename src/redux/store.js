@@ -6,6 +6,7 @@ import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import viewportModeReducer from './viewportModeRedux';
 import feedbacksReducer from './feedbacksRedux';
+import newsletterReducer from './newsletterRedux';
 
 // define reducers
 const reducers = {
@@ -14,6 +15,7 @@ const reducers = {
   categories: categoriesReducer,
   products: productsReducer,
   feedbacks: feedbacksReducer,
+  newsletter: newsletterReducer,
 };
 
 // add blank reducers for initial state properties without reducers

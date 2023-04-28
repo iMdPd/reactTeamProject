@@ -17,13 +17,12 @@ const Footer = ({ pathname }) => {
   const { t } = useTranslation();
 
   return (
-    pathname !== '/login' &&
-    pathname !== '/signup' && (
-      <footer className={styles.root}>
+    <footer className={styles.root}>
+      {pathname !== '/login' && pathname !== '/signup' && (
         <div className={styles.footerMenu}>
           <div className='container'>
-            <div className='row'>
-              <div className='col'>
+            <div className='row text-center text-md-left'>
+              <div className='col-12 col-md-6 col-lg-3'>
                 <div className={styles.menuWrapper}>
                   <h6>{t('label.information')}</h6>
                   <ul>
@@ -42,7 +41,7 @@ const Footer = ({ pathname }) => {
                   </ul>
                 </div>
               </div>
-              <div className='col'>
+              <div className='col-12 col-md-6 col-lg-3'>
                 <div className={styles.menuWrapper}>
                   <h6>{t('label.myAccount')}</h6>
                   <ul>
@@ -61,7 +60,7 @@ const Footer = ({ pathname }) => {
                   </ul>
                 </div>
               </div>
-              <div className='col'>
+              <div className='col-12 col-md-6 col-lg-3'>
                 <div className={styles.menuWrapper}>
                   <h6>{t('label.information')}</h6>
                   <ul>
@@ -80,7 +79,7 @@ const Footer = ({ pathname }) => {
                   </ul>
                 </div>
               </div>
-              <div className='col'>
+              <div className='col-12 col-md-6 col-lg-3'>
                 <div className={styles.menuWrapper}>
                   <h6>{t('label.orders')}</h6>
                   <ul>
@@ -98,59 +97,61 @@ const Footer = ({ pathname }) => {
                     </li>
                   </ul>
                 </div>
-                <img src='./images/cards.png' alt={t('label.supportedCreditCards')} />
+                <img
+                  className={styles.paymentCards}
+                  src='./images/cards.png'
+                  alt={t('label.supportedCreditCards')}
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className={styles.bottomBar}>
-          <div className='container'>
-            <div className='row align-items-center'>
-              <div className='col'></div>
-              <div className={'col text-center ' + styles.copyright}>
-                <p>©Copyright 2016 Bazar | All Rights Reserved</p>
-              </div>
-              <div className={'col text-right ' + styles.socialMedia}>
-                <ul>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faTwitter}>Twitter</FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faFacebookF}>Facebook</FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faYoutube}>YouTube</FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faGooglePlusG}>
-                        Google Plus
-                      </FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faLinkedinIn}>LinkedIn</FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faPinterestP}>Pinterest</FontAwesomeIcon>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+      )}
+      <div className={styles.bottomBar}>
+        <div className='container'>
+          <div className='row  align-items-lg-center '>
+            <div className='col-12 col-lg-4 text-center'></div>
+            <div className={'col text-left text-lg-center ' + styles.copyright}>
+              <p>©Copyright 2016 Bazar | All Rights Reserved</p>
+            </div>
+            <div className={'col text-right ' + styles.socialMedia}>
+              <ul>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faTwitter}>Twitter</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faFacebookF}>Facebook</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faYoutube}>YouTube</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faGooglePlusG}>Google Plus</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faLinkedinIn}>LinkedIn</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faPinterestP}>Pinterest</FontAwesomeIcon>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </footer>
-    )
+      </div>
+    </footer>
   );
 };
 
