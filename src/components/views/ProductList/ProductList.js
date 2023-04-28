@@ -12,9 +12,11 @@ import { faArrowCircleDown, faList, faTable } from '@fortawesome/free-solid-svg-
 import { Form } from 'react-bootstrap';
 
 const displayedProducts = 8;
+const time = 250;
 
 const ProductList = () => {
   const [displayProducts, setDisplayProducts] = useState(displayedProducts);
+  const [visible, setVisible] = useState(true);
   const [sortBy, setSortBy] = useState('');
 
   const { categoryId } = useParams();
@@ -22,6 +24,12 @@ const ProductList = () => {
   const categoryProducts = useSelector(state =>
     getProductsByCategory(state, categoryId)
   );
+
+  const handleSortChange = target => {
+    setVisible(false);
+    setTimeout(() => setSortBy(target), time);
+    setTimeout(() => setVisible(true), time * 2);
+  };
 
   const sortedProducts = condition => {
     switch (condition) {
@@ -66,7 +74,7 @@ const ProductList = () => {
                     className={styles.select}
                     size='sm'
                     defaultValue={0}
-                    onChange={e => setSortBy(e.target.value)}
+                    onChange={e => handleSortChange(e.target.value)}
                   >
                     <option value='0'>Select</option>
                     <option value='priceLow'>Price: Lowest first</option>
@@ -92,7 +100,11 @@ const ProductList = () => {
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div
+              className={
+                'row ' + styles.productsContainer + ' ' + (!visible && styles.fade)
+              }
+            >
               {sortedProducts(sortBy)
                 .slice(0, displayProducts)
                 .map(product => (
