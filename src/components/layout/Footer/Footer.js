@@ -17,9 +17,8 @@ const Footer = ({ pathname }) => {
   const { t } = useTranslation();
 
   return (
-    pathname !== '/login' &&
-    pathname !== '/signup' && (
-      <footer className={styles.root}>
+    <footer className={styles.root}>
+      {pathname !== '/login' && pathname !== '/signup' && (
         <div className={styles.footerMenu}>
           <div className='container'>
             <div className='row text-center text-md-left'>
@@ -107,55 +106,52 @@ const Footer = ({ pathname }) => {
             </div>
           </div>
         </div>
-        <div className={styles.bottomBar}>
-          <div className='container'>
-            <div className='row  align-items-lg-center '>
-              <div className='col-12 col-lg-4 text-center'></div>
-              <div className={'col text-left text-lg-center ' + styles.copyright}>
-                <p>©Copyright 2016 Bazar | All Rights Reserved</p>
-              </div>
-              <div className={'col text-right ' + styles.socialMedia}>
-                <ul>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faTwitter}>Twitter</FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faFacebookF}>Facebook</FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faYoutube}>YouTube</FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faGooglePlusG}>
-                        Google Plus
-                      </FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faLinkedinIn}>LinkedIn</FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='#'>
-                      <FontAwesomeIcon icon={faPinterestP}>Pinterest</FontAwesomeIcon>
-                    </a>
-                  </li>
-                </ul>
-                =======
-              </div>
+      )}
+      <div className={styles.bottomBar}>
+        <div className='container'>
+          <div className='row  align-items-lg-center '>
+            <div className='col-12 col-lg-4 text-center'></div>
+            <div className={'col text-left text-lg-center ' + styles.copyright}>
+              <p>©Copyright 2016 Bazar | All Rights Reserved</p>
+            </div>
+            <div className={'col text-right ' + styles.socialMedia}>
+              <ul>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faTwitter}>Twitter</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faFacebookF}>Facebook</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faYoutube}>YouTube</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faGooglePlusG}>Google Plus</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faLinkedinIn}>LinkedIn</FontAwesomeIcon>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon icon={faPinterestP}>Pinterest</FontAwesomeIcon>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </footer>
-    )
+      </div>
+    </footer>
   );
 };
 

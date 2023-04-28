@@ -14,16 +14,16 @@ import Loading from './components/common/Loading/Loading';
 import { AccessPage } from './components/views/AccessPage/AccessPage';
 import { ProtectedRoute } from './components/features/ProtectedRoute/ProtectedRoute';
 
-const userData = JSON.parse(sessionStorage.getItem('userData'));
+const userEmail = sessionStorage.getItem('userEmail');
 
 const App = () => {
-  const [user, setUser] = useState(userData);
+  const [user, setUser] = useState(userEmail);
 
   return (
     <Suspense fallback={<Loading />}>
       <Provider store={store}>
         <BrowserRouter>
-          <MainLayout>
+          <MainLayout user={user}>
             <Routes>
               <Route
                 exact
