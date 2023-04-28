@@ -1,0 +1,26 @@
+@import "../../../styles/settings.scss";
+
+.starRating {
+  display: flex;
+  justify-content: center;
+}
+
+.star {
+  cursor: pointer;
+}
+
+.defaultStar {
+  color: $sr-star-color-default;
+}
+
+.hoverStar {
+  color: $sr-star-hover-color;
+}
+
+.clickedStar {
+  color: $sr-star-click-color;
+}
+
+.userRatedStar {
+  color: $sr-star-user-rating-color;
+}

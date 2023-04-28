@@ -1,0 +1,14 @@
+.carousel {
+  overflow: hidden;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: 0.5s;
+}
+
+.carouselItem {
+  display: inline-block;
+  padding: 0 1rem 0 1rem;
+  width: 100%;
+}
