@@ -51,8 +51,8 @@
     .copyright {
       p {
         margin: 0;
+        font-size: 11px;
         color: $footer-copyright-color;
-        font-size: 14px;
         line-height: 26px;
       }
     }
@@ -79,5 +79,12 @@
         }
       }
     }
+  }
+}
+
+@media (max-width:990px) and (min-width: 768px) {
+  .paymentCards {
+    position: relative;
+    right: 50px;
   }
 }
