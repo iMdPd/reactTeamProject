@@ -236,13 +236,11 @@ const initialState = {
     { id: 3, name: 'Audi', logo: 'AudiLogo' },
     { id: 4, name: 'Batman', logo: 'BatmanLogo' },
     { id: 5, name: 'Jewellery', logo: 'JewelleryLogo' },
-    { id: 7, name: 'Adidas', logo: 'AdidasLogo' },
-    { id: 8, name: 'Audi', logo: 'AudiLogo' },
-    { id: 9, name: 'Microsoft', logo: 'MicrosoftLogo' },
-    { id: 10, name: 'Audi', logo: 'AudiLogo' },
-    { id: 11, name: 'Adidas', logo: 'AdidasLogo' },
-    { id: 12, name: 'Jewellery', logo: 'JewelleryLogo' },
-    { id: 13, name: 'Batman', logo: 'BatmanLogo' },
+    { id: 6, name: 'Volvo', logo: 'VolvoLogo' },
+    { id: 8, name: 'Fantail', logo: 'FantailLogo' },
+    { id: 9, name: 'Flyingcarpet', logo: 'FlyingcarpetLogo' },
+    { id: 10, name: 'Home', logo: 'HomeLogo' },
+    { id: 11, name: 'Opel', logo: 'OpelLogo' },
   ],
 };
 
