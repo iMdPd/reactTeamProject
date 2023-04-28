@@ -105,3 +105,46 @@
     max-width: 300px;
   }
 }
+
+@media (max-width: 991px) {
+  .root {
+    margin-top: -30px;
+    .contentbox {
+      margin-top: 20px;
+
+      .content {
+        h5 {
+          font-size: 12px;
+          line-height: 18px;
+        }
+        .stars {
+          font-size: 12px;
+        }
+      }
+
+      .actions {
+        padding: 10px 5px 5px 5px;
+      }
+
+      .outlines {
+        .favorite {
+          & > svg {
+            scale: 1;
+          }
+        }
+
+        .compare {
+          & > svg {
+            scale: 1;
+          }
+        }
+      }
+    }
+
+    .price {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Promoted.module.scss';
@@ -13,15 +13,24 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 import ProductBoxContent from '../../common/ProductBox/ProductBoxContent';
+import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
 
 const Promoted = () => {
   const product = useSelector(state => getOne(state, 'aenean-ru-bristique-1'));
+
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const handlePageSwipe = newPage => {
+    setActiveSlide(newPage);
+  };
 
   return (
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <section className={'col-4 ' + styles.productCart}>
+          <section
+            className={'col-xl-4 col-lg-4 col-md-4 col-sm-12 ' + styles.productCart}
+          >
             <div className={styles.photobox}>
               <div className={styles.deals}>
                 <h3 className={styles.text}>hot deals</h3>
@@ -71,24 +80,29 @@ const Promoted = () => {
             </div>
             <ProductBoxContent key={product.id} {...product} />
           </section>
-          <section className={'col-8 ' + styles.productFeatured}>
-            <div className={styles.photo}>
-              <img
-                className={styles.image}
-                alt={product.name}
-                src={`${process.env.PUBLIC_URL}/images/products/aenean-ru-bristique-2.jpg`}
-              />
-              <div className={styles.title}>
-                <div className={styles.text}>
-                  <p className={styles.textOne}>
-                    indoor <span>furniture</span>
-                  </p>
-                  <p className={styles.textTwo}>save up to 50% of all furniture</p>
+          <section
+            className={'col-xl-8 col-lg-8 col-md-8 col-sm-12 ' + styles.productFeatured}
+          >
+            <Carousel actionSwiped={handlePageSwipe} initialIndex={activeSlide}>
+              <CarouselItem>
+                <div className={styles.photo}>
+                  <img
+                    className={styles.image}
+                    alt={product.name}
+                    src={`${process.env.PUBLIC_URL}/images/products/aenean-ru-bristique-2.jpg`}
+                  />
+                  <div className={styles.title}>
+                    <div className={styles.text}>
+                      <p className={styles.textOne}>
+                        indoor <span>furniture</span>
+                      </p>
+                      <p className={styles.textTwo}>save up to 50% of all furniture</p>
+                    </div>
+                  </div>
+                  <button>shop now</button>
                 </div>
-              </div>
-              <button>shop now</button>
-            </div>
-
+              </CarouselItem>
+            </Carousel>
             <div className={styles.buttons}>
               <button className={styles.button}>
                 <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
