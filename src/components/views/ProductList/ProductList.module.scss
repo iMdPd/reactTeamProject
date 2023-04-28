@@ -73,6 +73,7 @@
 
   .productsContainer {
     transition: all 0.25s;
+    min-inline-size: -webkit-fill-available;
   }
 
   .fade {
