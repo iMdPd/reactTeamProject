@@ -14,8 +14,8 @@ const MainLayout = ({ children }) => {
     <div>
       <Header pathname={pathname} />
       {children}
-      {pathname !== '/signup' && pathname !== '/login' && <StickyBar />}
-      {pathname !== '/signup' && pathname !== '/login' && <Feedbacks />}
+      {pathname === '/' && <StickyBar />}
+      {pathname === '/' && <Feedbacks />}
       <Footer pathname={pathname} />
     </div>
   );
