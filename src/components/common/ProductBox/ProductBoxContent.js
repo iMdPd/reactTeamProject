@@ -21,9 +21,6 @@ const ProductBoxContent = ({ userRating: initialUserRating, ...props }) => {
   const { t } = useTranslation();
   const [userRating, setUserRating] = useState(initialUserRating || 0);
 
-  const [isShown, setIsShown] = useState(false);
-  const handleShow = () => setIsShown(true);
-
   const dispatch = useDispatch();
   const products = useSelector(getComparedProducts);
 
@@ -45,7 +42,7 @@ const ProductBoxContent = ({ userRating: initialUserRating, ...props }) => {
   };
 
   return (
-    <div className={styles.root} onMouseEnter={handleShow}>
+    <div className={styles.root}>
       <div className={styles.contentbox}>
         <div className={styles.content}>
           <h5>{props.name}</h5>

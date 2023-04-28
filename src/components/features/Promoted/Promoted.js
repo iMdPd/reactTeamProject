@@ -28,13 +28,13 @@ const Promoted = () => {
                 <div className={'col-auto ' + styles.dots}>
                   <ul>
                     <li>
-                      <a></a>
+                      <a>.</a>
                     </li>
                     <li>
-                      <a></a>
+                      <a>.</a>
                     </li>
                     <li>
-                      <a></a>
+                      <a>.</a>
                     </li>
                   </ul>
                 </div>
