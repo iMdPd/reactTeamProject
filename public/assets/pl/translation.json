@@ -49,10 +49,12 @@
   "label.addToCompare": "Do porównania",
   "label.USD": "USD",
   "label.english": "Angielski",
+  "label.polish": "Polski",
   "label.help": "Pomoc",
   "label.register": "Rejestracja",
   "label.page": "strona",
   "label.newFurniture": "Nowe meble",
+  "label.logout": "wyloguj",
 
   "label.loading": "Trwa ładowanie...",
   "label.freeShipping": {

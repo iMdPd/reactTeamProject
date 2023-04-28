@@ -2,14 +2,31 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCaretDown,
+  faUser,
+  faLock,
+  faBars,
+  faPowerOff,
+} from '@fortawesome/free-solid-svg-icons';
 
 import styles from './TopBar.module.scss';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const TopBar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const currentLangName = currentLang === 'pl' ? t('label.polish') : t('label.english');
+  const userData = JSON.parse(sessionStorage.getItem('userData'));
+
+  const handleLangChange = e => {
+    const lang = e.target.dataset.id;
+
+    if (lang !== currentLang) {
+      i18n.changeLanguage(lang);
+    }
+  };
 
   return (
     <div className={styles.root}>
@@ -23,11 +40,19 @@ const TopBar = () => {
                   <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
                 </a>
               </li>
-              <li>
+              <li className={styles.languages}>
                 <a href='#'>
-                  {t('label.english')}{' '}
+                  {currentLangName}{' '}
                   <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
                 </a>
+                <ul>
+                  <li data-id='en' onClick={handleLangChange}>
+                    {t('label.english')}
+                  </li>
+                  <li data-id='pl' onClick={handleLangChange}>
+                    {t('label.polish')}
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href='#'>
@@ -40,16 +65,30 @@ const TopBar = () => {
           <div className={`col text-right ${styles.topMenu}`}>
             <ul>
               <li>
-                <Link to='/login'>
-                  <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
-                  {t('label.login')}
-                </Link>
+                {userData ? (
+                  <span>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                    {userData.email}
+                  </span>
+                ) : (
+                  <Link to='/login'>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                    {t('label.login')}
+                  </Link>
+                )}
               </li>
               <li>
-                <Link to='/signup'>
-                  <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
-                  {t('label.register')}
-                </Link>
+                {userData ? (
+                  <Link>
+                    <FontAwesomeIcon className={styles.icon} icon={faPowerOff} />{' '}
+                    {t('label.logout')}
+                  </Link>
+                ) : (
+                  <Link to='/signup'>
+                    <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
+                    {t('label.register')}
+                  </Link>
+                )}
               </li>
               <li>
                 <Link to='/'>

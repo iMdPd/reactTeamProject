@@ -31,17 +31,11 @@ export const AccessPage = ({ setUser }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setUser({
-      email: `${userEmail}`,
-      password: `${password}`,
-    });
+    setUser(userEmail);
 
-    const userData = {
-      email: `${userEmail}`,
-      password: `${password}`,
-    };
     if (userEmail && password) {
-      sessionStorage.setItem('userData', JSON.stringify(userData));
+      sessionStorage.setItem('userEmail', userEmail);
+      sessionStorage.setItem('userPassword', password);
     }
 
     navigate('/');
