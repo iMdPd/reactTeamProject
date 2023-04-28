@@ -1,0 +1,32 @@
+@import "../../../styles/settings.scss";
+
+.dots {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  ul {
+    margin: 0;
+    list-style: none;
+    transform: translateY(-2px);
+
+    li {
+      display: inline-block;
+      margin-left: 0.5rem;
+
+      a {
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 6px;
+        background-color: $nf-menu-dots;
+        font-size: 0;
+
+        &.active,
+        &:hover {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
