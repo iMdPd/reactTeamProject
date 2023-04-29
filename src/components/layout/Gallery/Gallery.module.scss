@@ -12,6 +12,7 @@
       display: flex;
       flex: 1;
       flex-direction: column;
+      max-width: 50%;
 
       h3 {
         position: relative;
@@ -185,8 +186,7 @@
 
         .sliderImage {
           display: flex;
-          gap: 10px;
-          overflow: hidden;
+          overflow-x: auto;
 
           .thumbnail {
             position: relative;
@@ -288,6 +288,155 @@
       .rightSide {
         flex: 1 1 50%;
         max-width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .root {
+    .gallery {
+      .leftSide {
+        flex: 1 1 50%;
+        max-width: 50%;
+
+        .sectionButtons {
+          .button {
+            font-size: 12px;
+          }
+        }
+
+        .leftSideMainImage {
+          .productButtons {
+            flex-direction: column;
+            top: 100px;
+            left: 15px;
+            right: unset;
+            gap: 10px;
+            font-size: 10px;
+
+            .tooltipButton {
+              width: 35px;
+              height: 35px;
+            }
+          }
+        }
+
+        .productInfo {
+          width: 180px;
+          height: 90px;
+          top: 300px;
+          left: 150px;
+          gap: 10px;
+          z-index: 2;
+
+          h5 {
+            font-size: 13px;
+          }
+
+          .productPrices {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $gal-product-prices-bg;
+            opacity: 0.9;
+            z-index: 3;
+          }
+        }
+      }
+
+      .rightSide {
+        flex: 1 1 50%;
+        max-width: 50%;
+
+        .productInfo {
+          top: 40px;
+          left: 20px;
+          gap: 15px;
+          z-index: 2;
+
+          .price {
+            .priceText {
+              font-size: 16px;
+            }
+
+            .priceValue {
+              font-size: 32px;
+            }
+          }
+
+          h5 {
+            font-size: 32px;
+          }
+        }
+
+        .shopButton {
+          top: 170px;
+          left: 40px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .gallery {
+      .leftSide {
+        flex: 1 1 100%;
+        max-width: 100%;
+
+        .leftSideMainImage {
+          width: 100%;
+          height: 350px;
+          position: relative;
+          z-index: 1;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          .productButtons {
+            flex-direction: column;
+            top: 70px;
+            gap: 10px;
+            font-size: 10px;
+
+            .tooltipButton {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+
+        .productInfo {
+          width: 200px;
+          height: 100px;
+          top: 200px;
+          left: 300px;
+          gap: 5px;
+          z-index: 2;
+
+          h5 {
+            text-align: center;
+            font-size: 15px;
+            word-spacing: normal;
+          }
+
+          .productPrices {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+
+      .rightSide {
+        display: none;
       }
     }
   }

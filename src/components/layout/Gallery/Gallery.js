@@ -19,6 +19,7 @@ import {
   updateUserRating,
 } from '../../../redux/productsRedux';
 import StarRating from '../../features/StarRating/StarRating';
+import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
 
 const Gallery = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,12 @@ const Gallery = () => {
     if (comparedProducts.length < 4 || galleryProduct.compare === true) {
       dispatch(toggleCompare(id));
     }
+  };
+
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const handleImageSwipe = newImage => {
+    setActiveSlide(newImage);
   };
 
   return (
@@ -137,48 +144,70 @@ const Gallery = () => {
               </div>
             </div>
             <div className={styles.slider}>
-              <Button className={styles.sliderButton} variant='outline'>
+              <Button
+                className={styles.sliderButton}
+                variant='outline'
+                onClick={() => handleImageSwipe(activeSlide - 1)}
+              >
                 <FontAwesomeIcon icon={faChevronLeft} />
               </Button>
-              <div className={styles.sliderImage}>
-                <div className={styles.thumbnail}>
-                  <img
-                    src='https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg'
-                    alt='product1'
-                  ></img>
+              <Carousel actionSwiped={handleImageSwipe} initialIndex={activeSlide}>
+                <div className={styles.sliderImage}>
+                  <CarouselItem>
+                    <div className={styles.thumbnail}>
+                      <img
+                        src='https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg'
+                        alt='product1'
+                      ></img>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className={styles.thumbnail}>
+                      <img
+                        src='https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg'
+                        alt='product2'
+                      ></img>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className={styles.thumbnail}>
+                      <img
+                        src='https://images.pexels.com/photos/11112728/pexels-photo-11112728.jpeg'
+                        alt='product3'
+                      ></img>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className={styles.thumbnail}>
+                      <img
+                        src='https://images.pexels.com/photos/3965513/pexels-photo-3965513.jpeg'
+                        alt='product4'
+                      ></img>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className={styles.thumbnail}>
+                      <img
+                        src='https://images.pexels.com/photos/4172379/pexels-photo-4172379.jpeg'
+                        alt='product5'
+                      ></img>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className={styles.thumbnail}>
+                      <img
+                        src='https://images.pexels.com/photos/11112729/pexels-photo-11112729.jpeg'
+                        alt='product6'
+                      ></img>
+                    </div>
+                  </CarouselItem>
                 </div>
-                <div className={styles.thumbnail}>
-                  <img
-                    src='https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg'
-                    alt='product2'
-                  ></img>
-                </div>
-                <div className={styles.thumbnail}>
-                  <img
-                    src='https://images.pexels.com/photos/11112728/pexels-photo-11112728.jpeg'
-                    alt='product3'
-                  ></img>
-                </div>
-                <div className={styles.thumbnail}>
-                  <img
-                    src='https://images.pexels.com/photos/3965513/pexels-photo-3965513.jpeg'
-                    alt='product4'
-                  ></img>
-                </div>
-                <div className={styles.thumbnail}>
-                  <img
-                    src='https://images.pexels.com/photos/4172379/pexels-photo-4172379.jpeg'
-                    alt='product5'
-                  ></img>
-                </div>
-                <div className={styles.thumbnail}>
-                  <img
-                    src='https://images.pexels.com/photos/11112729/pexels-photo-11112729.jpeg'
-                    alt='product6'
-                  ></img>
-                </div>
-              </div>
-              <Button className={styles.sliderButton} variant='outline'>
+              </Carousel>
+              <Button
+                className={styles.sliderButton}
+                variant='outline'
+                onClick={() => handleImageSwipe(activeSlide + 1)}
+              >
                 <FontAwesomeIcon icon={faChevronRight} />
               </Button>
             </div>
