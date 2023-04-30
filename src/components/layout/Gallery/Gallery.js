@@ -29,12 +29,36 @@ const Gallery = () => {
     return products.find(product => product.section === 'featured') || {};
   });
 
-  const handleButtonClick = (productSection, e) => {
+  const [activeTab, setActiveTab] = useState('featured');
+
+  const getThumbnailsByActiveTab = () => {
+    const thumbnails = products.filter(
+      product => product.thumbnailCategory === activeTab
+    );
+    return thumbnails;
+  };
+
+  const [showFade, setShowFade] = useState(false);
+  const handleAnimationEnd = () => {
+    setShowFade(false);
+  };
+
+  const handleButtonClick = (selectedProduct, e) => {
     e.preventDefault();
     const product = products.find(
-      product => product.section.toLowerCase() === productSection
+      product => product.section.toLowerCase() === selectedProduct
     );
     setGalleryProduct(product);
+    setShowFade(true);
+    setActiveTab(selectedProduct);
+  };
+
+  const handleThumbnailClick = (thumbnail, e) => {
+    e.preventDefault();
+    if (galleryProduct.id !== thumbnail.id) {
+      setShowFade(true);
+      setGalleryProduct(products.find(product => product.id === thumbnail.id));
+    }
   };
 
   const handleToggleFavoriteProduct = (id, e) => {
@@ -91,7 +115,10 @@ const Gallery = () => {
                 Top rated
               </Button>
             </div>
-            <div className={styles.leftSideMainImage}>
+            <div
+              className={styles.leftSideMainImage + (showFade ? ' ' + styles.fade : '')}
+              onAnimationEnd={handleAnimationEnd}
+            >
               <img
                 src={`${process.env.PUBLIC_URL}/images/products/${galleryProduct.id}.jpg`}
                 alt={galleryProduct.name}
@@ -143,70 +170,47 @@ const Gallery = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.slider}>
+            <div
+              className={styles.slider + (showFade ? ' ' + styles.fade : '')}
+              onAnimationEnd={handleAnimationEnd}
+            >
               <Button
                 className={styles.sliderButton}
                 variant='outline'
-                onClick={() => handleImageSwipe(activeSlide - 1)}
+                onClick={e => {
+                  e.preventDefault();
+                  handleImageSwipe(activeSlide - 1);
+                }}
               >
                 <FontAwesomeIcon icon={faChevronLeft} />
               </Button>
               <Carousel actionSwiped={handleImageSwipe} initialIndex={activeSlide}>
                 <div className={styles.sliderImage}>
-                  <CarouselItem>
-                    <div className={styles.thumbnail}>
-                      <img
-                        src='https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg'
-                        alt='product1'
-                      ></img>
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className={styles.thumbnail}>
-                      <img
-                        src='https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg'
-                        alt='product2'
-                      ></img>
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className={styles.thumbnail}>
-                      <img
-                        src='https://images.pexels.com/photos/11112728/pexels-photo-11112728.jpeg'
-                        alt='product3'
-                      ></img>
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className={styles.thumbnail}>
-                      <img
-                        src='https://images.pexels.com/photos/3965513/pexels-photo-3965513.jpeg'
-                        alt='product4'
-                      ></img>
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className={styles.thumbnail}>
-                      <img
-                        src='https://images.pexels.com/photos/4172379/pexels-photo-4172379.jpeg'
-                        alt='product5'
-                      ></img>
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className={styles.thumbnail}>
-                      <img
-                        src='https://images.pexels.com/photos/11112729/pexels-photo-11112729.jpeg'
-                        alt='product6'
-                      ></img>
-                    </div>
-                  </CarouselItem>
+                  <div className={styles.thumbnailContainer}>
+                    <CarouselItem className={styles.carouselItemGallery}>
+                      {getThumbnailsByActiveTab().map(thumbnail => (
+                        <div
+                          className={styles.thumbnail}
+                          key={thumbnail.id}
+                          onClick={e => handleThumbnailClick(thumbnail, e)}
+                        >
+                          <img
+                            src={`${process.env.PUBLIC_URL}/images/products/${thumbnail.id}.jpg`}
+                            alt={thumbnail.name}
+                          />
+                        </div>
+                      ))}
+                    </CarouselItem>
+                  </div>
                 </div>
               </Carousel>
               <Button
                 className={styles.sliderButton}
                 variant='outline'
-                onClick={() => handleImageSwipe(activeSlide + 1)}
+                onClick={e => {
+                  e.preventDefault();
+                  handleImageSwipe(activeSlide + 1);
+                }}
               >
                 <FontAwesomeIcon icon={faChevronRight} />
               </Button>

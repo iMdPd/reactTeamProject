@@ -12,6 +12,9 @@ export const getOne = ({ products }, id) => products.find(product => product.id 
 export const getSaleProducts = ({ products }) =>
   products.filter(({ price, oldPrice }) => price < oldPrice);
 
+export const getThumbnailCategory = ({ products }, category) =>
+  products.filter(product => product.thumbnailCategory === category);
+
 /* action name creator */
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
