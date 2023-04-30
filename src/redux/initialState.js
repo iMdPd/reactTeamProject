@@ -934,6 +934,19 @@ const initialState = {
 
   viewportMode: {},
 
+  brands: [
+    { id: 1, name: 'Adidas', logo: 'AdidasLogo' },
+    { id: 2, name: 'Microsoft', logo: 'MicrosoftLogo' },
+    { id: 3, name: 'Audi', logo: 'AudiLogo' },
+    { id: 4, name: 'Batman', logo: 'BatmanLogo' },
+    { id: 5, name: 'Jewellery', logo: 'JewelleryLogo' },
+    { id: 6, name: 'Volvo', logo: 'VolvoLogo' },
+    { id: 8, name: 'Fantail', logo: 'FantailLogo' },
+    { id: 9, name: 'Flyingcarpet', logo: 'FlyingcarpetLogo' },
+    { id: 10, name: 'Home', logo: 'HomeLogo' },
+    { id: 11, name: 'Opel', logo: 'OpelLogo' },
+  ],
+
   feedbacks: [
     {
       id: '1',

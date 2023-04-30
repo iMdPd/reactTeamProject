@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faListUl } from '@fortawesome/free-solid-svg-icons';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
@@ -12,11 +14,41 @@ const MenuBar = ({ children }) => {
   return (
     <div className={styles.root}>
       <div className='container'>
-        <div className='row align-items-center'>
-          <div className='col'>
+        <nav className='row  flex-column-reverse  flex-xl-row  align-items-center '>
+          <div className='col d-flex justify-content-center align-items-center  my-2'>
             <ProductSearch />
+
+            <div className={styles.dropdown + ' d-md-none'}>
+              <FontAwesomeIcon className='mx-2' icon={faListUl} />
+
+              <ul className={styles.dropdownContent}>
+                <li>
+                  <a href='#' className={styles.active}>
+                    {t('label.homePage')}
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.furniture')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.chair')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.table')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.sofa')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.bedroom')}</a>
+                </li>
+                <li>
+                  <a href='#'>{t('label.blog')}</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className={'col-auto ' + styles.menu}>
+          <div className={'col-auto d-none d-md-flex ' + styles.menu}>
             <ul>
               <li>
                 <a href='#' className={styles.active}>
@@ -43,7 +75,7 @@ const MenuBar = ({ children }) => {
               </li>
             </ul>
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   );
