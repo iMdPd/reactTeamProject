@@ -1,0 +1,73 @@
+@import "../../../styles/settings.scss";
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $bl-box-bg;
+  border: solid 1px $bl-box-border;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 360px;
+  height: 290px;
+  object-fit: cover;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 312px;
+  height: 300px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.callendar,
+.comments {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.callendar svg,
+.comments svg {
+  margin-right: 10px;
+  width: 13px;
+  height: 14px;
+}
+
+.title {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.text {
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.blogButton {
+  align-self: center;
+  text-align: center;
+  width: 165px;
+  height: 45px;
+  font-size: 16px;
+  line-height: 45px;
+  background-color: $bl-button-bg;
+  color: $bl-button-tx;
+
+  &:hover {
+    background-color: $bl-button-hover-bg;
+    color: $bl-button-hover-tx;
+    text-decoration: none;
+  }
+}

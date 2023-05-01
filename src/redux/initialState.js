@@ -966,7 +966,7 @@ const initialState = {
   ],
   newsletter: ['test@test.pl', 'admin@admin.pl', '1@1.pl', '0@0.pl'],
 
-  blog: [
+  blogs: [
     {
       id: '1',
       image: 'https://images.pexels.com/photos/3653849/pexels-photo-3653849.jpeg',
