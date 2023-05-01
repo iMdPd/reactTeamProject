@@ -29,6 +29,7 @@ class NewFurniture extends React.Component {
     this.setState({ visible: false });
     setTimeout(() => this.setState({ activeCategory: newCategory }), time);
     setTimeout(() => this.setState({ visible: true }), time * 2);
+    this.setState({ activePage: 0 });
   }
 
   render() {
