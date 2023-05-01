@@ -4,7 +4,11 @@
   .panelBar {
     margin-bottom: 30px;
     position: relative;
-    border-bottom: 4px solid $nf-menu-line;
+
+    :global(.row) {
+      border-bottom: 4px solid $nf-menu-line;
+      width: 92%;
+    }
 
     .heading {
       position: relative;
@@ -27,39 +31,11 @@
         border-bottom: 4px solid $nf-menu-line-ornament;
       }
     }
-
-    .dots {
+    .dotsContainer {
       position: absolute;
       right: 0;
-      top: 0;
-
-      ul {
-        margin: 0;
-        padding: 0 0 0 1rem;
-        list-style: none;
-        background-color: $nf-menu-dots-bg;
-        transform: translateY(15px);
-
-        li {
-          display: inline-block;
-          margin-left: 0.5rem;
-
-          a {
-            display: block;
-            width: 13px;
-            height: 13px;
-            border-radius: 6px;
-            background-color: $nf-menu-dots;
-            font-size: 0;
-
-            &.active,
-            &:hover {
-              background-color: $nf-manu-hover-dots;
-              cursor: pointer;
-            }
-          }
-        }
-      }
+      top: 18px;
+      width: 100%;
     }
   }
 }
