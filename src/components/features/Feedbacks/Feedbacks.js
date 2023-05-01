@@ -1,10 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { getAll } from '../../../redux/feedbacksRedux';
 import { useSelector } from 'react-redux';
 import styles from './Feedbacks.module.scss';
 import Feedback from '../../common/Feedback/Feedback';
 import { useTranslation } from 'react-i18next';
 import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
+import Dots from '../../common/Dots/Dots';
 
 const Feedbacks = () => {
   const { t } = useTranslation();
@@ -16,24 +17,6 @@ const Feedbacks = () => {
     setActiveFeedback(newFeedback);
   };
 
-  const dots = useMemo(() => {
-    const dots = [];
-    for (let i = 0; i < feedbacks.length; i++) {
-      dots.push(
-        <li key={i}>
-          <a
-            onClick={() => handleFeedbackChange(i)}
-            className={i === activeFeedback && styles.active}
-          >
-            {t('label.feedback')} {i}
-          </a>
-        </li>
-      );
-    }
-
-    return dots;
-  }, [feedbacks.length, activeFeedback]);
-
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -42,8 +25,12 @@ const Feedbacks = () => {
             <div className={'col-auto ' + styles.heading}>
               <h3>{t('label.clientFeedback')}</h3>
             </div>
-            <div className={'col-auto ' + styles.dots}>
-              <ul>{dots}</ul>
+            <div className={styles.dotsContainer}>
+              <Dots
+                changeEvent={handleFeedbackChange}
+                activeNumber={activeFeedback}
+                dotsNumber={feedbacks.length}
+              />
             </div>
           </div>
         </div>

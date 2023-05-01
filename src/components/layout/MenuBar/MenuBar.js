@@ -1,4 +1,5 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl } from '@fortawesome/free-solid-svg-icons';
@@ -7,9 +8,14 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getAll } from '../../../redux/categoriesRedux';
 
-const MenuBar = ({ children }) => {
+const MenuBar = () => {
   const { t } = useTranslation();
+
+  const categories = useSelector(getAll);
 
   return (
     <div className={styles.root}>
@@ -51,27 +57,34 @@ const MenuBar = ({ children }) => {
           <div className={'col-auto d-none d-md-flex ' + styles.menu}>
             <ul>
               <li>
-                <a href='#' className={styles.active}>
+                <NavLink
+                  to='/'
+                  className={({ isActive }) => (isActive ? styles.active : undefined)}
+                >
                   {t('label.homePage')}
-                </a>
+                </NavLink>
               </li>
+              {categories.map(({ id }) => {
+                return (
+                  <li key={id}>
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? styles.active : undefined
+                      }
+                      to={`/shop/${id}`}
+                    >
+                      {t(`label.${id}`)}
+                    </NavLink>
+                  </li>
+                );
+              })}
               <li>
-                <a href='#'>{t('label.furniture')}</a>
-              </li>
-              <li>
-                <a href='#'>{t('label.chair')}</a>
-              </li>
-              <li>
-                <a href='#'>{t('label.table')}</a>
-              </li>
-              <li>
-                <a href='#'>{t('label.sofa')}</a>
-              </li>
-              <li>
-                <a href='#'>{t('label.bedroom')}</a>
-              </li>
-              <li>
-                <a href='#'>{t('label.blog')}</a>
+                <NavLink
+                  className={({ isActive }) => (isActive ? styles.active : undefined)}
+                  to='/blog'
+                >
+                  {t('label.blog')}
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -79,10 +92,6 @@ const MenuBar = ({ children }) => {
       </div>
     </div>
   );
-};
-
-MenuBar.propTypes = {
-  children: PropTypes.node,
 };
 
 export default MenuBar;

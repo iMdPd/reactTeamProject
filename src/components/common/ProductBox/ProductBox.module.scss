@@ -42,6 +42,25 @@
       bottom: 0;
     }
   }
+
+  &:hover {
+    .buttons {
+      visibility: visible;
+    }
+    .price > div {
+      background-color: $primary;
+    }
+  }
+
+  .price {
+    display: flex;
+    p {
+      margin: auto 3px;
+      color: $color-gray;
+      text-decoration: line-through;
+      font-weight: 200;
+    }
+  }
 }
 
 @media (max-width: 577px) {

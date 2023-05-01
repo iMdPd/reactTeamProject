@@ -1,3 +1,5 @@
+import { viewportModes } from '../settings';
+
 const initialState = {
   categories: [
     { id: 'bed', name: 'Bed' },
@@ -966,6 +968,9 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  viewportMode: {},
+
   brands: [
     { id: 1, name: 'Adidas', logo: 'AdidasLogo' },
     { id: 2, name: 'Microsoft', logo: 'MicrosoftLogo' },
@@ -978,6 +983,7 @@ const initialState = {
     { id: 10, name: 'Home', logo: 'HomeLogo' },
     { id: 11, name: 'Opel', logo: 'OpelLogo' },
   ],
+
   feedbacks: [
     {
       id: '1',
