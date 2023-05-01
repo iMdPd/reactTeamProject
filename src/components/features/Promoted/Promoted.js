@@ -19,13 +19,14 @@ import Dots from '../../common/Dots/Dots';
 const Promoted = () => {
   const product = useSelector(state => getOne(state, 'aenean-ru-bristique-1'));
 
-
   const [activeProduct, setActiveProduct] = useState(0);
   const productCount = 3;
 
+  const [activeSlide, setActiveSlide] = useState(0);
   const handlePageSwipe = newPage => {
     setActiveSlide(newPage);
-    
+  };
+
   const handleOnClick = i => {
     setActiveProduct(i);
   };
