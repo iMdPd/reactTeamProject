@@ -1,20 +1,36 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import { useDispatch } from 'react-redux';
+import { updateViewportMode } from '../../../redux/viewportModeRedux';
+import getViewportMode from '../../../utils/getViewportMode';
+import { StickyBar } from '../StickyBar/StickyBar';
+import Feedbacks from '../../features/Feedbacks/Feedbacks';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getNewsleterByEmail } from '../../../redux/newsletterRedux';
-import Feedbacks from '../../features/Feedbacks/Feedbacks';
 import { NewsletterModal } from '../../features/NewsletterModal/NewsletterModal';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
-import { StickyBar } from '../StickyBar/StickyBar';
 
 const time = 15000;
 
 const MainLayout = ({ children, user }) => {
   const [modalShow, setModalShow] = useState(false);
   const [count, setCount] = useState(0);
+
+  const dispatch = useDispatch();
+
+  const setViewportMode = () => dispatch(updateViewportMode(getViewportMode()));
+
+  const handleWindowResize = () => {
+    setViewportMode();
+  };
+
+  useEffect(() => {
+    setViewportMode();
+
+    window.addEventListener('resize', handleWindowResize);
+  });
 
   const { pathname } = useLocation();
 

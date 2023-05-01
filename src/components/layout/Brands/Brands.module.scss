@@ -1,0 +1,35 @@
+@import "../../../styles/settings.scss";
+
+.border {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    width: 100%;
+    height: 120px;
+    border-top: 1px solid $brands-border;
+    border-bottom: 1px solid $brands-border;
+    margin-bottom: 20px;
+}
+
+.button{
+    background-color: $pure-black;
+    height: 100%;
+    width: 25px;
+    border: none;
+    color: $pure-white;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: start;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+    .content {
+        justify-content: center;
+    }
+}
