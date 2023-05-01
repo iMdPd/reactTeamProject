@@ -74,11 +74,10 @@ const MainLayout = ({ children, user }) => {
     >
       <Header pathname={pathname} />
       {children}
-      {incorrectPath && ((<StickyBar />), (<Feedbacks />))}
+      {incorrectPath && <StickyBar />}
+      {pathname === '/' && <Feedbacks />}
       <Footer pathname={pathname} />
-      {incorrectPath && (
-        <NewsletterModal show={modalShow} onHide={() => setModalShow(false)} />
-      )}
+      <NewsletterModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };
