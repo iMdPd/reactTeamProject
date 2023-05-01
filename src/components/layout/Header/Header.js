@@ -7,10 +7,10 @@ import TopBar from '../TopBar/TopBar';
 import CompanyClaim from '../CompanyClaim/CompanyClaim';
 import MenuBar from '../MenuBar/MenuBar';
 
-const Header = ({ pathname }) => {
+const Header = ({ pathname, userSetter }) => {
   return (
     <header className={styles.root}>
-      <TopBar />
+      <TopBar userSetter={userSetter} />
       {pathname !== '/signup' && pathname !== '/login' && <CompanyClaim />}
       {pathname !== '/signup' && pathname !== '/login' && <MenuBar />}
     </header>
@@ -19,6 +19,7 @@ const Header = ({ pathname }) => {
 
 Header.propTypes = {
   pathname: PropTypes.string,
+  userSetter: PropTypes.func,
 };
 
 export default Header;
