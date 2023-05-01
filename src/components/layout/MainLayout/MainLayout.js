@@ -12,7 +12,7 @@ import { StickyBar } from '../StickyBar/StickyBar';
 
 const time = 15000;
 
-const MainLayout = ({ children, user }) => {
+const MainLayout = ({ children, user, userSetter }) => {
   const [modalShow, setModalShow] = useState(false);
   const [count, setCount] = useState(0);
 
@@ -56,7 +56,7 @@ const MainLayout = ({ children, user }) => {
       onMouseLeave={handleMouseLeave}
       style={{ filter: modalShow ? 'blur(20px)' : 'none' }}
     >
-      <Header pathname={pathname} />
+      <Header pathname={pathname} userSetter={userSetter} />
       {children}
       {incorrectPath && ((<StickyBar />), (<Feedbacks />))}
       <Footer pathname={pathname} />
@@ -70,6 +70,7 @@ const MainLayout = ({ children, user }) => {
 MainLayout.propTypes = {
   children: PropTypes.node,
   user: PropTypes.string,
+  userSetter: PropTypes.func,
 };
 
 export default MainLayout;

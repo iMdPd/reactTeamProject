@@ -15,21 +15,23 @@ import { AccessPage } from './components/views/AccessPage/AccessPage';
 import { ProtectedRoute } from './components/features/ProtectedRoute/ProtectedRoute';
 
 const userEmail = sessionStorage.getItem('userEmail');
+const userData = sessionStorage.getItem('userData');
 
 const App = () => {
   const [user, setUser] = useState(userEmail);
+  const [userLogged, setUserLogged] = useState(userData);
 
   return (
     <Suspense fallback={<Loading />}>
       <Provider store={store}>
         <BrowserRouter>
-          <MainLayout user={user}>
+          <MainLayout user={user} userSetter={setUserLogged}>
             <Routes>
               <Route
                 exact
                 path={'/'}
                 element={
-                  <ProtectedRoute user={user}>
+                  <ProtectedRoute user={userLogged}>
                     <Homepage />
                   </ProtectedRoute>
                 }
@@ -38,7 +40,7 @@ const App = () => {
                 exact
                 path={'/shop/:categoryId'}
                 element={
-                  <ProtectedRoute user={user}>
+                  <ProtectedRoute user={userLogged}>
                     <ProductList />
                   </ProtectedRoute>
                 }
@@ -47,7 +49,7 @@ const App = () => {
                 exact
                 path={'/product/:productId'}
                 element={
-                  <ProtectedRoute user={user}>
+                  <ProtectedRoute user={userLogged}>
                     <ProductPage />
                   </ProtectedRoute>
                 }
@@ -56,7 +58,7 @@ const App = () => {
               <Route
                 exact
                 path={'/:accessPage'}
-                element={<AccessPage setUser={setUser} />}
+                element={<AccessPage setUser={setUser} loginUser={setUserLogged} />}
               />
             </Routes>
           </MainLayout>
