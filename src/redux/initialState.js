@@ -965,6 +965,36 @@ const initialState = {
     },
   ],
   newsletter: ['test@test.pl', 'admin@admin.pl', '1@1.pl', '0@0.pl'],
+
+  blog: [
+    {
+      id: '1',
+      image: 'https://images.pexels.com/photos/3653849/pexels-photo-3653849.jpeg',
+      date: '12-02-2023',
+      comments: '4',
+      title: 'Article 1',
+      text:
+        'Aliquam dictum pellentesque nibh sit amet dapibus. Vivamus eget luctus nisi. Nullam euismod leo vehicula, rutrum magna in, ornare enim vehicula, rutrum magna in, ornare enim.',
+    },
+    {
+      id: '2',
+      image: 'https://images.pexels.com/photos/16474101/pexels-photo-16474101.jpeg',
+      date: '01-12-2022',
+      comments: '14',
+      title: 'Article 2',
+      text:
+        'Aliquam dictum pellentesque nibh sit amet dapibus. Vivamus eget luctus nisi. Nullam euismod leo vehicula, rutrum magna in, ornare enim vehicula, rutrum magna in, ornare enim.',
+    },
+    {
+      id: '3',
+      image: 'https://images.pexels.com/photos/14765970/pexels-photo-14765970.jpeg',
+      date: '30-04-2023',
+      comments: '7',
+      title: 'Article 3',
+      text:
+        'Aliquam dictum pellentesque nibh sit amet dapibus. Vivamus eget luctus nisi. Nullam euismod leo vehicula, rutrum magna in, ornare enim vehicula, rutrum magna in, ornare enim.',
+    },
+  ],
 };
 
 export default initialState;
