@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -14,11 +14,11 @@ import styles from './TopBar.module.scss';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-const TopBar = () => {
+const TopBar = ({ userSetter }) => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
   const currentLangName = currentLang === 'pl' ? t('label.polish') : t('label.english');
-  const userData = JSON.parse(sessionStorage.getItem('userData'));
+  const userData = sessionStorage.getItem('userData');
 
   const handleLangChange = e => {
     const lang = e.target.dataset.id;
@@ -26,6 +26,11 @@ const TopBar = () => {
     if (lang !== currentLang) {
       i18n.changeLanguage(lang);
     }
+  };
+
+  const handleLogoutClick = () => {
+    sessionStorage.removeItem('userData');
+    userSetter(null);
   };
 
   return (
@@ -67,8 +72,7 @@ const TopBar = () => {
               <li>
                 {userData ? (
                   <span>
-                    <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
-                    {userData.email}
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} /> {userData}
                   </span>
                 ) : (
                   <Link to='/login'>
@@ -79,7 +83,7 @@ const TopBar = () => {
               </li>
               <li>
                 {userData ? (
-                  <Link>
+                  <Link onClick={handleLogoutClick}>
                     <FontAwesomeIcon className={styles.icon} icon={faPowerOff} />{' '}
                     {t('label.logout')}
                   </Link>
@@ -103,6 +107,8 @@ const TopBar = () => {
   );
 };
 
-// TopBar.propTypes = {};
+TopBar.propTypes = {
+  userSetter: PropTypes.func,
+};
 
 export default TopBar;

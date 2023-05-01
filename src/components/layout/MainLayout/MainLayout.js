@@ -1,20 +1,36 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import { useDispatch } from 'react-redux';
+import { updateViewportMode } from '../../../redux/viewportModeRedux';
+import getViewportMode from '../../../utils/getViewportMode';
+import { StickyBar } from '../StickyBar/StickyBar';
+import Feedbacks from '../../features/Feedbacks/Feedbacks';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getNewsleterByEmail } from '../../../redux/newsletterRedux';
-import Feedbacks from '../../features/Feedbacks/Feedbacks';
 import { NewsletterModal } from '../../features/NewsletterModal/NewsletterModal';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
-import { StickyBar } from '../StickyBar/StickyBar';
 
 const time = 15000;
 
-const MainLayout = ({ children, user }) => {
+const MainLayout = ({ children, user, userSetter }) => {
   const [modalShow, setModalShow] = useState(false);
   const [count, setCount] = useState(0);
+
+  const dispatch = useDispatch();
+
+  const setViewportMode = () => dispatch(updateViewportMode(getViewportMode()));
+
+  const handleWindowResize = () => {
+    setViewportMode();
+  };
+
+  useEffect(() => {
+    setViewportMode();
+
+    window.addEventListener('resize', handleWindowResize);
+  });
 
   const { pathname } = useLocation();
 
@@ -56,13 +72,12 @@ const MainLayout = ({ children, user }) => {
       onMouseLeave={handleMouseLeave}
       style={{ filter: modalShow ? 'blur(20px)' : 'none' }}
     >
-      <Header pathname={pathname} />
+      <Header pathname={pathname} userSetter={userSetter} />
       {children}
-      {incorrectPath && ((<StickyBar />), (<Feedbacks />))}
+      {incorrectPath && <StickyBar />}
+      {pathname === '/' && <Feedbacks />}
       <Footer pathname={pathname} />
-      {incorrectPath && (
-        <NewsletterModal show={modalShow} onHide={() => setModalShow(false)} />
-      )}
+      <NewsletterModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };
@@ -70,6 +85,7 @@ const MainLayout = ({ children, user }) => {
 MainLayout.propTypes = {
   children: PropTypes.node,
   user: PropTypes.string,
+  userSetter: PropTypes.func,
 };
 
 export default MainLayout;

@@ -3,7 +3,7 @@ import styles from './AccessPage.module.scss';
 import PropTypes from 'prop-types';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 
-export const AccessPage = ({ setUser }) => {
+export const AccessPage = ({ setUser, loginUser }) => {
   const [username, setUsername] = useState();
   const [userEmail, setUserEmail] = useState();
   const [password, setPassword] = useState();
@@ -31,9 +31,11 @@ export const AccessPage = ({ setUser }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    loginUser(userEmail);
     setUser(userEmail);
 
     if (userEmail && password) {
+      sessionStorage.setItem('userData', userEmail);
       sessionStorage.setItem('userEmail', userEmail);
       sessionStorage.setItem('userPassword', password);
     }
@@ -99,4 +101,5 @@ export const AccessPage = ({ setUser }) => {
 
 AccessPage.propTypes = {
   setUser: PropTypes.func,
+  loginUser: PropTypes.func,
 };

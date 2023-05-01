@@ -14,14 +14,20 @@ import {
 import Button from '../../common/Button/Button';
 import ProductBoxContent from '../../common/ProductBox/ProductBoxContent';
 import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
+import Dots from '../../common/Dots/Dots';
 
 const Promoted = () => {
   const product = useSelector(state => getOne(state, 'aenean-ru-bristique-1'));
 
-  const [activeSlide, setActiveSlide] = useState(0);
+
+  const [activeProduct, setActiveProduct] = useState(0);
+  const productCount = 3;
 
   const handlePageSwipe = newPage => {
     setActiveSlide(newPage);
+    
+  const handleOnClick = i => {
+    setActiveProduct(i);
   };
 
   return (
@@ -34,19 +40,11 @@ const Promoted = () => {
             <div className={styles.photobox}>
               <div className={styles.deals}>
                 <h3 className={styles.text}>hot deals</h3>
-                <div className={'col-auto ' + styles.dots}>
-                  <ul>
-                    <li>
-                      <a>.</a>
-                    </li>
-                    <li>
-                      <a>.</a>
-                    </li>
-                    <li>
-                      <a>.</a>
-                    </li>
-                  </ul>
-                </div>
+                <Dots
+                  changeEvent={handleOnClick}
+                  activeNumber={activeProduct}
+                  dotsNumber={productCount}
+                />
               </div>
               <img
                 className={styles.image}

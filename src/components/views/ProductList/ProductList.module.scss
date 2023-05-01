@@ -2,4 +2,81 @@
 
 .root {
   padding: $base-padding 0;
+
+  .panelBar {
+    position: relative;
+
+    .heading {
+      position: relative;
+      width: 100%;
+      margin-bottom: 1rem;
+      border-bottom: 4px solid $nf-menu-line;
+      align-items: center;
+      justify-content: space-between;
+
+      h3 {
+        color: $pure-black;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $pure-black;
+      }
+    }
+
+    .getMore {
+      font-size: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      color: $primary;
+    }
+  }
+
+  .filterWrapper {
+    display: inherit;
+
+    .selectDescribe {
+      display: inline;
+      padding: 0 10px;
+      margin-left: 10px;
+    }
+
+    .select {
+      border-radius: 0;
+      outline: none;
+      padding: 0 10px 0 5px;
+    }
+
+    .displayVariant {
+      font-size: 17px;
+      border: 1px solid $pure-black;
+      margin-left: 20px;
+
+      & > svg {
+        padding: 0 5px;
+
+        &:active {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .productsContainer {
+    transition: all 0.25s;
+    min-inline-size: -webkit-fill-available;
+  }
+
+  .fade {
+    opacity: 0;
+  }
 }

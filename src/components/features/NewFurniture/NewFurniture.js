@@ -3,12 +3,20 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import { viewportModes } from '../../../settings';
 import Carousel, { CarouselItem } from '../../common/Carousel/Carousel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowCircleLeft,
+  faArrowCircleRight,
+} from '@fortawesome/free-solid-svg-icons';
 import { Translation } from 'react-i18next';
 
 const time = 250;
 
 class NewFurniture extends React.Component {
+  DEFAULT_PRODUCTS_PER_PAGE = 8;
+  pagesCount = 0;
   state = {
     activePage: 0,
     activeCategory: 'bed',
@@ -29,17 +37,41 @@ class NewFurniture extends React.Component {
     this.setState({ visible: false });
     setTimeout(() => this.setState({ activeCategory: newCategory }), time);
     setTimeout(() => this.setState({ visible: true }), time * 2);
+    this.setState({ activePage: 0 });
   }
 
+  leftArrowClick = () => {
+    if (this.state.activePage > 0) {
+      this.handlePageChange(this.state.activePage - 1);
+    }
+  };
+
+  rightArrowClick = () => {
+    if (this.state.activePage < this.pagesCount - 1) {
+      this.handlePageChange(this.state.activePage + 1);
+    }
+  };
+
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, viewportMode } = this.props;
     const { activeCategory, activePage, visible } = this.state;
+
+    if (viewportMode === viewportModes.mobile) {
+      this.DEFAULT_PRODUCTS_PER_PAGE = 1;
+    } else if (viewportMode === viewportModes.tablet) {
+      this.DEFAULT_PRODUCTS_PER_PAGE = 2;
+    } else {
+      this.DEFAULT_PRODUCTS_PER_PAGE = 8;
+    }
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    this.pagesCount = Math.ceil(
+      categoryProducts.length / this.DEFAULT_PRODUCTS_PER_PAGE
+    );
 
     const pages = [];
     const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
+    for (let i = 0; i < this.pagesCount; i++) {
       dots.push(
         <li key={i}>
           <a
@@ -52,7 +84,12 @@ class NewFurniture extends React.Component {
         </li>
       );
 
-      pages.push(categoryProducts.slice(i * 8, (i + 1) * 8));
+      pages.push(
+        categoryProducts.slice(
+          i * this.DEFAULT_PRODUCTS_PER_PAGE,
+          (i + 1) * this.DEFAULT_PRODUCTS_PER_PAGE
+        )
+      );
     }
     return (
       <div className={styles.root}>
@@ -83,12 +120,31 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
+          <div className={'row justify-content-center ' + styles.arrows}>
+            <FontAwesomeIcon
+              className={styles.left + ' ' + (activePage === 0 && styles.unactive)}
+              onClick={this.leftArrowClick}
+              icon={faArrowCircleLeft}
+            />
+            <FontAwesomeIcon
+              className={
+                styles.right +
+                ' ' +
+                (activePage >= this.pagesCount - 1 && styles.unactive)
+              }
+              onClick={this.rightArrowClick}
+              icon={faArrowCircleRight}
+            />
+          </div>
           <Carousel actionSwiped={this.handlePageSwipe} initialIndex={activePage}>
             {pages.map((page, i) => (
               <CarouselItem key={i}>
                 <div
                   className={
-                    'row ' + styles.productsContainer + ' ' + (!visible && styles.fade)
+                    'row justify-content-center ' +
+                    styles.productsContainer +
+                    ' ' +
+                    (!visible && styles.fade)
                   }
                 >
                   {page.map(item => (
@@ -125,6 +181,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  viewportMode: PropTypes.object,
 };
 
 NewFurniture.defaultProps = {
