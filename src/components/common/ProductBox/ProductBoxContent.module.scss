@@ -7,7 +7,7 @@
 
   .content {
     text-align: center;
-    padding: 20px;
+    padding: 20px 10px;
 
     h5 {
       color: $primary;
@@ -94,14 +94,18 @@
 
 @media (max-width: 577px) {
   .root {
-    margin: 20px auto;
-    max-width: 300px;
+
+    .content {
+      padding: 20px 0;
+    }
   }
 }
 
 @media (min-width: 578px) and (max-width: 991px) {
   .root {
-    margin: 20px auto;
-    max-width: 300px;
+
+    .content {
+      padding: 20px 0;
+    }
   }
 }
