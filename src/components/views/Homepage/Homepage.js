@@ -9,6 +9,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Brands from '../../layout/Brands/Brands';
 import { SaleBoxes } from '../../features/SaleBoxes/SaleBoxes';
 import Gallery from '../../layout/Gallery/Gallery';
+import Blogs from '../../layout/Blogs/Blogs';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -16,8 +17,9 @@ const Homepage = () => (
     <FeatureBoxes />
     <SaleBoxes />
     <NewFurniture />
-    <Brands />
     <Gallery />
+    <Blogs />
+    <Brands />
   </div>
 );
 
