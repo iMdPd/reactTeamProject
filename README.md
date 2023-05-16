@@ -225,8 +225,8 @@ Photos in ProductBox components do not fill all available space. There is still 
 I changed styles of ProductBox images. From now on, the picture fills all available space.
 
 <p align="center">
-  <img style="max-height: 320px" src="./images/Product-Image-before-changes.png" alt="before changes" />
-  <img style="max-height: 320px" src="./images/Product-Image-after-changes.png" alt="after changes" />
+  <img style="height: 420px;" src="./images/Product-Image-before-changes.png" alt="before changes" />
+  <img style="height: 420px;" src="./images/Product-Image-after-changes.png" alt="after changes" />
 </p>
     </samp>
   </div>
@@ -388,8 +388,8 @@ I created ProductList component with products sorted by category. ProductBox has
 |        ![ReactRouter](https://img.shields.io/badge/React%20Router-CA4245.svg?style-plastic-=for-the-badge&logo=React-Router&logoColor=white)         | Implements dynamic routing in web applications that allow navigating without refreshing the page. |
 |                   ![Redux](https://img.shields.io/badge/Redux-764ABC.svg?style-plastic-=for-the-badge&logo=Redux&logoColor=white)                    | Serves as a centralized store for state that is used across entire application.                   |
 |                       ![Jest](https://img.shields.io/badge/Jest-323330?style-plastic-=for-the-badge&logo=Jest&logoColor=white)                       | JavaScript testing framework designed to ensure correctness of any JavaScript codebase.           |
-|                  ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style-plastic-=for-the-badge&logo=netlify&logoColor=white)                   | Build and deploy pull requests from Git.           |
-|                  ![Netlify](https://img.shields.io/badge/Jira-0052CC?style-plastic-=for-the-badge&logo=Jira&logoColor=white)                   | An agile project management tool that supports in this case kanban methodology.           |
+|                  ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style-plastic-=for-the-badge&logo=netlify&logoColor=white)                   | Build and deploy pull requests from Git.                                                          |
+|                     ![Netlify](https://img.shields.io/badge/Jira-0052CC?style-plastic-=for-the-badge&logo=Jira&logoColor=white)                      | An agile project management tool that supports in this case kanban methodology.                   |
 |                                                                       ShortId                                                                        | Creates short non-sequential unique ids.                                                          |
 |                                                                         Clsx                                                                         | Utility for constructing className strings conditionally.                                         |
 
