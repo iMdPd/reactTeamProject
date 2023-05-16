@@ -225,8 +225,8 @@ Photos in ProductBox components do not fill all available space. There is still 
 I changed styles of ProductBox images. From now on, the picture fills all available space.
 
 <p align="center">
-  <img style="max-height: 420px" src="./images/Product-Image-before-changes.png" alt="before changes" />
-  <img style="max-height: 420px" src="./images/Product-Image-after-changes.png" alt="after changes" />
+  <img style="max-height: 320px" src="./images/Product-Image-before-changes.png" alt="before changes" />
+  <img style="max-height: 320px" src="./images/Product-Image-after-changes.png" alt="after changes" />
 </p>
     </samp>
   </div>
